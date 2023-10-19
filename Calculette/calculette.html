@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+  <head>
+		<meta charset="utf-8" />
+		<!--<link rel="stylesheet" type="text/css" href="style.css" />-->
+		
+		<title>Calculatrice</title>
+	</head>
+    <body>
+        <h1>Calculatrice</h1>
+        <br>        
+        <table border="3">
+            <thead>
+                <td colspan="4"><input type="text" id="resultat"></td>
+            </thead>
+            <tr>
+                <th><input type="button" value="%" onclick="opé('pourcentage')"></input></th>
+                <th><input type="button" value="&#8730" onclick="opé('racine')"></input></th>
+                <th colspan="2"><input type="button" value="Clear" onclick="reset()"></input></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="7" onclick="cliquer(7)"></input></th>
+                <th><input type="button" value="8" onclick="cliquer(8)"></input></th>
+                <th><input type="button" value="9" onclick="cliquer(9)"></input></th>
+                <th><input type="button" value="&#247" onclick="opé('division')"></input></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="4" onclick="cliquer(4)"></input></th>
+                <th><input type="button" value="5" onclick="cliquer(5)"></input></th>
+                <th><input type="button" value="6" onclick="cliquer(6)"></input></th>
+                <th><input type="button" value="X" onclick="opé('multiplication')"></input></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="1" onclick="cliquer(1)"></input></th>
+                <th><input type="button" value="2" onclick="cliquer(2)"></input></th>
+                <th><input type="button" value="3" onclick="cliquer(3)"></input></th>
+                <th><input type="button" value="-"onclick="opé('soustraction')"></input></th>
+            </tr>
+            <tfoot>
+                <th><input type="button" value="0" onclick="cliquer(0)"></input></th>
+                <th><input type="button" value="." onclick="cliquer('.')"></input></th>
+                <th><input type="button" value="=" onclick="résultat()"></input></th>
+                <th><input type="button" value="+" onclick="opé('addition')"></input></th>
+            </tfoot>
+        </table>
+
+        <script>
+            let chiffre1 = [];
+            let chiffre2 = [];
+            let operation = 0;
+            let itération = 2;
+            let chiffreAffiché = '0';
+            document.getElementById("resultat").value = chiffreAffiché;
+            function cliquer(valeur){
+                if (itération==2){
+                    chiffre1.push(valeur)
+                    chiffreAffiché = (chiffre1.join(''))
+                }
+                else{
+                    chiffre2.push(valeur)
+                    chiffreAffiché = (chiffre2.join(''))
+                }
+                document.getElementById("resultat").value = chiffreAffiché   
+            }
+            function opé(a){
+                if (a === "racine"){
+                        document.getElementById("resultat").value = chiffreAffiché = Math.sqrt(chiffreAffiché)
+                    }else{
+                        operation = a
+                        itération +=1
+                    }
+            } 
+            function résultat(){
+                    let a = Number(chiffre1.join(""))
+                    let b = Number(chiffre2.join(""))
+                switch(operation){
+                    case "addition":
+                        chiffreAffiché = a+b
+                        break;
+                    case "soustraction":
+                        chiffreAffiché = a-b
+                        break;
+                    case "multiplication":
+                        chiffreAffiché = a*b
+                        break
+                    case "division":
+                        chiffreAffiché =a/b
+                    case "pourcentage":
+                        chiffreAffiché = (a/100)*b
+                        break;
+                }
+                document.getElementById("resultat").value = chiffreAffiché
+                chiffre1 = []
+                chiffre1[0] = chiffreAffiché
+                chiffre2 = [];
+            }
+            function reset(){
+                chiffre1 = [];
+                chiffre2 = [];
+                operation = 0;
+                itération = 2;
+                chiffreAffiché = 0;
+                document.getElementById("resultat").value = chiffreAffiché
+            }
+        </script>
+    </body>   
+</html>
