@@ -1,0 +1,65 @@
+body {
+  font-family: Trebuchet MS;
+}
+
+hr {
+  width: 500px;
+  height: 5px;
+  border: 5px black solid;
+  background-color: red;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#titre {
+  color: black;
+  font-size: 50px;
+  text-align: center;
+}
+
+#titre h1 {
+  margin: 10px;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+#jeu td {
+  color: red;
+  border: 7px black solid;
+  text-align: center;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  user-select: none;
+}
+
+.vide:hover {
+  background-color: grey;
+}
+
+#score {
+  margin: 10px;
+  text-align: center;
+  font-size: x-large;
+}
+
+#score h1 {
+  font-size: 30px;
+  margin: 10px;
+  text-decoration: underline red;
+}
+
+#score td {
+  padding: 3px;
+  border: 2px black solid;
+}
+#boutonReset {
+  text-align: center;
+  margin: 10px;
+}

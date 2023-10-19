@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+		<meta charset="utf-8" />
+        <!--<style>
+            *{border:1px #ff0000 solid;}
+        </style>-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>Tic Tac Toe</title>
+	</head>
+    <body>
+        <section id="titre">
+            <h1>Morpion</h1>           
+        </section>
+        <hr>
+        <section id="jeu">
+            <table>
+                <tr>
+                    <td class="vide" id="A1">A1</td>
+                    <td class="vide" id="A2">A2</td>
+                    <td class="vide" id="A3">A3</td>
+                </tr>
+                <tr>
+                    <td class="vide" id="B1">B1</td>
+                    <td class="vide" id="B2">B2</td>
+                    <td class="vide" id="B3">B3</td>
+                </tr>
+                <tr>
+                    <td class="vide" id="C1">C1</td>
+                    <td class="vide" id="C2">C1</td>
+                    <td class="vide" id="C3">C3</td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section id="score">
+            <h1>Score</h1>
+            <table>
+                <tr>
+                    <td>Joueur 1</td>
+                    <td>Joueur 2</td>
+                </tr>
+                <tr>
+                    <td id="scoreJoueur1">0</td>
+                    <td id="scoreJoueur2">0</td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section id="boutonReset">
+            <button id="resetScore" onclick="resetScore()">Reset Score</button>
+        </section>
+        <script src="script.js">
+        </script>
+    </body>   
+</html>
