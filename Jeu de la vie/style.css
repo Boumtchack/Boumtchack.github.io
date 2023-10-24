@@ -1,0 +1,21 @@
+#tailleToile {
+  background-color: grey;
+}
+
+#canvas {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 1px black solid;
+}
+
+#bouttons {
+  margin: 2px;
+  padding-top: 10px;
+}
+
+button {
+  margin: 2px;
+}
