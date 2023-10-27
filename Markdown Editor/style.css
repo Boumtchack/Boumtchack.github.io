@@ -1,0 +1,27 @@
+.editeur {
+  background-color: bisque;
+  width: 100%;
+  height: 800px;
+}
+
+.entreeTexte {
+  background-color: grey;
+  float: left;
+  width: 47%;
+  height: 800px;
+  margin-left: 2%;
+}
+
+.sortieTexte {
+  background-color: grey;
+  float: right;
+  width: 47%;
+  height: 800px;
+  margin-right: 2%;
+}
+
+#priseTexte {
+  width: 100%;
+  height: 90%;
+  resize: none;
+}

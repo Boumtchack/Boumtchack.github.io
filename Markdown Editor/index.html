@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html style="margin: 0; height: 100%">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>MarkDown Editor</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="margin: 0; height: 100%">
-    <textarea
-      name="EntreeTexte"
-      id="TextInput"
-      style="width: 45%; height: auto; margin: 10px; resize: none"
-    >
+  <body>
+    <div class="titre"><p>Markdown Editor par Antoine</p></div>
+    <div class="editeur">
+      <div class="entreeTexte">
+        <textarea name="priseTexte" id="priseTexte">
 Entrez votre texte içi...</textarea
-    >
-    <script src="script.js"></script>
+        >
+      </div>
+      <div class="sortieTexte"></div>
+    </div>
   </body>
 </html>
