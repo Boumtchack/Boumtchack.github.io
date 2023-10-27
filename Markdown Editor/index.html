@@ -8,11 +8,16 @@
     <div class="titre"><p>Markdown Editor par Antoine</p></div>
     <div class="editeur">
       <div class="entreeTexte">
-        <textarea name="priseTexte" id="priseTexte">
-Entrez votre texte içi...</textarea
-        >
+        <textarea
+          oninput="convertTexte()"
+          name="priseTexte"
+          id="priseTexte"
+          placeholder="Entrez votre texte ici..."
+        ></textarea>
       </div>
-      <div class="sortieTexte"></div>
+      <div id="sortieTexte"></div>
     </div>
+    <script src="showdown.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
