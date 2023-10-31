@@ -7,14 +7,12 @@
   <body>
     <div class="titre"><p>Markdown Editor par Antoine</p></div>
     <div class="editeur">
-      <div class="entreeTexte">
-        <textarea
-          oninput="convertTexte()"
-          name="priseTexte"
-          id="priseTexte"
-          placeholder="Entrez votre texte ici..."
-        ></textarea>
-      </div>
+      <textarea
+        oninput="convertTexte()"
+        name="priseTexte"
+        id="priseTexte"
+        placeholder="Entrez votre texte ici..."
+      ></textarea>
       <div id="sortieTexte"></div>
     </div>
     <script src="showdown.min.js"></script>
