@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MarkDown Editor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Markdown Editor par Antoine</h1>
+    <div class="editeur">
+      <textarea
+        oninput="convertTexte()"
+        id="priseTexte"
+        placeholder="Entrez votre texte ici..."
+      ></textarea>
+      <div id="sortieTexte"></div>
+    </div>
+    <script src="showdown.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
