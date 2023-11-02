@@ -5,7 +5,7 @@ body {
   width: 100%;
 }
 
-.titre {
+h1 {
   margin: 10px;
   text-align: center;
 }
