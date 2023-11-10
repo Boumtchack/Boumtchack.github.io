@@ -5,7 +5,7 @@
 body {
   text-shadow: -1px 1px 10px white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-image: url("./image/fond-écran.jpg");
+  background-image: url("./image/fond-écran.jpg"); /*https://pixabay.com/users/aitoff-388338/*/
   background-size: cover;
   margin: 0;
 }
