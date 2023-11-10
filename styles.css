@@ -1,0 +1,80 @@
+/* * {
+  border: 1px red solid;
+} */
+
+body {
+  text-shadow: -1px 1px 10px white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-image: url("./image/fond-écran.jpg"); /*https://pixabay.com/users/aitoff-388338/*/
+  background-size: cover;
+  margin: 0;
+}
+
+h1,
+h2,
+ul {
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2,
+a {
+  font-size: 25px;
+}
+
+p {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: white;
+}
+a:active {
+  color: blue;
+}
+
+article {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px;
+}
+
+.gallerie ul,
+.projets ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projets ul {
+  flex-direction: column;
+}
+
+.gallerie ul {
+  flex-direction: row;
+}
+
+img {
+  --taille-photo: 300px;
+  max-width: var(--taille-photo);
+  height: var(--taille-photo);
+  object-fit: initial;
+  border: 2px black solid;
+}
