@@ -13,6 +13,7 @@ body {
 /*BODY*/
 
 body {
+  background-image: url("./image/fond-écran.jpg"); /*https://pixabay.com/users/aitoff-388338/*/
 }
 
 body.pure-g {
