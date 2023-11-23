@@ -1,7 +1,7 @@
 /*GLOBAL*/
 
 * {
-  border: 1px red solid;
+  /* border: 1px red solid; */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -13,9 +13,22 @@ body {
 }
 
 h1 {
+  margin: 10px 0;
   text-align: center;
   text-transform: uppercase;
+
   width: 100%;
+}
+
+a,
+.projectInfo div {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 30px;
+}
+
+.separator {
+  margin: 5px 0;
+  border-bottom: 1px black solid;
 }
 
 /*BODY*/
@@ -35,8 +48,8 @@ main {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  background-color: whitesmoke;
-  opacity: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
+
   height: 90%;
   min-height: 900px;
   width: 50%;
@@ -45,9 +58,56 @@ main {
 }
 
 section {
+  display: grid;
+  padding: 5px;
+  gap: 5px;
   height: 100%;
+  width: 100%;
+}
+
+.projectInfo {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.documents {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.hobbies {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hobbies a {
+  flex: 1;
+}
+
+/*IMAGES*/
+
+a {
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+a:hover {
+  background: white;
+}
+
+.calculette {
+  background-image: url(./image/programe/calculatrice.png);
+}
+
+.morpion {
+  background-image: url(./image/programe/morpion.png);
+}
+
+.jeuDeDame {
+  background-image: url(./image/programe/jeuDeDame.png);
+}
+
+.jeuDeLaVie {
+  background-image: url(./image/programe/gameOfLife.png);
 }
