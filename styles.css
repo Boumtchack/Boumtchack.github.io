@@ -27,8 +27,9 @@ a,
 }
 
 .separator {
-  margin: 5px 0;
-  border-bottom: 1px black solid;
+  margin: 5px 2px;
+  border-bottom: 4px black solid;
+  border-radius: 2px;
 }
 
 /*BODY*/
@@ -65,6 +66,10 @@ section {
   width: 100%;
 }
 
+.presentation {
+  height: 50%;
+}
+
 .projectInfo {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -76,8 +81,10 @@ section {
 }
 
 .hobbies {
+  height: 50%;
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 .hobbies a {
@@ -90,11 +97,15 @@ a {
   color: transparent;
   text-decoration: none;
   text-align: center;
-  padding: 2% 0;
+  padding: 15px 0;
   font-size: 20px;
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.markdownEditor {
+  color: white;
 }
 
 a:hover {
@@ -116,8 +127,4 @@ a:hover {
 
 .jeuDeLaVie {
   background-image: url(./image/programe/gameOfLife.png);
-}
-
-.markdownEditor {
-  color: white;
 }
