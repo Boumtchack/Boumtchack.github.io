@@ -1,84 +1,139 @@
-/* * {
-  border: 1px red solid;
-} */
+/*GLOBAL*/
 
-body {
-  text-shadow: -1px 1px 10px white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-image: url("./image/fond-écran.jpg"); /*https://pixabay.com/users/aitoff-388338/*/
-  background-size: cover;
+* {
+  /* border: 1px red solid; */
+  font-family: sans-serif;
+  box-sizing: border-box;
   margin: 0;
-}
-
-h1,
-h2,
-ul {
-  margin: 20px 0;
-}
-
-h1 {
-  font-size: 60px;
-}
-
-h2,
-a {
-  font-size: 25px;
-}
-
-p {
-  font-size: 20px;
-}
-
-a {
-  color: black;
-}
-
-a:visited {
-  color: black;
-}
-a:hover {
-  color: white;
-}
-a:active {
-  color: blue;
-}
-
-article {
-  text-align: center;
-}
-
-ul {
-  list-style: none;
   padding: 0;
 }
 
-li {
-  margin: 10px;
+html,
+body {
+  height: 100%;
 }
 
-.gallerie ul,
-.projets ul {
+h1 {
+  margin: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+
+  width: 100%;
+}
+
+a,
+.projectInfo div {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 30px;
+}
+
+.separator {
+  margin: 5px 2px;
+  border-bottom: 4px black solid;
+  border-radius: 2px;
+}
+
+/*BODY*/
+
+body {
   display: flex;
-  flex-wrap: wrap;
+  background-image: url("./image/fond-écran.jpg"); /*https://pixabay.com/users/aitoff-388338/*/
+  background-size: cover;
+  align-items: center;
   justify-content: center;
+  min-height: 1000px;
 }
 
-.projets ul {
+/*MAIN*/
+
+main {
+  display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  height: 90%;
+  min-height: 900px;
+  width: 50%;
+  max-width: 800px;
+  min-width: 500px;
 }
 
-.projets li {
-  text-decoration: underline;
+section {
+  display: grid;
+  padding: 5px;
+  gap: 5px;
+  height: 100%;
+  width: 100%;
 }
 
-.gallerie ul {
-  flex-direction: row;
+.presentation {
+  height: 50%;
 }
 
-img {
-  --taille-photo: 300px;
-  max-width: var(--taille-photo);
-  height: var(--taille-photo);
-  object-fit: initial;
-  border: 2px black solid;
+.projectInfo {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.documents {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.hobbies,
+.documents {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.hobbies a,
+.documents a {
+  flex: 1;
+}
+
+/*IMAGES*/
+
+a {
+  color: transparent;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.documents a,
+.hobbies a {
+  padding: 40px 0;
+  color: white;
+}
+
+.markdownEditor {
+  color: white;
+}
+
+a:hover {
+  color: black;
+  background: white;
+}
+
+.calculette {
+  background-image: url(./image/programe/calculatrice.png);
+}
+
+.morpion {
+  background-image: url(./image/programe/morpion.png);
+}
+
+.jeuDeDame {
+  background-image: url(./image/programe/jeuDeDame.png);
+}
+
+.jeuDeLaVie {
+  background-image: url(./image/programe/gameOfLife.png);
 }
