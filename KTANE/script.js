@@ -99,9 +99,7 @@ function setupWire() {
   }
 }
 
-function nombreDeFils(ar, couleur){
-
-}
+function nombreDeFils(ar, couleur) {}
 
 function testWires() {
   x = document.querySelector('input[name="nbfil"]:checked').value;
@@ -114,7 +112,6 @@ function testWires() {
   fils.push(document.getElementById("couleurFil6").value);
   if (x == 3) {
     fils3 = fils.slice(0, 2);
-    for()
   } else if (x == 4) {
     fils4 = fils.slice(0, 3);
   } else if (x == 5) {
