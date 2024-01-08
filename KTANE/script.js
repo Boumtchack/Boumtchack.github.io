@@ -15,6 +15,8 @@ function serialNumber() {
 
 // BOUTONS
 
+var maintenir = " Maintenir <p>bleu : compteur 4</p><p>jaune : compteur 5</p><p>autre : compteur 1</p>";
+
 let leBouton = {
   mention: "",
   couleur: "",
@@ -43,18 +45,18 @@ function resultatBouton() {
   var CAR = document.querySelector(".CAR");
   var FRK = document.querySelector(".FRK");
   if (leBouton["couleur"] == "bleu" && leBouton["mention"] == "annuler") {
-    console.log("1maintenir");
+    document.querySelector("#resultat").innerHTML = maintenir;
   } else if (nbBatteries > 1 && leBouton["mention"] == "exploser") {
-    console.log("1appuyer et relacher");
+    document.querySelector("#resultat").innerHTML = "appuyer et relacher";
   } else if (leBouton["couleur"] == "blanc" && CAR.checked == true) {
-    console.log("2maintenir");
+    document.querySelector("#resultat").innerHTML = maintenir;
   } else if (nbBatteries > 2 && FRK.checked == true) {
-    console.log("2appuyer et relacher");
+    document.querySelector("#resultat").innerHTML = "appuyer et relacher";
   } else if (leBouton["couleur"] == "jaune") {
-    console.log("3maintenir");
+    document.querySelector("#resultat").innerHTML = maintenir;
   } else if (leBouton["couleur"] == "rouge" && leBouton["mention"] == "Maintenir") {
-    console.log("3appuyer et relacher");
+    document.querySelector("#resultat").innerHTML = "appuyer et relacher";
   } else {
-    console.log("4maintenir");
+    document.querySelector("#resultat").innerHTML = maintenir;
   }
 }
