@@ -1,14 +1,15 @@
 var nbBatteries = document.querySelector(".nbBatteries").value;
 var CAR = document.querySelector(".CAR");
 var FRK = document.querySelector(".FRK");
+var serialNumber = document.querySelector(".serial").value;
 
 function serialVowel() {
-  var serialNumber = document.querySelector(".serial").value;
+  serialNumber = document.querySelector(".serial").value;
   const result = /[aeuioy]/.test(serialNumber);
 }
 
-function serialNumber() {
-  var serialNumber = document.querySelector(".serial").value;
+function serialLastEven() {
+  serialNumber = document.querySelector(".serial").value;
   return serialNumber[serialNumber.length - 1] % 2 == 0;
 }
 
@@ -80,43 +81,72 @@ function resetBouton() {
 
 function setupWire() {
   x = document.querySelector('input[name="nbfil"]:checked').value;
-  if (x == 3) {
-    document.getElementById("couleurFil4").disabled = true;
-    document.getElementById("couleurFil5").disabled = true;
-    document.getElementById("couleurFil6").disabled = true;
-  } else if (x == 4) {
-    document.getElementById("couleurFil4").disabled = false;
-    document.getElementById("couleurFil5").disabled = true;
-    document.getElementById("couleurFil6").disabled = true;
-  } else if (x == 5) {
-    document.getElementById("couleurFil4").disabled = false;
-    document.getElementById("couleurFil5").disabled = false;
-    document.getElementById("couleurFil6").disabled = true;
-  } else if (x == 6) {
-    document.getElementById("couleurFil4").disabled = false;
-    document.getElementById("couleurFil5").disabled = false;
-    document.getElementById("couleurFil6").disabled = false;
-  }
+  document.getElementById("couleurFil4").disabled = x < 4;
+  document.getElementById("couleurFil5").disabled = x < 5;
+  document.getElementById("couleurFil6").disabled = x < 6;
 }
 
-function nombreDeFils(ar, couleur) {}
+function nombreDeFils(couleur) {
+  count = 0;
+  for (let i = 0; i < fils.length; i++) {
+    if (fils[i] == couleur) {
+      count++;
+    }
+  }
+  return count;
+}
 
 function testWires() {
   x = document.querySelector('input[name="nbfil"]:checked').value;
   fils = [];
-  fils.push(document.getElementById("couleurFil1").value);
-  fils.push(document.getElementById("couleurFil2").value);
-  fils.push(document.getElementById("couleurFil3").value);
-  fils.push(document.getElementById("couleurFil4").value);
-  fils.push(document.getElementById("couleurFil5").value);
-  fils.push(document.getElementById("couleurFil6").value);
-  if (x == 3) {
-    fils3 = fils.slice(0, 2);
-  } else if (x == 4) {
-    fils4 = fils.slice(0, 3);
-  } else if (x == 5) {
-    fils5 = fils.slice(0, 4);
-  } else if (x == 6) {
-    fils6 = fils.slice(0, 5);
+  for (i = 1; i < 7; i++) {
+    fils.push(document.getElementById("couleurFil" + i).value);
   }
+  if (x == 3) {
+    fils = fils.slice(0, 3);
+    if (nombreDeFils("rouge") == 0) {
+      resultat = "couper le deuxième fil";
+    } else if (fils[2] == "blanc") {
+      resultat = "couper le dernier fil";
+    } else if (nombreDeFils("bleu") > 1) {
+      resultat = "couper le dernier fil bleu";
+    } else {
+      resultat = "couper le dernier fil";
+    }
+  } else if (x == 4) {
+    fils = fils.slice(0, 4);
+    if (nombreDeFils("rouge") > 1 && !serialLastEven()) {
+      resultat = "couper le dernier fil rouge";
+    } else if (fils[3] == "jaune" && nombreDeFils("rouge") == 0) {
+      resultat = "couper le premier fil";
+    } else if (nombreDeFils("bleu") == 1) {
+      resultat = "couper le premier fil";
+    } else if (nombreDeFils("jaune") > 1) {
+      resultat = "couper le dernier fil";
+    } else {
+      resutat = "couper le deuxième fil";
+    }
+  } else if (x == 5) {
+    fils = fils.slice(0, 5);
+    if (fils[4] == "noir" && !serialLastEven()) {
+      resultat = "couper le quatrième fil";
+    } else if (nombreDeFils("rouge") == 1 && nombreDeFils("jaune" > 1)) {
+      resultat = "couper le premier fil";
+    } else if (nombreDeFils("noir") == 0) {
+      resultat = "couper le deuxième fil";
+    } else {
+      resultat = "couper le premier fil";
+    }
+  } else if (x == 6) {
+    if (nombreDeFils("jaune") == 0 && !serialLastEven()) {
+      resultat = "couper le troisième fil";
+    } else if (nombreDeFils("jaune") == 1 && nombreDeFils("blanc") > 1) {
+      resultat = "couper le quatrième fil";
+    } else if (nombreDeFils("rouge") == 0) {
+      resultat = "couper le dernier fil";
+    } else {
+      resultat = "couper le quantrième fil";
+    }
+  }
+  document.querySelector(".resultWire").innerHTML = resultat;
 }
