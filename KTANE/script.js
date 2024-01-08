@@ -24,13 +24,14 @@ let leBouton = {
 
 function changeMention(a) {
   leBouton["mention"] = a.value;
-  console.log(leBouton["mention"]);
+  document.querySelector("#imageBouton").classList.add((leBouton["mention"] = a.value));
+  document.querySelector("#imageBouton").innerHTML = leBouton["mention"] = a.value;
   checkForResult();
 }
 
 function changeCouleur(a) {
   leBouton["couleur"] = a.value;
-  console.log(leBouton["couleur"]);
+  document.querySelector("#imageBouton").classList.add((leBouton["couleur"] = a.value));
   checkForResult();
 }
 
@@ -59,4 +60,12 @@ function resultatBouton() {
   } else {
     document.querySelector("#resultat").innerHTML = maintenir;
   }
+}
+
+function resetBouton() {
+  leBouton["mention"] = "";
+  leBouton["couleur"] = "";
+  document.querySelector("#resultat").innerHTML = "";
+  document.querySelector("#imageBouton").className = "";
+  document.querySelector("#imageBouton").innerHTML = "";
 }

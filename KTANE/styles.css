@@ -1,3 +1,28 @@
 /* * {
   border: 1px red solid;
 } */
+
+#imageBouton {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border: 1px black solid;
+  border-radius: 50%;
+}
+
+.rouge {
+  background-color: red;
+}
+.bleu {
+  background-color: blue;
+}
+.blanc {
+  background-color: antiquewhite;
+}
+.jaune {
+  background-color: yellow;
+}
+.noir {
+  background-color: black;
+  color: antiquewhite;
+}
