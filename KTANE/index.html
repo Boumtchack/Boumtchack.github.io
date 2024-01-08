@@ -11,7 +11,7 @@
       <div>CAR allumé? <input class="CAR" type="checkbox" name="ledCAR" /></div>
       <div>FRK allumé? <input class="FRK" type="checkbox" name="ledFRK" /></div>
       <div>Numéro de série: <input class="serial" type="text" /></div>
-      <div>Erreurs: <input type="number" min="0" max="2" value="0" /></div>
+      <div class="erreurs">Erreurs: <input type="number" min="0" max="2" value="0" /></div>
     </section>
     <section id="boutons">
       <div id="mentions">
@@ -35,12 +35,59 @@
     <section class="filsHorizontaux">
       <fieldset>
         <legend>selectionner le nombre de fil puits mettre l'ordre des couleurs</legend>
-        <input checked type="radio" name="nbfil" id="3wire" name="3" value="4" /><label for="3">3</label>
-        <input type="radio" name="nbfil" id="4wire" name="4" value="4" /><label for="4">4</label>
-        <input type="radio" name="nbfil" id="5wire" name="5" value="5" /><label for="5">5</label>
-        <input type="radio" name="nbfil" id="6wire" name="6" value="6" /><label for="6">6</label>
+        <input checked type="radio" name="nbfil" id="3wire" name="3" value="3" onclick="setupWire()" /><label for="3"
+          >3</label
+        >
+        <input type="radio" name="nbfil" id="4wire" name="4" value="4" onclick="setupWire()" /><label for="4">4</label>
+        <input type="radio" name="nbfil" id="5wire" name="5" value="5" onclick="setupWire()" /><label for="5">5</label>
+        <input type="radio" name="nbfil" id="6wire" name="6" value="6" onclick="setupWire()" /><label for="6">6</label>
       </fieldset>
-      <div class="wiresOverlay"></div>
+      <div class="wiresOverlay">
+        <select id="couleurFil1">
+          <option value="rouge">rouge</option>
+          <option value="bleu">bleu</option>
+          <option value="blanc">blanc</option>
+          <option value="jaune">jaune</option>
+          <option value="noir">noir</option>
+        </select>
+        <select id="couleurFil2">
+          <option value="rouge">rouge</option>
+          <option value="bleu">bleu</option>
+          <option value="blanc">blanc</option>
+          <option value="jaune">jaune</option>
+          <option value="noir">noir</option>
+        </select>
+        <select id="couleurFil3">
+          <option value="rouge">rouge</option>
+          <option value="bleu">bleu</option>
+          <option value="blanc">blanc</option>
+          <option value="jaune">jaune</option>
+          <option value="noir">noir</option>
+        </select>
+        <select id="couleurFil4" disabled>
+          <option value="rouge">rouge</option>
+          <option value="bleu">bleu</option>
+          <option value="blanc">blanc</option>
+          <option value="jaune">jaune</option>
+          <option value="noir">noir</option>
+        </select>
+        <select id="couleurFil5" disabled>
+          <option value="rouge">rouge</option>
+          <option value="bleu">bleu</option>
+          <option value="blanc">blanc</option>
+          <option value="jaune">jaune</option>
+          <option value="noir">noir</option>
+        </select>
+        <select id="couleurFil6" disabled>
+          <option value="rouge">rouge</option>
+          <option value="bleu">bleu</option>
+          <option value="blanc">blanc</option>
+          <option value="jaune">jaune</option>
+          <option value="noir">noir</option>
+        </select>
+      </div>
+      <button onclick="testWires()">test</button>
+      <p>résultat: <span class="resultWire"></span></p>
     </section>
     <!-- <section class="filsSequences"></section>
     <section class="filsComplexes"></section>
@@ -52,7 +99,7 @@
     <section class="labyrinthe"></section>
     <section class="motDePasse"></section>
     <section class="Molette"></section>
-    <section class="documents"></section>
-    <script src="script.js"></script> -->
+    <section class="documents"></section> -->
+    <script src="script.js"></script>
   </body>
 </html>

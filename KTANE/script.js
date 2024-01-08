@@ -5,7 +5,6 @@ var FRK = document.querySelector(".FRK");
 function serialVowel() {
   var serialNumber = document.querySelector(".serial").value;
   const result = /[aeuioy]/.test(serialNumber);
-  console.log(result);
 }
 
 function serialNumber() {
@@ -79,11 +78,48 @@ function resetBouton() {
 
 //Fils horizontaux
 
-function wires() {
-  nbfils = document.querySelector("input[name='nbfil']:checked").value;
-  for (i = 0; i < nbfils; i++) {
-    document.querySelector(".wiresOverlay").innerHTML =
-      '<select id="couleurFils"><option value="rouge">rouge</option><option value="bleu">bleu</option><option value="blanc">blanc</option><option value="jaune">jaune</option><option value="noir">noir</option></select>';
-    i++;
+function setupWire() {
+  x = document.querySelector('input[name="nbfil"]:checked').value;
+  if (x == 3) {
+    document.getElementById("couleurFil4").disabled = true;
+    document.getElementById("couleurFil5").disabled = true;
+    document.getElementById("couleurFil6").disabled = true;
+  } else if (x == 4) {
+    document.getElementById("couleurFil4").disabled = false;
+    document.getElementById("couleurFil5").disabled = true;
+    document.getElementById("couleurFil6").disabled = true;
+  } else if (x == 5) {
+    document.getElementById("couleurFil4").disabled = false;
+    document.getElementById("couleurFil5").disabled = false;
+    document.getElementById("couleurFil6").disabled = true;
+  } else if (x == 6) {
+    document.getElementById("couleurFil4").disabled = false;
+    document.getElementById("couleurFil5").disabled = false;
+    document.getElementById("couleurFil6").disabled = false;
+  }
+}
+
+function nombreDeFils(ar, couleur){
+
+}
+
+function testWires() {
+  x = document.querySelector('input[name="nbfil"]:checked').value;
+  fils = [];
+  fils.push(document.getElementById("couleurFil1").value);
+  fils.push(document.getElementById("couleurFil2").value);
+  fils.push(document.getElementById("couleurFil3").value);
+  fils.push(document.getElementById("couleurFil4").value);
+  fils.push(document.getElementById("couleurFil5").value);
+  fils.push(document.getElementById("couleurFil6").value);
+  if (x == 3) {
+    fils3 = fils.slice(0, 2);
+    for()
+  } else if (x == 4) {
+    fils4 = fils.slice(0, 3);
+  } else if (x == 5) {
+    fils5 = fils.slice(0, 4);
+  } else if (x == 6) {
+    fils6 = fils.slice(0, 5);
   }
 }
