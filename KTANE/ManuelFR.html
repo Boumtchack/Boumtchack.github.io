@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>manuel KTANE FR 750</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <section id="Info">
+      <div>Nombre de piles? (0-10) <input class="nbBatteries" type="number" min="0" max="10" value="0" /></div>
+      <div>CAR allumé? <input class="CAR" type="checkbox" name="ledCAR" /></div>
+      <div>FRK allumé? <input class="FRK" type="checkbox" name="ledFRK" /></div>
+      <div>Numéro de série: <input class="serial" type="text" /></div>
+      <div>Erreurs: <input type="number" min="0" max="2" value="0" /></div>
+    </section>
+    <section id="boutons">
+      <div id="mentions">
+        <div class="metion annuler"><button onclick="changeMention(this)" value="annuler">annuler</button></div>
+        <div class="metion exploser"><button onclick="changeMention(this)" value="exploser">exploser</button></div>
+        <div class="metion maintenir"><button onclick="changeMention(this)" value="maintenir">maintenir</button></div>
+        <div class="metion appuyer"><button onclick="changeMention(this)" value="appuyer">appuyer</button></div>
+      </div>
+      <div id="couleurs">
+        <div class="couleur rouge"><button onclick="changeCouleur(this)" value="rouge">rouge</button></div>
+        <div class="couleur bleu"><button onclick="changeCouleur(this)" value="bleu">bleu</button></div>
+        <div class="couleur blanc"><button onclick="changeCouleur(this)" value="blanc">blanc</button></div>
+        <div class="couleur autre"><button onclick="changeCouleur(this)" value="autre">autre</button></div>
+      </div>
+      <div id="imageBouton">rien</div>
+      <div id="resultat">
+        <div class="resulat appuyerRelacher">appuyez et relachez</div>
+        <div class="resulat appuyer">appuyez et se referez à la bande de couleur</div>
+      </div>
+    </section>
+    <!-- <section class="filsHorizontaux"></section>
+    <section class="filsSequences"></section>
+    <section class="filsComplexes"></section>
+    <section class="clavierForme"></section>
+    <section class="simon"></section>
+    <section class="mots"></section>
+    <section class="memory"></section>
+    <section class="morse"></section>
+    <section class="labyrinthe"></section>
+    <section class="motDePasse"></section>
+    <section class="Molette"></section>
+    <section class="documents"></section> -->
+    <script src="script.js"></script>
+  </body>
+</html>
