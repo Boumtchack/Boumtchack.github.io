@@ -150,3 +150,60 @@ function testWires() {
   }
   document.querySelector(".resultWire").innerHTML = resultat;
 }
+
+//Keypads
+
+let keypads = {
+  list1: [28, 13, 30, 12, 7, 9, 23],
+  list2: [16, 28, 23, 26, 3, 9, 20],
+  list3: [1, 8, 26, 5, 15, 30, 3],
+  list4: [11, 21, 31, 7, 5, 20, 4],
+  list5: [24, 4, 31, 22, 21, 19, 2],
+  list6: [11, 16, 27, 14, 24, 18, 6],
+};
+
+let myList = [];
+var numberOfKeypad = 0;
+
+function addKeypad(key) {
+  if (numberOfKeypad < 4) {
+    myList.push(key);
+    numberOfKeypad++;
+  }
+  if (numberOfKeypad == 4) {
+    findResult();
+  }
+}
+
+function findResult() {
+  for (x = 1; x <= 6; x++) {
+    testList(x);
+  }
+}
+
+function testList(x) {
+  testingList = keypads["list" + x];
+  let listResult = [];
+  for (i = 0; i < testingList.length; i++) {
+    for (y = 0; y < myList.length; y++) {
+      if (myList[y].alt == testingList[i]) {
+        listResult.push(myList[y]);
+      }
+    }
+  }
+  if (listResult.length == 4) {
+    document.querySelector(".keyResult1").src = listResult[0].src;
+    document.querySelector(".keyResult2").src = listResult[1].src;
+    document.querySelector(".keyResult3").src = listResult[2].src;
+    document.querySelector(".keyResult4").src = listResult[3].src;
+  }
+}
+
+function resetKeypad() {
+  document.querySelector(".keyResult1").src = "";
+  document.querySelector(".keyResult2").src = "";
+  document.querySelector(".keyResult3").src = "";
+  document.querySelector(".keyResult4").src = "";
+  myList = [];
+  numberOfKeypad = 0;
+}

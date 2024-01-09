@@ -27,3 +27,27 @@
   background-color: black;
   color: antiquewhite;
 }
+
+/* KEYPADS */
+
+.keypads {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyResult > div {
+  height: 50px;
+  width: 50px;
+  border: 1px black solid;
+  background-color: red;
+}
+
+.keypads > img:hover {
+  border: 1px red solid;
+}
+
+.keypads > img {
+  height: 50px;
+  width: 50px;
+  border: 1px black solid;
+}

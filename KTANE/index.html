@@ -35,9 +35,7 @@
     <section class="filsHorizontaux">
       <fieldset>
         <legend>selectionner le nombre de fil puits mettre l'ordre des couleurs</legend>
-        <input checked type="radio" name="nbfil" id="3wire" name="3" value="3" onclick="setupWire()" /><label for="3"
-          >3</label
-        >
+        <input checked type="radio" name="nbfil" id="3wire" name="3" value="3" onclick="setupWire()" /><label for="3">3</label>
         <input type="radio" name="nbfil" id="4wire" name="4" value="4" onclick="setupWire()" /><label for="4">4</label>
         <input type="radio" name="nbfil" id="5wire" name="5" value="5" onclick="setupWire()" /><label for="5">5</label>
         <input type="radio" name="nbfil" id="6wire" name="6" value="6" onclick="setupWire()" /><label for="6">6</label>
@@ -89,17 +87,43 @@
       <button onclick="testWires()">test</button>
       <p>résultat: <span class="resultWire"></span></p>
     </section>
-    <!-- <section class="filsSequences"></section>
-    <section class="filsComplexes"></section>
-    <section class="clavierForme"></section>
-    <section class="simon"></section>
-    <section class="mots"></section>
-    <section class="memory"></section>
-    <section class="morse"></section>
-    <section class="labyrinthe"></section>
-    <section class="motDePasse"></section>
-    <section class="Molette"></section>
-    <section class="documents"></section> -->
+    <section class="keypads">
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/1-copyright.png" alt="1" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/2-filledstar.png" alt="2" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/3-hollowstar.png" alt="3" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/4-smileyface.png" alt="4" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/5-doublek.png" alt="5" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/6-omega.png" alt="6" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/7-squidknife.png" alt="7" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/8-pumpkin.png" alt="8" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/9-hookn.png" alt="9" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/11-six.png" alt="11" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/12-squigglyn.png" alt="12" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/13-at.png" alt="13" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/14-ae.png" alt="14" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/15-meltedthree.png" alt="15" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/16-euro.png" alt="16" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/18-nwithhat.png" alt="18" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/19-dragon.png" alt="19" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/20-questionmark.png" alt="20" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/21-paragraph.png" alt="21" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/22-rightc.png" alt="22" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/23-leftc.png" alt="23" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/24-pitchfork.png" alt="24" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/26-cursive.png" alt="26" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/27-tracks.png" alt="27" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/28-balloon.png" alt="28" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/30-upsidedowny.png" alt="30" onclick="addKeypad(this)" />
+      <img src="https://www.bombmanual.com/web/img/modules/keypad/31-bt.png" alt="31" onclick="addKeypad(this)" />
+      <div class="keyResult">
+        <img src="" class="keyResult1" />
+        <img src="" class="keyResult2" />
+        <img src="" class="keyResult3" />
+        <img src="" class="keyResult4" />
+      </div>
+      <button onclick="resetKeypad()">reset</button>
+    </section>
+
     <script src="script.js"></script>
   </body>
 </html>
