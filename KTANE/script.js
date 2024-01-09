@@ -145,7 +145,7 @@ function testWires() {
     } else if (nombreDeFils("rouge") == 0) {
       resultat = "couper le dernier fil";
     } else {
-      resultat = "couper le quantrième fil";
+      resultat = "couper le quatrième fil";
     }
   }
   document.querySelector(".resultWire").innerHTML = resultat;
@@ -165,9 +165,10 @@ let keypads = {
 let myList = [];
 var numberOfKeypad = 0;
 
-function addKeypad(key) {
+function addKeypad(element) {
   if (numberOfKeypad < 4) {
-    myList.push(key);
+    myList.push(element);
+    element.classList.add("clicked");
     numberOfKeypad++;
   }
   if (numberOfKeypad == 4) {
@@ -204,6 +205,9 @@ function resetKeypad() {
   document.querySelector(".keyResult2").src = "";
   document.querySelector(".keyResult3").src = "";
   document.querySelector(".keyResult4").src = "";
-  myList = [];
   numberOfKeypad = 0;
+  myList.forEach((element) => {
+    element.classList.remove("clicked");
+  });
+  myList = [];
 }
