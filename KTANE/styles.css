@@ -112,10 +112,22 @@
   border: 1px black solid;
 }
 
-/* input[type="radio"] {
-  display: none;
+/* WORDSPLAY */
+
+#wordPlay {
+  margin: 30px;
 }
 
-input[type="radio"]:checked > label {
-  border: 2px red solid;
-} */
+#firstWords {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+}
+
+#firstWords > div {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid black;
+  border-collapse: collapse;
+}

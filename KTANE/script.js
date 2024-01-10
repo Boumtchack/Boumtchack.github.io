@@ -196,11 +196,11 @@ function addKeypad(element) {
     numberOfKeypad++;
   }
   if (numberOfKeypad == 4) {
-    findResult();
+    findKeypadResult();
   }
 }
 
-function findResult() {
+function findKeypadResult() {
   for (x = 1; x <= 6; x++) {
     testList(x);
   }
@@ -316,4 +316,72 @@ function getRightColor(color) {
 
 function resetSimonSays() {
   caseResultat.innerHTML = "";
+}
+
+//WordPlay
+
+firstWordsList = [
+  ["...", 5],
+  ["attends", 6],
+  ["au", 5],
+  ["bouge", 4],
+  ["c", 2],
+  ["c'est", 6],
+  ["eau", 5],
+  ["haut", 5],
+  ["maux", 6],
+  ["mot", 3],
+  ["mots", 6],
+  ["non", 6],
+  ["ok", 2],
+  ["oui", 3],
+  ["premier", 2],
+  ["rien", 3],
+  ["rouge", 4],
+  ["t'es", 6],
+  ["tes", 4],
+  ["thon", 1],
+  ["ton", 4],
+  ["tons", 4],
+  ["tu es", 6],
+  ["ver", 6],
+  ["vers", 4],
+  ["vert", 3],
+  ["verre", 6],
+  ["vide", 4],
+];
+
+const firstWords = document.getElementById("firstWords");
+
+function createFirstWordsDisplay() {
+  for (i = 0; i < 28; i++) {
+    newDiv = document.createElement("div");
+    newDiv.innerText = firstWordsList[i][0];
+    newDiv.classList.add("watch" + firstWordsList[i][1]);
+    firstWords.appendChild(newDiv);
+    newDiv.onclick = () => findFirstWordsResult(newDiv);
+  }
+}
+
+createFirstWordsDisplay();
+
+function findFirstWordsResult(word) {
+  if (word.classList == "watch1") {
+    document.getElementById("firstWordsResult").innerText = "regarder en haut à gauche";
+  }
+  if (word.classList == "watch2") {
+    document.getElementById("firstWordsResult").innerText = "regarder en haut à droite";
+  }
+  if (word.classList == "watch3") {
+    document.getElementById("firstWordsResult").innerText = "regarder au milieu à gauche";
+  }
+  if (word.classList == "watch4") {
+    document.getElementById("firstWordsResult").innerText = "regarder au milieu à droite";
+  }
+  if (word.classList == "watch5") {
+    document.getElementById("firstWordsResult").innerText = "regarder en bas à gauche";
+  }
+  if (word.classList == "watch6") {
+    document.getElementById("firstWordsResult").innerText = "regarder en bas à droite";
+  }
 }
