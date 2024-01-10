@@ -24,6 +24,10 @@ function parallelPort() {
   return document.querySelector("#parallelPort");
 }
 
+function getErrorNumber() {
+  return document.querySelector('input[name="errors"]:checked').value;
+}
+
 // BOUTONS
 
 var hold = " hold <p>blue : compteur 4</p><p>jaune : compteur 5</p><p>autre : compteur 1</p>";
@@ -230,4 +234,88 @@ function resetKeypad() {
     element.classList.remove("clicked");
   });
   myList = [];
+}
+
+//Simon Says
+
+const caseResultat = document.getElementById("simonSaysResult");
+tileNumber = 1;
+
+function addTile(color) {
+  newDiv = document.createElement("div");
+  newDiv.classList.add("tileResult");
+  newDiv.classList.add(getRightColor(color));
+  caseResultat.appendChild(newDiv);
+  tileNumber++;
+}
+
+function getRightColor(color) {
+  errors = getErrorNumber();
+  if (getSerialVowel) {
+    if (errors == 0) {
+      if (color == "red") {
+        return "blue";
+      } else if (color == "blue") {
+        return "red";
+      } else if (color == "green") {
+        return "yellow";
+      } else if (color == "yellow") {
+        return "green";
+      }
+    } else if (errors == 1) {
+      if (color == "red") {
+        return "yellow";
+      } else if (color == "blue") {
+        return "green";
+      } else if (color == "green") {
+        return "blue";
+      } else if (color == "yellow") {
+        return "red";
+      }
+    } else if (errors == 2) {
+      if (color == "red") {
+        return "green";
+      } else if (color == "blue") {
+        return "red";
+      } else if (color == "green") {
+        return "yellow";
+      } else if (color == "yellow") {
+        return "blue";
+      }
+    }
+  } else if (!getSerialVowel) {
+    if (errors == 0) {
+      if (color == "red") {
+        return "blue";
+      } else if (color == "blue") {
+        return "yellow";
+      } else if (color == "green") {
+        return "green";
+      } else if (color == "yellow") {
+        return "red";
+      }
+    } else if (errors == 1) {
+      if (color == "red" || color == "blue") {
+        return color;
+      } else if (color == "green") {
+        return "yellow";
+      } else if (color == "yellow") {
+        return "green";
+      }
+    } else if (errors == 2) {
+      if (color == "red") {
+        return "yellow";
+      } else if (color == "blue") {
+        return "green";
+      } else if (color == "green") {
+        return "blue";
+      } else if (color == "yellow") {
+        return "red";
+      }
+    }
+  }
+}
+
+function resetSimonSays() {
+  caseResultat.innerHTML = "";
 }

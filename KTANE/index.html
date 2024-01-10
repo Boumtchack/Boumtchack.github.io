@@ -15,29 +15,36 @@
         <input type="radio" id="oneBatterie" name="batteries" value="1" />
         <label for="oneBatterie">1</label>
         <input type="radio" id="twoBatteries" name="batteries" value="2" />
-        <label for="twoBatterie">2</label>
+        <label for="twoBatteries">2</label>
         <input type="radio" id="threeBatteries" name="batteries" value="3" />
-        <label for="threeBatterie">3</label>
+        <label for="threeBatteries">3</label>
         <input type="radio" id="fourBatteries" name="batteries" value="4" />
-        <label for="fourBatterie">4</label>
+        <label for="fourBatteries">4</label>
         <input type="radio" id="fiveBatteries" name="batteries" value="5" />
-        <label for="fiveBatterie">5</label>
+        <label for="fiveBatteries">5</label>
         <input type="radio" id="sixBatteries" name="batteries" value="6" />
-        <label for="sixBatterie">6</label>
+        <label for="sixBatteries">6</label>
         <input type="radio" id="sevenBatteries" name="batteries" value="7" />
-        <label for="seventBatterie">7</label>
+        <label for="sevenBatteries">7</label>
         <input type="radio" id="eightBatteries" name="batteries" value="8" />
-        <label for="heightBatterie">8</label>
+        <label for="eightBatteries">8</label>
         <input type="radio" id="nineBatteries" name="batteries" value="9" />
-        <label for="nineBatterie">9</label>
-        <input type="radio" id="tenBatterise" name="batteries" value="10" />
-        <label for="tenBatterie">10</label>
+        <label for="nineBatteries">9</label>
+        <input type="radio" id="tenBatteries" name="batteries" value="10" />
+        <label for="tenBatteries">10</label>
       </fieldset>
       <div>CAR allumé? <input id="CAR" type="checkbox" name="CAR" /></div>
       <div>FRK allumé? <input id="FRK" type="checkbox" name="FRK" /></div>
       <div>Voyelles dans le numéro de série? <input type="checkbox" name="serialVowel" id="serialVowel" /></div>
       <div>dernier chiffre du numéro de série pair? <input type="checkbox" name="serialLastNumber" id="serialLastNumber" /></div>
       <div>port parallèle? <input type="checkbox" name="parallelPort" id="parallelPort" /></div>
+      <div id="errorNumbers">
+        Nombre d'erreurs? <input checked type="radio" name="errors" id="noErrors" value="0" /><label for="noErrors">0</label> <input type="radio" name="errors" id="oneErrors" value="1" /><label
+          for="oneErrors"
+          >1</label
+        >
+        <input type="radio" name="errors" id="twoErrors" value="2" /><label for="twoErrors">2</label>
+      </div>
     </section>
     <section id="buttons">
       <div id="buttonMentions">
@@ -58,7 +65,7 @@
       <div id="buttonResult"></div>
       <button onclick="resetBouton()">reset</button>
     </section>
-    <section class="simpleWire">
+    <section id="simpleWire">
       <fieldset>
         <legend>selectionner le nombre de fils</legend>
         <input checked type="radio" name="simpleWireNb" id="3wire" value="3" onclick="setupWire()" /><label for="3">3</label>
@@ -138,7 +145,7 @@
       <button onclick="testWires()">test</button>
       <p>résultat: <span class="resultWire"></span></p>
     </section>
-    <section class="keypads">
+    <section id="keypads">
       <img src="https://www.bombmanual.com/web/img/modules/keypad/1-copyright.png" alt="1" onclick="addKeypad(this)" />
       <img src="https://www.bombmanual.com/web/img/modules/keypad/2-filledstar.png" alt="2" onclick="addKeypad(this)" />
       <img src="https://www.bombmanual.com/web/img/modules/keypad/3-hollowstar.png" alt="3" onclick="addKeypad(this)" />
@@ -174,7 +181,16 @@
       </div>
       <button onclick="resetKeypad()">reset</button>
     </section>
-
+    <section id="simonSays">
+      <div id="simonSaysPad">
+        <div class="tile blue" value="blue" onclick="addTile('blue')"></div>
+        <div class="tile yellow" value="yellow" onclick="addTile('yellow')"></div>
+        <div class="tile red" value="red" onclick="addTile('red')"></div>
+        <div class="tile green" value="green" onclick="addTile('green')"></div>
+      </div>
+      <div id="simonSaysResult"></div>
+      <button id="SimonSaysReset" onclick="resetSimonSays()">reset</button>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
