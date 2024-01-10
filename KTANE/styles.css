@@ -3,7 +3,7 @@
   /* border: 1px red solid; */
 }
 
-#imageBouton {
+#buttonImage {
   text-align: center;
   width: 100px;
   height: 100px;
@@ -11,19 +11,19 @@
   border-radius: 50%;
 }
 
-.rouge {
+.red {
   background-color: red;
 }
-.bleu {
+.blue {
   background-color: blue;
 }
-.blanc {
+.white {
   background-color: antiquewhite;
 }
-.jaune {
+.yellow {
   background-color: yellow;
 }
-.noir {
+.black {
   background-color: black;
   color: antiquewhite;
 }
@@ -54,4 +54,8 @@
   height: 50px;
   width: 50px;
   border: 1px black solid;
+}
+
+.hidden {
+  display: none;
 }

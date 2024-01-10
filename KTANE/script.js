@@ -1,95 +1,115 @@
-var nbBatteries = document.querySelector(".nbBatteries").value;
-var CAR = document.querySelector(".CAR");
-var FRK = document.querySelector(".FRK");
-var serialNumber = document.querySelector(".serial").value;
+//BASIC INFO
 
-function serialVowel() {
-  serialNumber = document.querySelector(".serial").value;
-  const result = /[aeuioy]/.test(serialNumber);
+function getNbOfBatteries() {
+  return document.querySelector('input[name="batteries"]:checked').value;
 }
 
-function serialLastEven() {
-  serialNumber = document.querySelector(".serial").value;
-  return serialNumber[serialNumber.length - 1] % 2 == 0;
+function getCAR() {
+  return document.querySelector("#CAR");
+}
+
+function getFRK() {
+  return document.querySelector("#FRK");
+}
+
+function getSerialVowel() {
+  return document.querySelector("#serialVowel");
+}
+
+function getSerialLastNumber() {
+  return document.querySelector("#serialLastNumber");
+}
+
+function parallelPort() {
+  return document.querySelector("#parallelPort");
 }
 
 // BOUTONS
 
-var maintenir = " Maintenir <p>bleu : compteur 4</p><p>jaune : compteur 5</p><p>autre : compteur 1</p>";
+var hold = " hold <p>blue : compteur 4</p><p>jaune : compteur 5</p><p>autre : compteur 1</p>";
 
-let leBouton = {
+let myButton = {
   mention: "",
-  couleur: "",
+  color: "",
 };
 
-function changeMention(a) {
-  leBouton["mention"] = a.value;
-  document.querySelector("#imageBouton").classList.add((leBouton["mention"] = a.value));
-  document.querySelector("#imageBouton").innerHTML = leBouton["mention"] = a.value;
+function mentionChange(a) {
+  myButton["mention"] = a.value;
+  document.querySelector("#buttonImage").classList.add((myButton["mention"] = a.value));
+  document.querySelector("#buttonImage").innerHTML = myButton["mention"] = a.value;
   checkForResult();
 }
 
-function changeCouleur(a) {
-  leBouton["couleur"] = a.value;
-  document.querySelector("#imageBouton").classList.add((leBouton["couleur"] = a.value));
+function colorChange(a) {
+  myButton["color"] = a.value;
+  document.querySelector("#buttonImage").classList.add((myButton["color"] = a.value));
   checkForResult();
 }
 
 function checkForResult() {
-  if (leBouton["mention"] != "" && leBouton["couleur"] != "") {
+  if (myButton["mention"] != "" && myButton["color"] != "") {
     resultatBouton();
   }
 }
 
 function resultatBouton() {
-  var nbBatteries = document.querySelector(".nbBatteries").value;
-  var CAR = document.querySelector(".CAR");
-  var FRK = document.querySelector(".FRK");
-  if (leBouton["couleur"] == "bleu" && leBouton["mention"] == "annuler") {
-    document.querySelector("#resultat").innerHTML = maintenir;
+  var nbBatteries = getNbOfBatteries();
+  var CAR = getCAR();
+  var FRK = getFRK();
+  if (myButton["color"] == "blue" && myButton["mention"] == "abort") {
+    document.querySelector("#buttonResult").innerHTML = hold;
     console.log("1");
-  } else if (nbBatteries > 1 && leBouton["mention"] == "exploser") {
-    document.querySelector("#resultat").innerHTML = "appuyer et relacher";
+  } else if (nbBatteries > 1 && myButton["mention"] == "explode") {
+    document.querySelector("#buttonResult").innerHTML = "appuyer et relacher";
     console.log("2");
-  } else if (leBouton["couleur"] == "blanc" && CAR.checked == true) {
-    document.querySelector("#resultat").innerHTML = maintenir;
+  } else if (myButton["color"] == "white" && CAR.checked == true) {
+    document.querySelector("#buttonResult").innerHTML = hold;
     console.log("3");
   } else if (nbBatteries > 2 && FRK.checked == true) {
-    document.querySelector("#resultat").innerHTML = "appuyer et relacher";
+    document.querySelector("#buttonResult").innerHTML = "appuyer et relacher";
     console.log("4");
-  } else if (leBouton["couleur"] == "jaune") {
-    document.querySelector("#resultat").innerHTML = maintenir;
+  } else if (myButton["color"] == "yellow") {
+    document.querySelector("#buttonResult").innerHTML = hold;
     console.log("5");
-  } else if (leBouton["couleur"] == "rouge" && leBouton["mention"] == "maintenir") {
+  } else if (myButton["color"] == "red" && myButton["mention"] == "hold") {
     console.log("6");
-    document.querySelector("#resultat").innerHTML = "appuyer et relacher";
+    document.querySelector("#buttonResult").innerHTML = "appuyer et relacher";
   } else {
-    document.querySelector("#resultat").innerHTML = maintenir;
+    document.querySelector("#buttonResult").innerHTML = hold;
     console.log("7");
   }
 }
 
 function resetBouton() {
-  leBouton["mention"] = "";
-  leBouton["couleur"] = "";
-  document.querySelector("#resultat").innerHTML = "";
-  document.querySelector("#imageBouton").className = "";
-  document.querySelector("#imageBouton").innerHTML = "";
+  myButton["mention"] = "";
+  myButton["color"] = "";
+  document.querySelector("#buttonResult").innerHTML = "";
+  document.querySelector("#buttonImage").className = "";
+  document.querySelector("#buttonImage").innerHTML = "";
 }
 
-//Fils horizontaux
+//Simple Wire
 
 function setupWire() {
-  x = document.querySelector('input[name="nbfil"]:checked').value;
-  document.getElementById("couleurFil4").disabled = x < 4;
-  document.getElementById("couleurFil5").disabled = x < 5;
-  document.getElementById("couleurFil6").disabled = x < 6;
+  document.querySelector(".simpleWires4").classList.remove("hidden");
+  document.querySelector(".simpleWires5").classList.remove("hidden");
+  document.querySelector(".simpleWires6").classList.remove("hidden");
+  x = document.querySelector('input[name="simpleWireNb"]:checked').value;
+  if (x < 4) {
+    document.querySelector(".simpleWires4").classList.add("hidden");
+  }
+  if (x < 5) {
+    document.querySelector(".simpleWires5").classList.add("hidden");
+  }
+  if (x < 6) {
+    document.querySelector(".simpleWires6").classList.add("hidden");
+  }
 }
 
-function nombreDeFils(couleur) {
+function wireColorNb(color) {
   count = 0;
-  for (let i = 0; i < fils.length; i++) {
-    if (fils[i] == couleur) {
+  for (let i = 0; i < wire.length; i++) {
+    if (wire[i] == color) {
       count++;
     }
   }
@@ -97,58 +117,58 @@ function nombreDeFils(couleur) {
 }
 
 function testWires() {
-  x = document.querySelector('input[name="nbfil"]:checked').value;
-  fils = [];
+  x = document.querySelector('input[name="simpleWireNb"]:checked').value;
+  wire = [];
   for (i = 1; i < 7; i++) {
-    fils.push(document.getElementById("couleurFil" + i).value);
+    wire.push(document.querySelector(`input[name="simpleWireColor${i}"]:checked`).value);
   }
   if (x == 3) {
-    fils = fils.slice(0, 3);
-    if (nombreDeFils("rouge") == 0) {
-      resultat = "couper le deuxième fil";
-    } else if (fils[2] == "blanc") {
-      resultat = "couper le dernier fil";
-    } else if (nombreDeFils("bleu") > 1) {
-      resultat = "couper le dernier fil bleu";
+    wire = wire.slice(0, 3);
+    if (wireColorNb("red") == 0) {
+      simpleWireResult = "couper le deuxième fil";
+    } else if (wire[2] == "white") {
+      simpleWireResult = "couper le dernier fil";
+    } else if (wireColorNb("blue") > 1) {
+      simpleWireResult = "couper le dernier fil bleu";
     } else {
-      resultat = "couper le dernier fil";
+      simpleWireResult = "couper le dernier fil";
     }
   } else if (x == 4) {
-    fils = fils.slice(0, 4);
-    if (nombreDeFils("rouge") > 1 && !serialLastEven()) {
-      resultat = "couper le dernier fil rouge";
-    } else if (fils[3] == "jaune" && nombreDeFils("rouge") == 0) {
-      resultat = "couper le premier fil";
-    } else if (nombreDeFils("bleu") == 1) {
-      resultat = "couper le premier fil";
-    } else if (nombreDeFils("jaune") > 1) {
-      resultat = "couper le dernier fil";
+    wire = wire.slice(0, 4);
+    if (wireColorNb("red") > 1 && !getSerialLastNumber().checked) {
+      simpleWireResult = "couper le dernier fil rouge";
+    } else if (wire[3] == "yellow" && wireColorNb("red") == 0) {
+      simpleWireResult = "couper le premier fil";
+    } else if (wireColorNb("blue") == 1) {
+      simpleWireResult = "couper le premier fil";
+    } else if (wireColorNb("yellow") > 1) {
+      simpleWireResult = "couper le dernier fil";
     } else {
       resutat = "couper le deuxième fil";
     }
   } else if (x == 5) {
-    fils = fils.slice(0, 5);
-    if (fils[4] == "noir" && !serialLastEven()) {
-      resultat = "couper le quatrième fil";
-    } else if (nombreDeFils("rouge") == 1 && nombreDeFils("jaune" > 1)) {
-      resultat = "couper le premier fil";
-    } else if (nombreDeFils("noir") == 0) {
-      resultat = "couper le deuxième fil";
+    wire = wire.slice(0, 5);
+    if (wire[4] == "black" && !getSerialLastNumber().checked) {
+      simpleWireResult = "couper le quatrième fil";
+    } else if (wireColorNb("red") == 1 && wireColorNb("yellow" > 1)) {
+      simpleWireResult = "couper le premier fil";
+    } else if (wireColorNb("black") == 0) {
+      simpleWireResult = "couper le deuxième fil";
     } else {
-      resultat = "couper le premier fil";
+      simpleWireResult = "couper le premier fil";
     }
   } else if (x == 6) {
-    if (nombreDeFils("jaune") == 0 && !serialLastEven()) {
-      resultat = "couper le troisième fil";
-    } else if (nombreDeFils("jaune") == 1 && nombreDeFils("blanc") > 1) {
-      resultat = "couper le quatrième fil";
-    } else if (nombreDeFils("rouge") == 0) {
-      resultat = "couper le dernier fil";
+    if (wireColorNb("yellow") == 0 && !getSerialLastNumber().checked) {
+      simpleWireResult = "couper le troisième fil";
+    } else if (wireColorNb("yellow") == 1 && wireColorNb("white") > 1) {
+      simpleWireResult = "couper le quatrième fil";
+    } else if (wireColorNb("red") == 0) {
+      simpleWireResult = "couper le dernier fil";
     } else {
-      resultat = "couper le quatrième fil";
+      simpleWireResult = "couper le quatrième fil";
     }
   }
-  document.querySelector(".resultWire").innerHTML = resultat;
+  document.querySelector(".resultWire").innerHTML = simpleWireResult;
 }
 
 //Keypads
