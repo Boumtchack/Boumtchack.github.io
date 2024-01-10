@@ -239,14 +239,12 @@ function resetKeypad() {
 //Simon Says
 
 const caseResultat = document.getElementById("simonSaysResult");
-tileNumber = 1;
 
 function addTile(color) {
   newDiv = document.createElement("div");
   newDiv.classList.add("tileResult");
   newDiv.classList.add(getRightColor(color));
   caseResultat.appendChild(newDiv);
-  tileNumber++;
 }
 
 function getRightColor(color) {
