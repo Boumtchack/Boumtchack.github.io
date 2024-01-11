@@ -351,7 +351,40 @@ firstWordsList = [
   ["vide", 4],
 ];
 
+secondWordsList = {
+  1: ["APPUIE", "DROITE", "MILIEU", "OUI", "PRÊT", "APPUIE"],
+  2: ["ATTENDS", "EUHHH", "NON", "VIDE", "E", "OUI", "GAUCHE", "PREMIER", "APPUIE", "EUX", "ATTENDS"],
+  3: ["AVANT", "AVANT"],
+  4: ["COMME", "TONS", "SUIVANT", "TES", "T'ES", "MAINTIENS", "FAIT", "QUOI", "QUOI ?", "AVANT", "TOI", "COMME"],
+  5: ["DROITE", "OUI", "RIEN", "PRÊT", "APPUIE", "NON", "ATTENDS", "EUX", "DROITE"],
+  6: ["E", "MILIEU", "NON", "PREMIER", "OUI", "EUHHH", "RIEN", "ATTENDS", "E"],
+  7: ["EUHHH", "PRÊT", "RIEN", "GAUCHE", "EUX", "E", "OUI", "DROITE", "NON", "APPUIE", "VIDE", "EUHHH"],
+  8: ["EUX", "EUHHH", "EUX"],
+  9: ["FAIT", "OK", "AVANT", "SUIVANT", "QUOI ?", "TON", "T'ES", "TONS", "MAINTIENS", "COMME", "TOI", "TES", "THON", "QUOI", "FAIT"],
+  10: ["GAUCHE", "DROITE", "GAUCHE"],
+  11: ["MAINTIENS", "THON", "TES", "FAIT", "QUOI", "TOI", "T'ES", "OK", "QUOI ?", "TONS", "SUIVANT", "MAINTIENS"],
+  12: ["MILIEU", "VIDE", "PRÊT", "E", "EUX", "RIEN", "APPUIE", "NON", "ATTENDS", "GAUCHE", "MILIEU"],
+  13: ["NON", "VIDE", "EUHHH", "ATTENDS", "PREMIER", "EUX", "PRÊT", "DROITE", "OUI", "RIEN", "GAUCHE", "APPUIE", "E", "NON"],
+  14: ["OK", "THON", "FAIT", "COMME", "TONS", "TOI", "MAINTIENS", "AVANT", "T'ES", "OK"],
+  15: ["OUI", "E", "DROITE", "EUHHH", "MILIEU", "PREMIER", "EUX", "APPUIE", "PRÊT", "RIEN", "OUI", "GAUCHE", "VIDE", "NON", "ATTENDS"],
+  16: ["PREMIER", "GAUCHE", "E", "OUI", "MILIEU", "NON", "DROITE", "RIEN", "EUHHH", "ATTENDS", "PRÊT", "VIDE", "EUX", "APPUIE", "PREMIER"],
+  17: ["PRÊT", "OUI", "E", "EUX", "MILIEU", "GAUCHE", "APPUIE", "DROITE", "VIDE", "PRÊT"],
+  18: ["QUOI ?", "TOI", "MAINTIENS", "TONS", "TON", "TES", "FAIT", "QUOI", "COMME", "THON", "AVANT", "T'ES", "SUIVANT", "QUOI ?"],
+  19: ["QUOI", "T'ES", "TES", "THON", "TONS", "SUIVANT", "QUOI"],
+  20: ["RIEN", "EUHHH", "DROITE", "E", "MILIEU", "OUI", "VIDE", "NON", "APPUIE", "GAUCHE", "EUX", "ATTENDS", "PREMIER", "RIEN"],
+  21: ["SUIVANT", "QUOI ?", "AVANT", "QUOI", "TON", "MAINTIENS", "OK", "SUIVANT"],
+  22: ["T'ES", "FAIT", "TES", "T'ES"],
+  23: ["TES", "AVANT", "OK", "SUIVANT", "QUOI ?", "TONS", "T'ES", "QUOI", "FAIT", "TES"],
+  24: ["THON", "TON", "SUIVANT", "COMME", "AVANT", "QUOI ?", "FAIT", "QUOI", "MAINTIENS", "TOI", "TES", "TONS", "OK", "T'ES", "THON"],
+  25: ["TOI", "OK", "THON", "TON", "TONS", "SUIVANT", "AVANT", "T'ES", "MAINTIENS", "QUOI ?", "TOI"],
+  26: ["TON", "QUOI", "THON", "AVANT", "TON"],
+  27: ["TONS", "TOI", "TONS"],
+  28: ["VIDE", "ATTENDS", "DROITE", "E", "MILIEU", "VIDE"],
+};
+
 const firstWords = document.getElementById("firstWords");
+const secondWords = document.getElementById("secondWords");
+const secondWordsResult = document.getElementById("secondWordsResult");
 
 function createFirstWordsDisplay() {
   for (i = 0; i < 28; i++) {
@@ -359,29 +392,65 @@ function createFirstWordsDisplay() {
     newDiv.innerText = firstWordsList[i][0];
     newDiv.classList.add("watch" + firstWordsList[i][1]);
     firstWords.appendChild(newDiv);
-    newDiv.onclick = () => findFirstWordsResult(newDiv);
+    newDiv.onclick = findFirstWordsResult;
+  }
+}
+
+function findFirstWordsResult(event) {
+  if (event.currentTarget.classList == "watch1") {
+    document.getElementById("firstWordsResult").innerText = "regarder en haut à gauche";
+  }
+  if (event.currentTarget.classList == "watch2") {
+    document.getElementById("firstWordsResult").innerText = "regarder en haut à droite";
+  }
+  if (event.currentTarget.classList == "watch3") {
+    document.getElementById("firstWordsResult").innerText = "regarder au milieu à gauche";
+  }
+  if (event.currentTarget.classList == "watch4") {
+    document.getElementById("firstWordsResult").innerText = "regarder au milieu à droite";
+  }
+  if (event.currentTarget.classList == "watch5") {
+    document.getElementById("firstWordsResult").innerText = "regarder en bas à gauche";
+  }
+  if (event.currentTarget.classList == "watch6") {
+    document.getElementById("firstWordsResult").innerText = "regarder en bas à droite";
+  }
+}
+
+function createSecondWordsDisplay() {
+  for (i = 1; i < 29; i++) {
+    newDiv = document.createElement("div");
+    newDiv.innerText = secondWordsList[i][0];
+    newDiv.value = i;
+    secondWords.appendChild(newDiv);
+    newDiv.onclick = showSecondWordsResult;
+  }
+}
+
+function showSecondWordsResult(event) {
+  secondWordsResult.innerHTML = "";
+  let result = secondWordsList[event.currentTarget.value].slice(1);
+  for (i = 0; i < result.length; i++) {
+    newSpan = document.createElement("span");
+    newSpan.innerText = result[i] + "- - -";
+    secondWordsResult.appendChild(newSpan);
   }
 }
 
 createFirstWordsDisplay();
+createSecondWordsDisplay();
 
-function findFirstWordsResult(word) {
-  if (word.classList == "watch1") {
-    document.getElementById("firstWordsResult").innerText = "regarder en haut à gauche";
-  }
-  if (word.classList == "watch2") {
-    document.getElementById("firstWordsResult").innerText = "regarder en haut à droite";
-  }
-  if (word.classList == "watch3") {
-    document.getElementById("firstWordsResult").innerText = "regarder au milieu à gauche";
-  }
-  if (word.classList == "watch4") {
-    document.getElementById("firstWordsResult").innerText = "regarder au milieu à droite";
-  }
-  if (word.classList == "watch5") {
-    document.getElementById("firstWordsResult").innerText = "regarder en bas à gauche";
-  }
-  if (word.classList == "watch6") {
-    document.getElementById("firstWordsResult").innerText = "regarder en bas à droite";
+//COMPLEX WIRES
+
+complexWireResult = [];
+
+function complexWireSelector(button) {
+  if (button.dataset.click == "no") {
+    button.dataset.click = "yes";
+    complexWireResult.push(button.classList.value);
+  } else {
+    index = complexWireResult.indexOf(button.classList.value);
+    complexWireResult.splice(index, index + 1);
+    button.dataset.click = "no";
   }
 }

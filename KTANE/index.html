@@ -193,7 +193,30 @@
     </section>
     <section id="wordPlay">
       <div id="firstWords"></div>
-      <div>regarder: <span id="firstWordsResult"></span></div>
+      <div>regarder:</div>
+      <div id="firstWordsResult"></div>
+      <div id="secondWords"></div>
+      <div id="secondWordsResult"></div>
+    </section>
+    <section id="complexWire">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="4">Selectionner les fils et voyants</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="blue" data-click="no" onclick="complexWireSelector(this)">bleu</td>
+            <td class="red" data-click="no" onclick="complexWireSelector(this)">rouge</td>
+            <td class="star" data-click="no" onclick="complexWireSelector(this)">étoile</td>
+            <td class="led" data-click="no" onclick="complexWireSelector(this)">voyant</td>
+          </tr>
+          <tr colspan="4">
+            <td id="complexWireResult">faire:</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
     <script src="script.js"></script>
   </body>
