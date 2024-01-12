@@ -202,7 +202,7 @@
       <table>
         <thead>
           <tr>
-            <th colspan="4">Selectionner les fils et voyants</th>
+            <th colspan="5">Selectionner les fils et voyants</th>
           </tr>
         </thead>
         <tbody>
@@ -211,12 +211,23 @@
             <td class="red" data-click="no" onclick="complexWireSelector(this)">rouge</td>
             <td class="star" data-click="no" onclick="complexWireSelector(this)">étoile</td>
             <td class="led" data-click="no" onclick="complexWireSelector(this)">voyant</td>
+            <td id="complexWireTestBtn" onclick="complexWireResolve()">tester</td>
           </tr>
-          <tr colspan="4">
-            <td id="complexWireResult">faire:</td>
+          <tr>
+            <td colspan="5" id="complexWireResult">faire</td>
           </tr>
         </tbody>
       </table>
+    </section>
+    <section id="memory">
+      <span id="instructions"></span>
+      <br />
+      <button onclick="clicked(1)">1</button>
+      <button onclick="clicked(2)">2</button>
+      <button onclick="clicked(3)">3</button>
+      <button onclick="clicked(4)">4</button>
+      <br />
+      <button onclick="reset()">reset</button>
     </section>
     <script src="script.js"></script>
   </body>

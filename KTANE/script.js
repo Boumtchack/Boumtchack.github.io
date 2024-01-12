@@ -249,7 +249,7 @@ function addTile(color) {
 
 function getRightColor(color) {
   errors = getErrorNumber();
-  if (getSerialVowel) {
+  if (getSerialVowel().checked) {
     if (errors == 0) {
       if (color == "red") {
         return "blue";
@@ -281,7 +281,7 @@ function getRightColor(color) {
         return "blue";
       }
     }
-  } else if (!getSerialVowel) {
+  } else if (!getSerialVowel().checked) {
     if (errors == 0) {
       if (color == "red") {
         return "blue";
@@ -453,4 +453,187 @@ function complexWireSelector(button) {
     complexWireResult.splice(index, index + 1);
     button.dataset.click = "no";
   }
+}
+
+function complexWireResolve() {
+  if (
+    (!complexWireResult.includes("blue") && !complexWireResult.includes("red") && !complexWireResult.includes("star") && !complexWireResult.includes("led")) ||
+    (!complexWireResult.includes("blue") && !complexWireResult.includes("red") && complexWireResult.includes("star") && !complexWireResult.includes("led")) ||
+    (!complexWireResult.includes("blue") && complexWireResult.includes("red") && complexWireResult.includes("star") && !complexWireResult.includes("led"))
+  ) {
+    result = "couper";
+  } else if (
+    (complexWireResult.includes("blue") && !complexWireResult.includes("red") && !complexWireResult.includes("star") && !complexWireResult.includes("led")) ||
+    (!complexWireResult.includes("blue") && complexWireResult.includes("red") && !complexWireResult.includes("star") && !complexWireResult.includes("led")) ||
+    (complexWireResult.includes("blue") && complexWireResult.includes("red") && !complexWireResult.includes("star") && !complexWireResult.includes("led")) ||
+    (complexWireResult.includes("blue") && complexWireResult.includes("red") && !complexWireResult.includes("star") && complexWireResult.includes("led"))
+  ) {
+    if (getSerialLastNumber().checked) {
+      result = "couper";
+    } else {
+      result = "ne pas couper";
+    }
+  } else if (
+    (complexWireResult.includes("blue") && !complexWireResult.includes("red") && complexWireResult.includes("star") && !complexWireResult.includes("led")) ||
+    (!complexWireResult.includes("blue") && !complexWireResult.includes("red") && !complexWireResult.includes("star") && complexWireResult.includes("led")) ||
+    (complexWireResult.includes("blue") && complexWireResult.includes("red") && complexWireResult.includes("star") && complexWireResult.includes("led"))
+  ) {
+    result = "ne pas couper";
+  } else if (
+    (complexWireResult.includes("blue") && !complexWireResult.includes("red") && !complexWireResult.includes("star") && complexWireResult.includes("led")) ||
+    (complexWireResult.includes("blue") && complexWireResult.includes("red") && complexWireResult.includes("star") && !complexWireResult.includes("led")) ||
+    (complexWireResult.includes("blue") && !complexWireResult.includes("red") && complexWireResult.includes("star") && complexWireResult.includes("led"))
+  ) {
+    if (parallelPort().checked) {
+      result = "couper";
+    } else {
+      result = "ne pas couper";
+    }
+  } else {
+    (!complexWireResult.includes("blue") && !complexWireResult.includes("red") && complexWireResult.includes("star") && complexWireResult.includes("led")) ||
+      (!complexWireResult.includes("blue") && complexWireResult.includes("red") && complexWireResult.includes("star") && complexWireResult.includes("led")) ||
+      (!complexWireResult.includes("blue") && complexWireResult.includes("red") && !complexWireResult.includes("star") && complexWireResult.includes("led"));
+
+    if (nbBatteries > 1) {
+      result = "couper";
+    } else {
+      result = "ne pas couper";
+    }
+  }
+  document.getElementById("complexWireResult").innerText = "";
+
+  document.getElementById("complexWireResult").innerText = result;
+}
+
+//MEMORY
+
+let stages = [];
+let state = "display";
+
+function reset() {
+  stages = [];
+  state = "display";
+  instructions.innerText = "Valeur affiché?";
+}
+reset();
+
+function clicked(v) {
+  switch (state) {
+    case "display":
+      return handle_display(v);
+    case "value":
+      return handle_value(v);
+    case "position":
+      return handle_position(v);
+  }
+}
+
+function handle_display(v) {
+  stages.push({ displayed: v });
+  switch (stages.length) {
+    case 1:
+      switch (v) {
+        case 1:
+          press_position_ask_value(2);
+          break;
+        case 2:
+          press_position_ask_value(2);
+          break;
+        case 3:
+          press_position_ask_value(3);
+          break;
+        case 4:
+          press_position_ask_value(4);
+          break;
+      }
+      break;
+    case 2:
+      switch (v) {
+        case 1:
+          press_value_ask_position(4);
+          break;
+        case 2:
+          press_position_ask_value(stages[0].position);
+          break;
+        case 3:
+          press_position_ask_value(1);
+          break;
+        case 4:
+          press_position_ask_value(stages[0].position);
+          break;
+      }
+      break;
+    case 3:
+      switch (v) {
+        case 1:
+          press_value_ask_position(stages[1].value);
+          break;
+        case 2:
+          press_value_ask_position(stages[0].value);
+          break;
+        case 3:
+          press_position_ask_value(3);
+          break;
+        case 4:
+          press_value_ask_position(4);
+          break;
+      }
+      break;
+    case 4:
+      switch (v) {
+        case 1:
+          press_position_ask_value(stages[0].position);
+          break;
+        case 2:
+          press_position_ask_value(1);
+          break;
+        case 3:
+          press_position_ask_value(stages[1].position);
+          break;
+        case 4:
+          press_position_ask_value(stages[1].position);
+          break;
+      }
+      break;
+    case 5:
+      switch (v) {
+        case 1:
+          press_value_ask_position(stages[0].value);
+          break;
+        case 2:
+          press_value_ask_position(stages[1].value);
+          break;
+        case 3:
+          press_value_ask_position(stages[3].value);
+          break;
+        case 4:
+          press_value_ask_position(stages[2].value);
+          break;
+      }
+      break;
+  }
+}
+
+function handle_position(p) {
+  stages[stages.length - 1].position = p;
+  state = "display";
+  instructions.innerText = "Valeur affiché?";
+}
+
+function handle_value(v) {
+  stages[stages.length - 1].value = v;
+  state = "display";
+  instructions.innerText = "Valeur affiché?";
+}
+
+function press_position_ask_value(p) {
+  instructions.innerText = `position ${p} ,appuyer sur la valeur`;
+  state = "value";
+  stages[stages.length - 1].position = p;
+}
+
+function press_value_ask_position(v) {
+  instructions.innerText = `valeur ${v} appuyer sur la position`;
+  state = "position";
+  stages[stages.length - 1].value = v;
 }

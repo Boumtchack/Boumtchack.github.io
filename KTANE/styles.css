@@ -5,6 +5,12 @@
   /* border: 1px red solid; */
 }
 
+.clicked,
+td[data-click="yes"] {
+  background-color: rgba(46, 38, 48, 0.4);
+  border: 1px red solid;
+}
+
 /* INFO */
 
 #errorNumbers {
@@ -62,11 +68,6 @@
 }
 
 #keypads > img:hover {
-  border: 1px red solid;
-}
-
-.clicked {
-  background-color: rgba(46, 38, 48, 0.4);
   border: 1px red solid;
 }
 
@@ -140,4 +141,26 @@
 #firstWordsResult {
   height: 40px;
   padding: 10px auto;
+}
+
+/* COMPLEX WIRE */
+
+#complexWire > table {
+  text-align: center;
+  border: 1px black solid;
+  height: 100px;
+  width: 500px;
+}
+
+#complexWire > table > tr {
+  height: 100%;
+  width: 100%;
+}
+#complexWireTestBtn {
+  background-color: green;
+}
+
+#complexWireTestBtn:hover {
+  background-color: rgb(0, 153, 46);
+  border: 1px rgb(255, 0, 0) solid;
 }
