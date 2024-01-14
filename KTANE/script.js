@@ -148,7 +148,7 @@ function testWires() {
     } else if (wireColorNb("yellow") > 1) {
       simpleWireResult = "couper le dernier fil";
     } else {
-      resutat = "couper le deuxième fil";
+      simpleWireResult = "couper le deuxième fil";
     }
   } else if (x == 5) {
     wire = wire.slice(0, 5);
