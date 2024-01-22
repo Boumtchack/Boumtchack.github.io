@@ -637,3 +637,19 @@ function press_value_ask_position(v) {
   state = "position";
   stages[stages.length - 1].value = v;
 }
+
+// WIRE SEQUENCE
+
+wiresOrders = {
+  red: ["C","B","A","AC","B","AC","ABC","AB","B"],
+  blue: ["B","AC","B","A","B","BC","C","AC","A"],
+  green: ["ABC","AC","B","AC","B","BC","AB","C","C"]
+}
+
+numbOfRed = 0
+nmbOfBlue = 0
+nmbOfGreen = 0
+
+function addOneWire(color) {
+  numbOf+color += 1
+}
