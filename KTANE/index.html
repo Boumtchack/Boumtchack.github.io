@@ -202,7 +202,25 @@
       <br />
       <button onclick="reset()">reset</button>
     </section>
-    <section id="WireSequence"></section>
+    <section id="wireSequence">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="6">Appuyer sur le fil pour ajouter une itération</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="red" onclick="addOneWire('red')">num fil rouge</td>
+            <td>couper:<span id="wireSequenceRed">C</span></td>
+            <td class="blue" onclick="addOneWire('blue')">num fil bleu</td>
+            <td>couper:<span id="wireSequenceRed">B</span></td>
+            <td class="green" onclick="addOneWire('green')">num fil vert</td>
+            <td>couper:<span id="wireSequenceRed">ABC</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
