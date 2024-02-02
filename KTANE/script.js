@@ -646,35 +646,37 @@ wiresOrders = {
   black: ["ABC", "AC", "B", "AC", "B", "BC", "AB", "C", "C"]
 }
 
-numbOfRed = 0
+nmbOfRed = 0
 nmbOfBlue = 0
 nmbOfBlack = 0
 
 function addOneWire(color) {
   switch (color) {
     case "red":
-      numbOfRed += 1
-      changeWireSequence
+      nmbOfRed += 1
+      changeWireSequence()
       break;
     case "blue":
       nmbOfBlue += 1
+      changeWireSequence()
       break;
     case "black":
-      numbOfBlack += 1
+      nmbOfBlack += 1
+      changeWireSequence()
       break;
   }
 }
 
-function changeWireSequence {
-  document.querySelector(".resultWire").innerHTML = simpleWireResult
+function changeWireSequence() {
+  wireSequenceRed.textContent = wiresOrders.red[nmbOfRed]
+  wireSequenceBlue.textContent = wiresOrders.blue[nmbOfBlue]
+  wireSequenceBlack.textContent = wiresOrders.black[nmbOfBlack]
 }
 
 
-
-
 function resetWireSequence() {
-  numbOfRed = 0
+  nmbOfRed = 0
   nmbOfBlue = 0
   nmbOfBlack = 0
-  changeWireSequence
+  changeWireSequence()
 }
