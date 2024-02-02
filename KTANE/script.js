@@ -649,7 +649,3 @@ wiresOrders = {
 numbOfRed = 0
 nmbOfBlue = 0
 nmbOfGreen = 0
-
-function addOneWire(color) {
-  numbOf+color += 1
-}
