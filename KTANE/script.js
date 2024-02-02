@@ -641,11 +641,40 @@ function press_value_ask_position(v) {
 // WIRE SEQUENCE
 
 wiresOrders = {
-  red: ["C","B","A","AC","B","AC","ABC","AB","B"],
-  blue: ["B","AC","B","A","B","BC","C","AC","A"],
-  green: ["ABC","AC","B","AC","B","BC","AB","C","C"]
+  red: ["C", "B", "A", "AC", "B", "AC", "ABC", "AB", "B"],
+  blue: ["B", "AC", "B", "A", "B", "BC", "C", "AC", "A"],
+  black: ["ABC", "AC", "B", "AC", "B", "BC", "AB", "C", "C"]
 }
 
 numbOfRed = 0
 nmbOfBlue = 0
-nmbOfGreen = 0
+nmbOfBlack = 0
+
+function addOneWire(color) {
+  switch (color) {
+    case "red":
+      numbOfRed += 1
+      changeWireSequence
+      break;
+    case "blue":
+      nmbOfBlue += 1
+      break;
+    case "black":
+      numbOfBlack += 1
+      break;
+  }
+}
+
+function changeWireSequence {
+  document.querySelector(".resultWire").innerHTML = simpleWireResult
+}
+
+
+
+
+function resetWireSequence() {
+  numbOfRed = 0
+  nmbOfBlue = 0
+  nmbOfBlack = 0
+  changeWireSequence
+}
