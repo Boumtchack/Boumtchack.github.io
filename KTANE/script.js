@@ -1,5 +1,10 @@
 //BASIC INFO
 
+function goTo(idName) {
+  document.getElementById(idName).scrollIntoView({ block: 'center', behavior: "smooth" })
+
+}
+
 function getNbOfBatteries() {
   return document.querySelector('input[name="batteries"]:checked').value;
 }
@@ -39,14 +44,16 @@ let myButton = {
 
 function mentionChange(a) {
   myButton["mention"] = a.value;
-  document.querySelector("#buttonImage").classList.add((myButton["mention"] = a.value));
-  document.querySelector("#buttonImage").innerHTML = myButton["mention"] = a.value;
+  document.querySelector("#buttonImage").dataset.color = a.value;
+  document.querySelector(".button-text").innerHTML = a.value;
   checkForResult();
 }
 
 function colorChange(a) {
   myButton["color"] = a.value;
-  document.querySelector("#buttonImage").classList.add((myButton["color"] = a.value));
+  document.querySelector("#buttonImage").classList = ""
+  document.querySelector("#buttonImage").classList.add(a.value)
+  document.querySelector("#buttonImage").dataset.input = a.value;
   checkForResult();
 }
 
@@ -61,35 +68,45 @@ function resultatBouton() {
   var CAR = getCAR();
   var FRK = getFRK();
   if (myButton["color"] == "blue" && myButton["mention"] == "abort") {
-    document.querySelector("#buttonResult").innerHTML = hold;
-    console.log("1");
+    document.querySelector(".resultbutton").innerHTML = "gardez appuyé";
+    document.querySelector("#hold").classList.remove("d-none");
+    console.log("hold");
   } else if (nbBatteries > 1 && myButton["mention"] == "explode") {
-    document.querySelector("#buttonResult").innerHTML = "appuyer et relacher";
-    console.log("2");
+    document.querySelector(".resultbutton").innerHTML = "appuyer et relacher";
+    document.querySelector("#hold").classList.add("d-none");
+    console.log("push");
   } else if (myButton["color"] == "white" && CAR.checked == true) {
-    document.querySelector("#buttonResult").innerHTML = hold;
-    console.log("3");
+    document.querySelector(".resultbutton").innerHTML = "gardez appuyé";
+    document.querySelector("#hold").classList.remove("d-none");
+    console.log("hold");
   } else if (nbBatteries > 2 && FRK.checked == true) {
-    document.querySelector("#buttonResult").innerHTML = "appuyer et relacher";
-    console.log("4");
+    document.querySelector(".resultbutton").innerHTML = "appuyer et relacher";
+    document.querySelector("#hold").classList.add("d-none");
+    console.log("push");
   } else if (myButton["color"] == "yellow") {
-    document.querySelector("#buttonResult").innerHTML = hold;
-    console.log("5");
+    document.querySelector(".resultbutton").innerHTML = "gardez appuyé";
+    document.querySelector("#hold").classList.remove("d-none");
+    console.log("hold");
   } else if (myButton["color"] == "red" && myButton["mention"] == "hold") {
-    console.log("6");
-    document.querySelector("#buttonResult").innerHTML = "appuyer et relacher";
+    document.querySelector(".resultbutton").innerHTML = "appuyer et relacher";
+    document.querySelector("#hold").classList.add("d-none");
+    console.log("push ");
   } else {
-    document.querySelector("#buttonResult").innerHTML = hold;
-    console.log("7");
+    document.querySelector("#hold").classList.remove("d-none");
+    document.querySelector(".resultbutton").innerHTML = "gardez appuyé";
+    console.log("hold");
   }
 }
 
 function resetBouton() {
   myButton["mention"] = "";
-  myButton["color"] = "";
-  document.querySelector("#buttonResult").innerHTML = "";
-  document.querySelector("#buttonImage").className = "";
+  myButton["color"] = "white";
+  document.querySelector(".resultbutton").innerHTML = '';
+  document.querySelector("#hold").classList.add('d-none');
   document.querySelector("#buttonImage").innerHTML = "";
+  document.querySelector("#buttonImage").dataset.color = "white";
+  document.querySelector("#buttonImage").dataset.input = "";
+  document.querySelector("#buttonImage").classList = "white"
 }
 
 //Simple Wire

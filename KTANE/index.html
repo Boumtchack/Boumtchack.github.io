@@ -1,254 +1,301 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>manuel KTANE FR 750</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
 
-  <body>
-    <section id="Info">
-      <fieldset id="nbBatteries">
-        <legend>Nombre de piles?</legend>
-        <input type="radio" id="noBatterie" name="batteries" value="0" checked />
-        <label for="noBatterie">0</label>
-        <input type="radio" id="oneBatterie" name="batteries" value="1" />
-        <label for="oneBatterie">1</label>
-        <input type="radio" id="twoBatteries" name="batteries" value="2" />
-        <label for="twoBatteries">2</label>
-        <input type="radio" id="threeBatteries" name="batteries" value="3" />
-        <label for="threeBatteries">3</label>
-        <input type="radio" id="fourBatteries" name="batteries" value="4" />
-        <label for="fourBatteries">4</label>
-        <input type="radio" id="fiveBatteries" name="batteries" value="5" />
-        <label for="fiveBatteries">5</label>
-        <input type="radio" id="sixBatteries" name="batteries" value="6" />
-        <label for="sixBatteries">6</label>
-        <input type="radio" id="sevenBatteries" name="batteries" value="7" />
-        <label for="sevenBatteries">7</label>
-        <input type="radio" id="eightBatteries" name="batteries" value="8" />
-        <label for="eightBatteries">8</label>
-        <input type="radio" id="nineBatteries" name="batteries" value="9" />
-        <label for="nineBatteries">9</label>
-        <input type="radio" id="tenBatteries" name="batteries" value="10" />
-        <label for="tenBatteries">10</label>
-      </fieldset>
-      <div>CAR allumé? <input id="CAR" type="checkbox" name="CAR" /></div>
-      <div>FRK allumé? <input id="FRK" type="checkbox" name="FRK" /></div>
-      <div>Voyelles dans le numéro de série? <input type="checkbox" name="serialVowel" id="serialVowel" /></div>
-      <div>dernier chiffre du numéro de série pair? <input type="checkbox" name="serialLastNumber" id="serialLastNumber" /></div>
-      <div>port parallèle? <input type="checkbox" name="parallelPort" id="parallelPort" /></div>
-      <div id="errorNumbers">
-        Nombre d'erreurs? <input checked type="radio" name="errors" id="noErrors" value="0" /><label for="noErrors">0</label> <input type="radio" name="errors" id="oneErrors" value="1" /><label
-          for="oneErrors"
-          >1</label
-        >
+<head>
+  <title>manuel KTANE FR 750</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <section id="Info">
+    <div id="navbar">
+      <div class="buttons">
+        <img onclick="goTo('Info')" src="icons/info.jpeg">
+        <img onclick="goTo('buttons')" src="icons/buttons.jpeg">
+        <img onclick="goTo('simpleWire')" src="icons/simpleWire.jpeg">
+        <img onclick="goTo('keypads')" src="icons/keypad.jpeg">
+        <img onclick="goTo('simonSays')" src="icons/simonsays.jpeg">
+        <img onclick="goTo('wordPlay')" src="icons/wordplay.jpeg">
+        <img onclick="goTo('complexWire')" src="icons/complexwires.jpeg">
+        <img onclick="goTo('wireSequence')" src="icons/wiresequence.jpeg">
+        <img onclick="goTo('memory')" src="icons/memory.jpeg">
+        <img onclick="goTo('maze')" src="icons/maze.jpeg">
+        <img onclick="goTo('morse')" src="icons/morse.jpeg">
+        <img onclick="goTo('password')" src="icons/password.jpeg">
+        <img onclick="goTo('needy')" src="icons/needy.jpeg">
+      </div>
+    </div>
+    <h2>Nombre de piles?</h2>
+    <div id="nbBatteries">
+      <input type="radio" id="noBatterie" name="batteries" value="0" checked />
+      <label for="noBatterie">
+        <p>0</p>
+      </label>
+      <input type="radio" id="oneBatterie" name="batteries" value="1" />
+      <label for="oneBatterie">
+        <p>1</p>
+      </label>
+      <input type="radio" id="twoBatteries" name="batteries" value="2" />
+      <label for="twoBatteries">
+        <p>2</p>
+      </label>
+      <input type="radio" id="threeBatteries" name="batteries" value="3" />
+      <label for="threeBatteries">
+        <p>3</p>
+      </label>
+      <input type="radio" id="fourBatteries" name="batteries" value="4" />
+      <label for="fourBatteries">
+        <p>4</p>
+      </label>
+      <input type="radio" id="fiveBatteries" name="batteries" value="5" />
+      <label for="fiveBatteries">
+        <p>5</p>
+      </label>
+      <input type="radio" id="sixBatteries" name="batteries" value="6" />
+      <label for="sixBatteries">
+        <p>6</p>
+      </label>
+      <input type="radio" id="sevenBatteries" name="batteries" value="7" />
+      <label for="sevenBatteries">
+        <p>7</p>
+      </label>
+      <input type="radio" id="eightBatteries" name="batteries" value="8" />
+      <label for="eightBatteries">
+        <p>8</p>
+      </label>
+      <input type="radio" id="nineBatteries" name="batteries" value="9" />
+      <label for="nineBatteries">
+        <p>9</p>
+      </label>
+      <input type="radio" id="tenBatteries" name="batteries" value="10" />
+      <label for="tenBatteries">
+        <p>10</p>
+      </label>
+    </div>
+    <h2>cherchez ces mentions</h2>
+    <div class="checkboxes">
+      <input id="CAR" type="checkbox" name="CAR" /><label for="CAR">
+        <p>CAR allumé? </p>
+      </label>
+      <input id="FRK" type="checkbox" name="FRK" /><label for="FRK">
+        <p>FRK allumé? </p>
+      </label>
+      <input type="checkbox" name="serialVowel" id="serialVowel" /><label for="serialVowel">
+        <p>Voyelles dans le numéro de série? </p>
+      </label>
+      <input type="checkbox" name="serialLastNumber" id="serialLastNumber" /><label for="serialLastNumber">
+        <p>dernier chiffre du numéro de série pair? </p>
+      </label>
+      <input type="checkbox" name="parallelPort" id="parallelPort" /><label for="parallelPort">
+        <p>port parallèle? </p>
+      </label>
+    </div>
+    <div id="errorNumbers">
+      <div class="content">
+        <p>erreurs</p>
+        <input checked type="radio" name="errors" id="noErrors" value="0" /><label for="noErrors">0</label> <input type="radio" name="errors" id="oneErrors" value="1" /><label
+          for="oneErrors">1</label>
         <input type="radio" name="errors" id="twoErrors" value="2" /><label for="twoErrors">2</label>
       </div>
-    </section>
-    <section id="buttons">
+    </div>
+  </section>
+  <section id="buttons">
+    <div class="buttons-entries">
       <div id="buttonMentions">
-        <div class="metion abort"><button onclick="mentionChange(this)" value="abort">annuler</button></div>
-        <div class="metion explode"><button onclick="mentionChange(this)" value="explode">exploser</button></div>
-        <div class="metion hold"><button onclick="mentionChange(this)" value="hold">maintenir</button></div>
-        <div class="metion push"><button onclick="mentionChange(this)" value="push">appuyer</button></div>
+        <button onclick="mentionChange(this)" value="abort">annuler</button>
+        <button onclick="mentionChange(this)" value="explode">exploser</button>
+        <button onclick="mentionChange(this)" value="hold">maintenir</button>
+        <button onclick="mentionChange(this)" value="push">appuyer</button>
+        <button onclick="resetBouton()">reset</button>
       </div>
       <div id="buttonColors">
-        <div class="color red"><button onclick="colorChange(this)" value="red">rouge</button></div>
-        <div class="color blue"><button onclick="colorChange(this)" value="blue">bleu</button></div>
-        <div class="color white"><button onclick="colorChange(this)" value="white">blanc</button></div>
-        <div class="color yellow"><button onclick="colorChange(this)" value="yellow">jaune</button></div>
-        <div class="color black"><button onclick="colorChange(this)" value="black">noir</button></div>
+        <button onclick="colorChange(this)" value="red" class="mention red"></button>
+        <button onclick="colorChange(this)" value="blue" class="mention blue"></button>
+        <button onclick="colorChange(this)" value="white" class="metion white"></button>
+        <button onclick="colorChange(this)" value="yellow" class="metion yellow"></button>
+        <button onclick="colorChange(this)" value="black" class="mention black"></button>
       </div>
-      <div id="buttonImage"></div>
-      <p>faire:</p>
-      <div id="buttonResult"></div>
-      <button onclick="resetBouton()">reset</button>
-    </section>
-    <section id="simpleWire">
-      <fieldset>
-        <legend>selectionner le nombre de fils</legend>
-        <input checked type="radio" name="simpleWireNb" id="3wire" value="3" onclick="setupWire()" /><label for="3">3</label>
-        <input type="radio" name="simpleWireNb" id="4wire" value="4" onclick="setupWire()" /><label for="4">4</label>
-        <input type="radio" name="simpleWireNb" id="5wire" value="5" onclick="setupWire()" /><label for="5">5</label>
-        <input type="radio" name="simpleWireNb" id="6wire" value="6" onclick="setupWire()" /><label for="6">6</label>
-      </fieldset>
-      <fieldset class="wiresOverlay">
-        <legend>couleurs</legend>
-        <div>
-          fil 1 <input checked type="radio" name="simpleWireColor1" id="red1" value="red" /><label for="red1">rouge</label> <input type="radio" name="simpleWireColor1" id="blue1" value="blue" /><label
-            for="blue1"
-            >bleu</label
-          >
-          <input type="radio" name="simpleWireColor1" id="white1" value="white" /><label for="white1">blanc</label> <input type="radio" name="simpleWireColor1" id="yellow1" value="yellow" /><label
-            for="yellow1"
-            >jaune</label
-          >
-          <input type="radio" name="simpleWireColor1" id="black1" value="black" /><label for="black1">noir</label>
-        </div>
-        <div>
-          fil 2 <input checked type="radio" name="simpleWireColor2" id="red2" value="red" /><label for="red2">rouge</label> <input type="radio" name="simpleWireColor2" id="blue2" value="blue" /><label
-            for="blue2"
-            >bleu</label
-          >
-          <input type="radio" name="simpleWireColor2" id="white2" value="white" /><label for="white2">blanc</label> <input type="radio" name="simpleWireColor2" id="yellow2" value="yellow" /><label
-            for="yellow2"
-            >jaune</label
-          >
-          <input type="radio" name="simpleWireColor2" id="black2" value="black" /><label for="black2">noir</label>
-        </div>
-        <div>
-          fil 3 <input checked type="radio" name="simpleWireColor3" id="red3" value="red" /><label for="red3">rouge</label> <input type="radio" name="simpleWireColor3" id="blue3" value="blue" /><label
-            for="blue3"
-            >bleu</label
-          >
-          <input type="radio" name="simpleWireColor3" id="white3" value="white" /><label for="white3">blanc</label> <input type="radio" name="simpleWireColor3" id="yellow3" value="yellow" /><label
-            for="yellow3"
-            >jaune</label
-          >
-          <input type="radio" name="simpleWireColor3" id="black3" value="black" /><label for="black3">noir</label>
-        </div>
-        <div class="simpleWires4 hidden">
-          fil 4 <input checked type="radio" name="simpleWireColor4" id="red4" value="red" /><label for="red4">rouge</label> <input type="radio" name="simpleWireColor4" id="blue4" value="blue" /><label
-            for="blue4"
-            >bleu</label
-          >
-          <input type="radio" name="simpleWireColor4" id="white4" value="white" /><label for="white4">blanc</label> <input type="radio" name="simpleWireColor4" id="yellow4" value="yellow" /><label
-            for="yellow4"
-            >jaune</label
-          >
-          <input type="radio" name="simpleWireColor4" id="black4" value="black" /><label for="black4">noir</label>
-        </div>
-        <div class="simpleWires5 hidden">
-          fil 5 <input checked type="radio" name="simpleWireColor5" id="red5" value="red" /><label for="red5">rouge</label> <input type="radio" name="simpleWireColor5" id="blue5" value="blue" /><label
-            for="blue5"
-            >bleu</label
-          >
-          <input type="radio" name="simpleWireColor5" id="white5" value="white" /><label for="white5">blanc</label> <input type="radio" name="simpleWireColor5" id="yellow5" value="yellow" /><label
-            for="yellow5"
-            >jaune</label
-          >
-          <input type="radio" name="simpleWireColor5" id="black5" value="black" /><label for="black5">noir</label>
-        </div>
-        <div class="simpleWires6 hidden">
-          fil 6 <input checked type="radio" name="simpleWireColor6" id="red6" value="red" /><label for="red6">rouge</label> <input type="radio" name="simpleWireColor6" id="blue6" value="blue" /><label
-            for="blue6"
-            >bleu</label
-          >
-          <input type="radio" name="simpleWireColor6" id="white6" value="white" /><label for="white6">blanc</label> <input type="radio" name="simpleWireColor6" id="yellow6" value="yellow" /><label
-            for="yellow6"
-            >jaune</label
-          >
-          <input type="radio" name="simpleWireColor6" id="black6" value="black" /><label for="black6">noir</label>
-        </div>
-      </fieldset>
-      <button onclick="testWires()">test</button>
-      <p>résultat: <span class="resultWire"></span></p>
-    </section>
-    <section id="keypads">
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/1-copyright.png" alt="1" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/2-filledstar.png" alt="2" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/3-hollowstar.png" alt="3" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/4-smileyface.png" alt="4" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/5-doublek.png" alt="5" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/6-omega.png" alt="6" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/7-squidknife.png" alt="7" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/8-pumpkin.png" alt="8" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/9-hookn.png" alt="9" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/11-six.png" alt="11" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/12-squigglyn.png" alt="12" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/13-at.png" alt="13" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/14-ae.png" alt="14" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/15-meltedthree.png" alt="15" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/16-euro.png" alt="16" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/18-nwithhat.png" alt="18" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/19-dragon.png" alt="19" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/20-questionmark.png" alt="20" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/21-paragraph.png" alt="21" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/22-rightc.png" alt="22" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/23-leftc.png" alt="23" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/24-pitchfork.png" alt="24" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/26-cursive.png" alt="26" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/27-tracks.png" alt="27" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/28-balloon.png" alt="28" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/30-upsidedowny.png" alt="30" onclick="addKeypad(this)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/31-bt.png" alt="31" onclick="addKeypad(this)" />
-      <div class="keyResult">
-        <img src="" class="keyResult1" />
-        <img src="" class="keyResult2" />
-        <img src="" class="keyResult3" />
-        <img src="" class="keyResult4" />
+      <div id="buttonImage" data-color="white" data-input="" class="white">
+        <p class="button-text"></p>
       </div>
-      <button onclick="resetKeypad()">reset</button>
-    </section>
-    <section id="simonSays">
-      <div id="simonSaysPad">
-        <div class="tile blue" value="blue" onclick="addTile('blue')"></div>
-        <div class="tile yellow" value="yellow" onclick="addTile('yellow')"></div>
-        <div class="tile red" value="red" onclick="addTile('red')"></div>
-        <div class="tile green" value="green" onclick="addTile('green')"></div>
+    </div>
+    <div id="buttonResult">
+      <h2 class="resultbutton"></h2>
+      <div id="hold" class="d-none">
+        <p class="blue">4</p>
+        <p class="yellow">5</p>
+        <div class="multiple-color">
+          <p class="red"></p>
+          <p class="white">1</p>
+          <p class="black"></p>
+        </div>
       </div>
-      <div id="simonSaysResult"></div>
-      <button id="SimonSaysReset" onclick="resetSimonSays()">reset</button>
-    </section>
-    <section id="wordPlay">
-      <div id="firstWords"></div>
-      <div>regarder:</div>
-      <div id="firstWordsResult"></div>
-      <div id="secondWords"></div>
-      <div id="secondWordsResult"></div>
-    </section>
-    <section id="complexWire">
-      <table>
-        <thead>
-          <tr>
-            <th colspan="5">Selectionner les fils et voyants</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="blue" data-click="no" onclick="complexWireSelector(this)">bleu</td>
-            <td class="red" data-click="no" onclick="complexWireSelector(this)">rouge</td>
-            <td class="star" data-click="no" onclick="complexWireSelector(this)">étoile</td>
-            <td class="led" data-click="no" onclick="complexWireSelector(this)">voyant</td>
-            <td id="complexWireTestBtn" onclick="complexWireResolve()">tester</td>
-          </tr>
-          <tr>
-            <td colspan="5" id="complexWireResult">faire</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section id="memory">
-      <span id="instructions"></span>
-      <br />
-      <button onclick="clicked(1)">1</button>
-      <button onclick="clicked(2)">2</button>
-      <button onclick="clicked(3)">3</button>
-      <button onclick="clicked(4)">4</button>
-      <br />
-      <button onclick="reset()">reset</button>
-    </section>
-    <section id="wireSequence">
-      <table>
-        <thead>
-          <tr>
-            <th colspan="6">Appuyer sur le fil pour ajouter une itération</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="red" onclick="addOneWire('red')">num fil rouge</td>
-            <td>couper:<span id="wireSequenceRed">C</span></td>
-            <td class="blue" onclick="addOneWire('blue')">num fil bleu</td>
-            <td>couper:<span id="wireSequenceBlue">B</span></td>
-            <td class="black" onclick="addOneWire('black')">num fil noir</td>
-            <td>couper:<span id="wireSequenceBlack">ABC</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <button onclick="resetWireSequence()">reset</button>
-    </section>
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </section>
+  <section id="simpleWire">
+    <fieldset>
+      <legend>selectionner le nombre de fils</legend>
+      <input checked type="radio" name="simpleWireNb" id="3wire" value="3" onclick="setupWire()" /><label for="3">3</label>
+      <input type="radio" name="simpleWireNb" id="4wire" value="4" onclick="setupWire()" /><label for="4">4</label>
+      <input type="radio" name="simpleWireNb" id="5wire" value="5" onclick="setupWire()" /><label for="5">5</label>
+      <input type="radio" name="simpleWireNb" id="6wire" value="6" onclick="setupWire()" /><label for="6">6</label>
+    </fieldset>
+    <fieldset class="wiresOverlay">
+      <legend>couleurs</legend>
+      <div>
+        fil 1 <input checked type="radio" name="simpleWireColor1" id="red1" value="red" /><label for="red1">rouge</label> <input type="radio" name="simpleWireColor1" id="blue1" value="blue" /><label
+          for="blue1">bleu</label>
+        <input type="radio" name="simpleWireColor1" id="white1" value="white" /><label for="white1">blanc</label> <input type="radio" name="simpleWireColor1" id="yellow1" value="yellow" /><label
+          for="yellow1">jaune</label>
+        <input type="radio" name="simpleWireColor1" id="black1" value="black" /><label for="black1">noir</label>
+      </div>
+      <div>
+        fil 2 <input checked type="radio" name="simpleWireColor2" id="red2" value="red" /><label for="red2">rouge</label> <input type="radio" name="simpleWireColor2" id="blue2" value="blue" /><label
+          for="blue2">bleu</label>
+        <input type="radio" name="simpleWireColor2" id="white2" value="white" /><label for="white2">blanc</label> <input type="radio" name="simpleWireColor2" id="yellow2" value="yellow" /><label
+          for="yellow2">jaune</label>
+        <input type="radio" name="simpleWireColor2" id="black2" value="black" /><label for="black2">noir</label>
+      </div>
+      <div>
+        fil 3 <input checked type="radio" name="simpleWireColor3" id="red3" value="red" /><label for="red3">rouge</label> <input type="radio" name="simpleWireColor3" id="blue3" value="blue" /><label
+          for="blue3">bleu</label>
+        <input type="radio" name="simpleWireColor3" id="white3" value="white" /><label for="white3">blanc</label> <input type="radio" name="simpleWireColor3" id="yellow3" value="yellow" /><label
+          for="yellow3">jaune</label>
+        <input type="radio" name="simpleWireColor3" id="black3" value="black" /><label for="black3">noir</label>
+      </div>
+      <div class="simpleWires4 hidden">
+        fil 4 <input checked type="radio" name="simpleWireColor4" id="red4" value="red" /><label for="red4">rouge</label> <input type="radio" name="simpleWireColor4" id="blue4" value="blue" /><label
+          for="blue4">bleu</label>
+        <input type="radio" name="simpleWireColor4" id="white4" value="white" /><label for="white4">blanc</label> <input type="radio" name="simpleWireColor4" id="yellow4" value="yellow" /><label
+          for="yellow4">jaune</label>
+        <input type="radio" name="simpleWireColor4" id="black4" value="black" /><label for="black4">noir</label>
+      </div>
+      <div class="simpleWires5 hidden">
+        fil 5 <input checked type="radio" name="simpleWireColor5" id="red5" value="red" /><label for="red5">rouge</label> <input type="radio" name="simpleWireColor5" id="blue5" value="blue" /><label
+          for="blue5">bleu</label>
+        <input type="radio" name="simpleWireColor5" id="white5" value="white" /><label for="white5">blanc</label> <input type="radio" name="simpleWireColor5" id="yellow5" value="yellow" /><label
+          for="yellow5">jaune</label>
+        <input type="radio" name="simpleWireColor5" id="black5" value="black" /><label for="black5">noir</label>
+      </div>
+      <div class="simpleWires6 hidden">
+        fil 6 <input checked type="radio" name="simpleWireColor6" id="red6" value="red" /><label for="red6">rouge</label> <input type="radio" name="simpleWireColor6" id="blue6" value="blue" /><label
+          for="blue6">bleu</label>
+        <input type="radio" name="simpleWireColor6" id="white6" value="white" /><label for="white6">blanc</label> <input type="radio" name="simpleWireColor6" id="yellow6" value="yellow" /><label
+          for="yellow6">jaune</label>
+        <input type="radio" name="simpleWireColor6" id="black6" value="black" /><label for="black6">noir</label>
+      </div>
+    </fieldset>
+    <button onclick="testWires()">test</button>
+    <p>résultat: <span class="resultWire"></span></p>
+  </section>
+  <section id="keypads">
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/1-copyright.png" alt="1" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/2-filledstar.png" alt="2" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/3-hollowstar.png" alt="3" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/4-smileyface.png" alt="4" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/5-doublek.png" alt="5" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/6-omega.png" alt="6" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/7-squidknife.png" alt="7" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/8-pumpkin.png" alt="8" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/9-hookn.png" alt="9" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/11-six.png" alt="11" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/12-squigglyn.png" alt="12" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/13-at.png" alt="13" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/14-ae.png" alt="14" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/15-meltedthree.png" alt="15" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/16-euro.png" alt="16" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/18-nwithhat.png" alt="18" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/19-dragon.png" alt="19" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/20-questionmark.png" alt="20" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/21-paragraph.png" alt="21" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/22-rightc.png" alt="22" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/23-leftc.png" alt="23" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/24-pitchfork.png" alt="24" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/26-cursive.png" alt="26" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/27-tracks.png" alt="27" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/28-balloon.png" alt="28" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/30-upsidedowny.png" alt="30" onclick="addKeypad(this)" />
+    <img src="https://www.bombmanual.com/web/img/modules/keypad/31-bt.png" alt="31" onclick="addKeypad(this)" />
+    <div class="keyResult">
+      <img src="" class="keyResult1" />
+      <img src="" class="keyResult2" />
+      <img src="" class="keyResult3" />
+      <img src="" class="keyResult4" />
+    </div>
+    <button onclick="resetKeypad()">reset</button>
+  </section>
+  <section id="simonSays">
+    <div id="simonSaysPad">
+      <div class="tile blue" value="blue" onclick="addTile('blue')"></div>
+      <div class="tile yellow" value="yellow" onclick="addTile('yellow')"></div>
+      <div class="tile red" value="red" onclick="addTile('red')"></div>
+      <div class="tile green" value="green" onclick="addTile('green')"></div>
+    </div>
+    <div id="simonSaysResult"></div>
+    <button id="SimonSaysReset" onclick="resetSimonSays()">reset</button>
+  </section>
+  <section id="wordPlay">
+    <div id="firstWords"></div>
+    <div>regarder:</div>
+    <div id="firstWordsResult"></div>
+    <div id="secondWords"></div>
+    <div id="secondWordsResult"></div>
+  </section>
+  <section id="complexWire">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="5">Selectionner les fils et voyants</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="blue" data-click="no" onclick="complexWireSelector(this)">bleu</td>
+          <td class="red" data-click="no" onclick="complexWireSelector(this)">rouge</td>
+          <td class="star" data-click="no" onclick="complexWireSelector(this)">étoile</td>
+          <td class="led" data-click="no" onclick="complexWireSelector(this)">voyant</td>
+          <td id="complexWireTestBtn" onclick="complexWireResolve()">tester</td>
+        </tr>
+        <tr>
+          <td colspan="5" id="complexWireResult">faire</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section id="memory">
+    <span id="instructions"></span>
+    <br />
+    <button onclick="clicked(1)">1</button>
+    <button onclick="clicked(2)">2</button>
+    <button onclick="clicked(3)">3</button>
+    <button onclick="clicked(4)">4</button>
+    <br />
+    <button onclick="reset()">reset</button>
+  </section>
+  <section id="wireSequence">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="6">Appuyer sur le fil pour ajouter une itération</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="red" onclick="addOneWire('red')">num fil rouge</td>
+          <td>couper:<span id="wireSequenceRed">C</span></td>
+          <td class="blue" onclick="addOneWire('blue')">num fil bleu</td>
+          <td>couper:<span id="wireSequenceBlue">B</span></td>
+          <td class="black" onclick="addOneWire('black')">num fil noir</td>
+          <td>couper:<span id="wireSequenceBlack">ABC</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="resetWireSequence()">reset</button>
+  </section>
+  <script src="script.js"></script>
+</body>
+
 </html>

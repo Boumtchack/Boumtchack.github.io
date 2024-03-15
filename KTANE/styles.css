@@ -1,36 +1,31 @@
 * {
-  margin: 0 auto;
   font-family: sans-serif;
   font-weight: bold;
   user-select: none;
+  font-size: 16px;
   /* border: 1px red solid; */
+}
+
+body {
+  background-color: rgb(243, 215, 155) !important;
+}
+
+section {
+  background-color: rgba(255, 255, 255, 0.863);
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid grey;
+  border-radius: 2px;
+  box-shadow: 0 0 2px black;
 }
 
 .clicked,
 td[data-click="yes"] {
   background-color: rgba(46, 38, 48, 0.4);
   border: 1px red solid;
-}
-
-/* INFO */
-
-#errorNumbers {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-}
-
-/* BUTTON */
-
-#buttonImage {
-  text-align: center;
-  width: 100px;
-  height: 100px;
-  border: 1px black solid;
-  border-radius: 50%;
 }
 
 .red {
@@ -40,7 +35,7 @@ td[data-click="yes"] {
   background-color: blue;
 }
 .white {
-  background-color: antiquewhite;
+  background-color: rgb(255, 255, 255);
 }
 .yellow {
   background-color: yellow;
@@ -49,9 +44,210 @@ td[data-click="yes"] {
   background-color: black;
   color: antiquewhite;
 }
-
 .green {
   background-color: green;
+}
+
+/* INFO */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 100vh;
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: 98%;
+    justify-content: space-evenly;
+    align-items: center;
+    img {
+      box-shadow: 0 0 10px 2px rgb(87, 87, 87);
+      width: 60px;
+    }
+  }
+}
+
+#Info {
+  h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin: 15px 0 30px 0;
+  }
+  #errorNumbers {
+    position: fixed;
+    top: 20px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+
+    .content {
+      border: 3px black solid;
+      border-radius: 3px;
+      text-align: center;
+      display: flex;
+      background-color: rgb(255, 32, 32);
+      flex-direction: column;
+      width: 60%;
+      justify-content: space-evenly;
+      align-items: center;
+      box-shadow: 0 0 3px 1px rgb(121, 121, 121);
+    }
+    input {
+      display: none;
+    }
+    label {
+      padding-top: 2px;
+      width: 90%;
+      background-color: rgb(190, 190, 190);
+      border: 1px solid black;
+      text-align: center;
+    }
+    input:checked + label {
+      background-color: rgb(255, 32, 32);
+      border: 1px rgb(0, 0, 0) solid;
+    }
+    #noErrors:checked + label {
+      background-color: rgb(0, 255, 0);
+    }
+  }
+  #nbBatteries,
+  .checkboxes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    gap: 10px;
+    label {
+      background-color: white;
+
+      height: 100%;
+      flex-grow: 1;
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 3px;
+      box-shadow: 0 0 5px 1px rgb(87, 87, 87);
+    }
+    input {
+      display: none;
+    }
+    input:checked + label {
+      background-color: rgb(241, 255, 45);
+    }
+  }
+  #nbBatteries {
+    p {
+      margin: 18px auto;
+    }
+  }
+}
+
+.checkboxes {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  p {
+    margin-top: 3px;
+  }
+}
+
+/* BUTTON */
+
+#buttons {
+  .buttons-entries {
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    #buttonMentions,
+    #buttonColors {
+      gap: 5px;
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    #buttonMentions {
+      button {
+        background-color: rgb(187, 187, 187);
+      }
+    }
+    #buttonImage {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 200px;
+      width: 200px;
+      margin: auto;
+      box-shadow: 0 0 10px 2px rgb(87, 87, 87);
+      .button-text {
+        margin: 0;
+        padding: 0 0 5px 5px;
+        text-align: center;
+      }
+    }
+    button {
+      text-transform: uppercase;
+      flex-grow: 1;
+      border-radius: 4px;
+      box-shadow: 0 0 5px 1px rgb(192, 192, 192);
+    }
+    button:hover {
+      .red {
+        background-color: rgb(253, 67, 67);
+      }
+    }
+  }
+  #buttonResult {
+    text-align: center;
+    #hold {
+      display: flex;
+      justify-content: space-around;
+      p {
+        width: 60px;
+        height: 60px;
+        margin: 0;
+        padding-top: 18px;
+      }
+      .multiple-color {
+        p {
+          border: 1px solid black;
+          border-radius: 3px;
+          box-shadow: 0 0 10px 2px rgb(87, 87, 87);
+          width: 60px;
+          height: 20px;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+#buttonImage {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border: 1px black solid;
+  border-radius: 50%;
+}
+
+/* SIMPLE WIRE */
+
+#simpleWire {
+  text-align: center;
 }
 
 /* KEYPADS */
