@@ -1,7 +1,7 @@
 //BASIC INFO
 
 function goTo(idName) {
-  document.getElementById(idName).scrollIntoView({ block: 'center', behavior: "smooth" })
+  document.getElementById(idName).scrollIntoView({ block: 'center' })
 
 }
 
@@ -103,7 +103,7 @@ function resetBouton() {
   myButton["color"] = "white";
   document.querySelector(".resultbutton").innerHTML = '';
   document.querySelector("#hold").classList.add('d-none');
-  document.querySelector("#buttonImage").innerHTML = "";
+  document.querySelector("#buttonImage").innerHTML = '<p class="button-text"></p>';
   document.querySelector("#buttonImage").dataset.color = "white";
   document.querySelector("#buttonImage").dataset.input = "";
   document.querySelector("#buttonImage").classList = "white"
@@ -470,6 +470,7 @@ function complexWireSelector(button) {
     complexWireResult.splice(index, index + 1);
     button.dataset.click = "no";
   }
+  complexWireResolve()
 }
 
 function complexWireResolve() {
@@ -667,21 +668,38 @@ nmbOfRed = 0
 nmbOfBlue = 0
 nmbOfBlack = 0
 
+NumberOfWires()
+
+function NumberOfWires() {
+  document.getElementById("nmbOfRedWires").innerText = nmbOfRed + 1
+  document.getElementById("nmbOfBlueWires").innerText = nmbOfBlue + 1
+  document.getElementById("nmbOfBlackWires").innerText = nmbOfBlack + 1
+}
+
 function addOneWire(color) {
   switch (color) {
     case "red":
-      nmbOfRed += 1
-      changeWireSequence()
+      if (nmbOfRed < 8) {
+        nmbOfRed += 1
+        changeWireSequence()
+      }
       break;
+
     case "blue":
-      nmbOfBlue += 1
-      changeWireSequence()
+      if (nmbOfBlue < 8) {
+        nmbOfBlue += 1
+        changeWireSequence()
+      }
       break;
+
     case "black":
-      nmbOfBlack += 1
-      changeWireSequence()
+      if (nmbOfBlack < 8) {
+        nmbOfBlack += 1
+        changeWireSequence()
+      }
       break;
   }
+  NumberOfWires()
 }
 
 function changeWireSequence() {
@@ -690,10 +708,10 @@ function changeWireSequence() {
   wireSequenceBlack.textContent = wiresOrders.black[nmbOfBlack]
 }
 
-
 function resetWireSequence() {
   nmbOfRed = 0
   nmbOfBlue = 0
   nmbOfBlack = 0
   changeWireSequence()
+  NumberOfWires()
 }

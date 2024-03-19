@@ -105,11 +105,11 @@
   <section id="buttons">
     <div class="buttons-entries">
       <div id="buttonMentions">
-        <button onclick="mentionChange(this)" value="abort">annuler</button>
-        <button onclick="mentionChange(this)" value="explode">exploser</button>
-        <button onclick="mentionChange(this)" value="hold">maintenir</button>
-        <button onclick="mentionChange(this)" value="push">appuyer</button>
-        <button onclick="resetBouton()">reset</button>
+        <button class="button-mention" onclick="mentionChange(this)" value="abort">annuler</button>
+        <button class="button-mention" onclick="mentionChange(this)" value="explode">exploser</button>
+        <button class="button-mention" onclick="mentionChange(this)" value="hold">maintenir</button>
+        <button class="button-mention" onclick="mentionChange(this)" value="push">appuyer</button>
+        <button class="button-reset" onclick="resetBouton()">reset</button>
       </div>
       <div id="buttonColors">
         <button onclick="colorChange(this)" value="red" class="mention red"></button>
@@ -136,9 +136,9 @@
     </div>
   </section>
   <section id="simpleWire">
-    <h1>selectionner le nombre de fils</h1>
     <div class="wires-container">
       <div id="simpleWireNb">
+        <h2>selectionner le nombre de fils</h2>
         <input checked type="radio" name="simpleWireNb" id="3wire" value="3" onclick="setupWire()" /><label for="3wire">3</label>
         <input type="radio" name="simpleWireNb" id="4wire" value="4" onclick="setupWire()" /><label for="4wire">4</label>
         <input type="radio" name="simpleWireNb" id="5wire" value="5" onclick="setupWire()" /><label for="5wire">5</label>
@@ -253,7 +253,7 @@
       <img src="https://www.bombmanual.com/web/img/modules/keypad/28-balloon.png" alt="28" onclick="addKeypad(this)" />
       <img src="https://www.bombmanual.com/web/img/modules/keypad/30-upsidedowny.png" alt="30" onclick="addKeypad(this)" />
       <img src="https://www.bombmanual.com/web/img/modules/keypad/31-bt.png" alt="31" onclick="addKeypad(this)" />
-      <button onclick="resetKeypad()">reset</button>
+      <button class="button-reset" onclick="resetKeypad()">reset</button>
     </div>
     <div class="keyResult">
       <div class="photo-div">
@@ -279,12 +279,12 @@
         <div class="tile green" value="green" onclick="addTile('green')"></div>
       </div>
       <div id="simonSaysResult"></div>
+      <button id="SimonSaysReset" class="button-reset" onclick="resetSimonSays()">reset</button>
     </div>
-    <button id="SimonSaysReset" onclick="resetSimonSays()">reset</button>
   </section>
   <section id="wordPlay">
+    <h2>selectionner les mots</h2>
     <div id="firstWords"></div>
-    <div>regarder:</div>
     <div id="firstWordsResult"></div>
     <div id="secondWords"></div>
     <div id="secondWordsResult"></div>
@@ -293,19 +293,20 @@
     <table>
       <thead>
         <tr>
-          <th colspan="5">Selectionner les fils et voyants</th>
+          <th colspan="4">Selectionner les fils et voyants</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="blue" data-click="no" onclick="complexWireSelector(this)">bleu</td>
-          <td class="red" data-click="no" onclick="complexWireSelector(this)">rouge</td>
-          <td class="star" data-click="no" onclick="complexWireSelector(this)">étoile</td>
-          <td class="led" data-click="no" onclick="complexWireSelector(this)">voyant</td>
-          <td id="complexWireTestBtn" onclick="complexWireResolve()">tester</td>
+          <td class="blue" data-click="no" onclick="complexWireSelector(this)"></td>
+          <td class="red" data-click="no" onclick="complexWireSelector(this)"></td>
+          <td class="star" data-click="no" onclick="complexWireSelector(this)"></td>
+          <td class="led" data-click="no" onclick="complexWireSelector(this)"><div class="led-circle"></div></td>
         </tr>
         <tr>
-          <td colspan="5" id="complexWireResult">faire</td>
+          <td class="empty-td"></td>
+          <td colspan="2" id="complexWireResult"></td>
+          <td class="empty-td"></td>
         </tr>
       </tbody>
     </table>
@@ -318,27 +319,27 @@
     <button onclick="clicked(3)">3</button>
     <button onclick="clicked(4)">4</button>
     <br />
-    <button onclick="reset()">reset</button>
+    <button class="button-reset" onclick="reset()">reset</button>
   </section>
   <section id="wireSequence">
     <table>
       <thead>
         <tr>
-          <th colspan="6">Appuyer sur le fil pour ajouter une itération</th>
+          <th colspan="6">Appuyer sur la couleur du fil pour ajouter une itération</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="red" onclick="addOneWire('red')">num fil rouge</td>
-          <td>couper:<span id="wireSequenceRed">C</span></td>
-          <td class="blue" onclick="addOneWire('blue')">num fil bleu</td>
-          <td>couper:<span id="wireSequenceBlue">B</span></td>
-          <td class="black" onclick="addOneWire('black')">num fil noir</td>
-          <td>couper:<span id="wireSequenceBlack">ABC</span></td>
+          <td class="red" onclick="addOneWire('red')"><p id="nmbOfRedWires"></p></td>
+          <td class="result-wire-sequence">couper:<span id="wireSequenceRed">C</span></td>
+          <td class="blue" onclick="addOneWire('blue')"><p id="nmbOfBlueWires"></p></td>
+          <td class="result-wire-sequence">couper:<span id="wireSequenceBlue">B</span></td>
+          <td class="black" onclick="addOneWire('black')"><p id="nmbOfBlackWires"></p></td>
+          <td class="result-wire-sequence">couper:<span id="wireSequenceBlack">ABC</span></td>
         </tr>
       </tbody>
     </table>
-    <button onclick="resetWireSequence()">reset</button>
+    <button class="button-reset" onclick="resetWireSequence()">reset</button>
   </section>
   <script src="script.js"></script>
 </body>

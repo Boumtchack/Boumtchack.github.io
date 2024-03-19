@@ -22,12 +22,6 @@ section {
   box-shadow: 0 0 2px black;
 }
 
-.clicked,
-td[data-click="yes"] {
-  background-color: rgba(46, 38, 48, 0.4);
-  border: 1px red solid;
-}
-
 .red {
   background-color: red;
 }
@@ -46,6 +40,11 @@ td[data-click="yes"] {
 }
 .green {
   background-color: green;
+}
+
+.button-reset{
+  background-color: green;
+  color: white;
 }
 
 /* INFO */
@@ -176,6 +175,7 @@ td[data-click="yes"] {
 /* BUTTON */
 
 #buttons {
+  height: 550px;
   .buttons-entries {
     height: 400px;
     display: flex;
@@ -190,7 +190,7 @@ td[data-click="yes"] {
       justify-content: space-evenly;
     }
     #buttonMentions {
-      button {
+      button- {
         background-color: rgb(187, 187, 187);
       }
     }
@@ -222,6 +222,10 @@ td[data-click="yes"] {
   }
   #buttonResult {
     text-align: center;
+    .resultbutton{
+      margin: 10px auto;
+      text-transform: uppercase;
+    }
     #hold {
       display: flex;
       justify-content: space-around;
@@ -268,6 +272,10 @@ td[data-click="yes"] {
     display: flex;
     justify-content: start;
     #simpleWireNb {
+      h2{
+        margin-top: 57px;
+        flex-grow: 1;
+      }
       width: 25%;
       padding-bottom: 11px;
       height: 450px;
@@ -349,32 +357,39 @@ td[data-click="yes"] {
 #keypads {
   .keypadicon {
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
-    gap: 24px;
+    gap: 30px;
     flex-wrap: wrap;
   }
+  button {
+    height: 75px;
+    width: 75px;
+  }
+  .keypadicon > img {
+    height: 75px;
+    width: 75px;
+    border: 1px black solid;
+  }
+
+  .keypadicon > img:hover {
+    border: 1px red solid;
+    background-color: rgba(255, 0, 0, 0.137);
+  }
+
   .keyResult {
     margin-top: 24px;
     display: flex;
     gap: 24px;
     justify-content: center;
+
     .photo-div {
       border: black 1px solid;
-      background-color: red;
-      height: 70px;
-      width: 70px;
+      background-color: rgb(143, 143, 143);
+      height: 80px;
+      width: 80px;
     }
   }
-}
-
-.keypadicon > img:hover {
-  border: 1px red solid;
-}
-
-.keypadicon > img {
-  height: 50px;
-  width: 50px;
-  border: 1px black solid;
 }
 
 .hidden {
@@ -389,7 +404,7 @@ td[data-click="yes"] {
   .pads {
     margin-left: 20px;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     gap: 50px;
   }
 }
@@ -429,6 +444,7 @@ td[data-click="yes"] {
 /* WORDSPLAY */
 
 #wordPlay {
+  text-align: center;
 }
 
 #firstWords,
@@ -441,29 +457,74 @@ td[data-click="yes"] {
 #secondWords > div {
   width: 100%;
   height: 100%;
-  text-align: center;
   text-transform: uppercase;
   border: 1px solid black;
   border-collapse: collapse;
 }
 
-#firstWordsResult {
-  height: 40px;
-  padding: 10px auto;
+#firstWordsResult, #secondWordsResult {
+  height: 50px;
+  margin: 10px auto;
+  width: 50%;
 }
 
 /* COMPLEX WIRE */
 
-#complexWire > table {
-  text-align: center;
-  border: 1px black solid;
-  height: 200px;
-  width: 90%;
-}
+#complexWire {
+  table{
+    margin: auto;
+    text-align: center;
+    height: 300px;
+    width: 90%;
+    border-spacing: 10px 10px;
+    border-collapse: separate;
+    tr{
+      height: 100%;
+      width: 100%;
+      td{
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        border: 3px black solid;
+      }
+    }
+    td:hover{
+      border: 7px green solid;
+    }
+    td[data-click="yes"] {
+      border: 7px green solid;
+    }
+    .star{
+      background-image: url(https://www.bombmanual.com/web/img/modules/keypad/3-hollowstar.png);
+      background-position: center;
+    }
+    .led-circle{
+      margin: auto;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      border: 3px solid rgb(255, 255, 195);
+      background-color: yellow;
+      box-shadow:0px 0px 10px rgb(255, 255, 0)
+    }
+  }
+  #complexWireResult{
+    height: 50px;
+    border-radius: 0;
+    vertical-align: middle;
+    background-color: black;
+    color: white;
 
-#complexWire > table > tr {
-  height: 100%;
-  width: 100%;
+  }
+  #complexWireResult:hover, .empty-td:hover{
+    border: 0px;
+  }
+  .empty-td{
+    background-color: none;
+    border-radius: 0;
+    border: 0;
+    height: 0;
+  }
 }
 
 #complexWireTestBtn {
@@ -475,14 +536,35 @@ td[data-click="yes"] {
   border: 1px rgb(255, 0, 0) solid;
 }
 
-#wireSequence > table {
-  text-align: center;
-  border: 1px black solid;
-  height: 200px;
-  width: 90%;
+#memory{
+  
 }
 
-#wireSequence > table > tr {
-  height: 100%;
-  width: 100%;
+/* WIRE SEQUENCE */
+
+#wireSequence {
+  table {
+    margin: auto;
+    text-align: center;
+    height: 200px;
+    width: 90%;
+    th{
+      height: 50px;
+    }
+    tbody{
+      tr{
+        height: 100%;
+        width: 100%;
+        td{
+          height: 100px;
+          width: 100px;
+          border-radius: 5px;
+          border: black 1px solid;
+        }
+      }
+      .result-wire-sequence{
+        border: 0;
+      }
+    }
+  }
 }
