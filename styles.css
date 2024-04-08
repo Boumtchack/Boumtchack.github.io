@@ -2,126 +2,132 @@
 
 * {
   /* border: 1px red solid; */
-  font-family: sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  font-family: "Tilt Neon", sans-serif;
+  color: white;
 
-html,
-body {
-  height: 100%;
-}
-
-h1 {
-  margin: 10px 0;
-  text-align: center;
-  text-transform: uppercase;
-
-  width: 100%;
-}
-
-a,
-.projectInfo div {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 30px;
-}
-
-.separator {
-  margin: 5px 2px;
-  border-bottom: 4px black solid;
-  border-radius: 2px;
-}
-
-/*BODY*/
-
-body {
-  display: flex;
-  background-color: grey;
-  background-size: cover;
-  align-items: center;
-  justify-content: center;
-  min-height: 1000px;
-}
-
-/*MAIN*/
-
-main {
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 60%;
-  max-width: 800px;
-}
-
-@media screen and (max-width: 800px) {
-  main {
-    width: 100%;
+  a{
+    text-decoration: none;
+    &:hover{
+      color: grey;
+      box-shadow:0 0 8px 3px rgba(255, 255, 255, 0.411);
+    }
+  }
+  h2{
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px grey solid;
+    box-shadow:inset -2px 2px 10px 0px rgba(255, 255, 255);
   }
 }
 
-section {
-  display: grid;
-  padding: 5px;
-  gap: 5px;
-  height: 100%;
-  width: 100%;
-}
-
-.presentation {
-  height: 50%;
-}
-
-.projectInfo {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.documents {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
-
-.hobbies,
-.documents {
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 10px;
-}
-
-.hobbies a,
-.documents a {
-  flex: 1;
-}
-
-/*IMAGES*/
-
-a {
-  color: transparent;
-  text-decoration: none;
+.description{
   text-align: center;
-  padding: 20px 0;
-  font-size: 20px;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
+  p{
+    margin-block: 20px;
+  }
 }
 
-.documents a,
-.hobbies a {
-  padding: 40px 0;
-  color: white;
+html,body {
+  height:100%;
+  background-color: black;
+  margin:0;
+  padding:0;
 }
 
-.markdownEditor, .KTANE {
-  color: white;
+.in-progress{
+  background-color: white;
+  color: red;
+  position: sticky;
 }
 
-a:hover {
-  color: black;
-  background: white;
+section{
+  padding-inline: 10px;
+}
+/* NAVBAR */
+
+#nav-bar{
+  z-index: 10;
+  padding-inline: 10px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  left: 0;
+  gap: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 50px;
+  box-shadow:0 0 10px rgba(255, 255, 255);
+  a{
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+  }
+}
+
+/* PROJECTS */
+#projects{
+  .projects-list{
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    .project{
+      width: 150px;
+      height: 150px;
+      border-radius:10px;
+      opacity: 90%;
+      border: 1px rgb(180, 180, 180) solid;
+      background-size: cover;
+      &:hover{
+        color: grey;
+        box-shadow:0 0 8px 3px rgba(255, 255, 255, 0.411);
+      }
+    }
+    .post-project{
+      width: 45%;
+      .banner{
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        width: 100%;
+        gap: 20px;
+        .img-banner{
+          border-radius: 6px;
+          width: 50px;
+          background-size: cover;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+#documents{
+  .diplome{
+    display: block;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(./image/icone/certif-wagon.png);
+  }
+}
+
+.github{
+  border-radius: 6px;
+  border: 1px white solid;
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: url(./image/icone/github-mark.png);
+}
+
+.linkedin{
+  border-radius: 6px;
+  border: 1px white solid;
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: url(./image/icone/logo-linkedin.png);
 }
 
 .calculette {
@@ -138,4 +144,26 @@ a:hover {
 
 .jeuDeLaVie {
   background-image: url(./image/programe/gameOfLife.png);
+}
+
+.markdown{
+  background-color: rgba(255, 255, 255, 0.9);
+  background-image: url(https://www.iconbolt.com/iconsets/remix-icon-fill/markdown.svg);
+}
+
+.KTANE {
+  color: red;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/49/Logo_Keep_Talking_and_Nobody_Explodes.png);
+}
+
+.komod {
+  .img-banner{
+    background-image: url(./image/icone/logo_komod.png);
+  }
+}
+
+.discover {
+  .img-banner{
+    background-image: url(./image/icone/Spotify_logo_without_text.svg);
+  }
 }

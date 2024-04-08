@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>Site de AntoineH</title>
+    <title>Boumtchack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
   </head>
   <body>
-    <main>
-      <h1>Qui suis-je?</h1>
-      <div class="separator"></div>
-      <section class="presentation">
-        <p>
-          Je m'appelle Antoine Haffreingue et j'ai 28 ans, anciennement menuisier, je souhaite changer de voie et me
-          lancer dans le développement web et web mobile.
-        </p>
-        <p>Vous trouverez ici mes projets personnels, documents utiles et des informations sur mes passions.</p>
-        <p>le site évoluera en fonction de mes compétences.</p>
-      </section>
-      <div class="separator"></div>
-      <h1>projets réalisés</h1>
-      <div class="separator"></div>
-      <section class="projectInfo">
-        <a href="./Calculette/index.html" class="calculette" target="_blank">Calculette</a>
-        <a href="./Morpion/index.html" class="morpion" target="_blank">Morpion</a>
-        <a href="./Jeu de Dame/index.html" class="jeuDeDame" target="_blank">Jeu De Dame</a>
-        <a href="./Jeu de la vie/index.html" class="jeuDeLaVie" target="_blank">Jeu De La Vie</a>
-        <a href="./Markdown Editor/index.html" class="markdownEditor" target="_blank">Éditeur Markdown </a>
-        <a href="./KTANE/index.html" class="KTANE" target="_blank">Manuel KTANE (in progress...)</a>
-        <div></div>
-      </section>
-      <div class="separator"></div>
-      <h1>documents utiles</h1>
-      <div class="separator"></div>
-      <section class="documents">
-        <a href="./documents/CV Antoine Haffreingue.pdf" class="CV" target="_blank">Curriculum vitae</a>
-        <div></div>
-      </section>
-      <div class="separator"></div>
-      <h1>mes passions</h1>
-      <div class="separator"></div>
-      <section class="hobbies">
-        <a href="">Sport</a>
-        <a href="">Musique</a>
-        <a href="./gallerie/index.html" target="_blank">Origami</a>
-      </section>
-    </main>
+    <p class="in-progress">in progress...</p>
+    <div id="nav-bar">
+      <a href="https://www.linkedin.com/in/antoine-haffreingue-726ba1294/" class="linkedin" target="_blank"></a>
+      <a href="https://github.com/Boumtchack" class="github" target="_blank"></a>
+    </div>
+    <section class="description">
+      <h2>Antoine Haffreingue</h2>
+      <p>Anciennement menuisier, je me reconverti actuellement dans le milieu de l'information</p>
+      <p>J'ai acquis la certification du Wagon en développement web de la saison hiver 2024</p>
+      <p>Suite à ça j'ai eu la chance d'être accépté par l'Epitech de Nantes pour rentrer en septembre 2024, dans une formation MSCP en alternance pour obtenir un master</p>
+      <p>Je suis donc actuellement à la recherche d'une entreprise qui me prendrais comme alternant</p>
+    </section>
+    <section id="projects">
+      <h2>Mes projets post-wagon</h2>
+      <div class="projects-list">
+        <div class="komod post-project">
+          <div class="banner">
+            <div class="img-banner"></div>
+            <h3>Komod'</h3>
+          </div>
+          <div class="description">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet a repudiandae numquam magnam rem. Dolorem est, iusto, provident, maxime fuga porro quaerat sequi autem quas dolores aspernatur. Placeat, sint tenetur.</p>
+          </div>
+        </div>
+        <div class="discover post-project">
+          <div class="banner">
+            <div class="img-banner"></div>
+            <h3>Discover</h3>
+          </div>
+          <div class="description">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet a repudiandae numquam magnam rem. Dolorem est, iusto, provident, maxime fuga porro quaerat sequi autem quas dolores aspernatur. Placeat, sint tenetur.</p>
+          </div>
+        </div>
+      </div>
+      <h2>Mes projets pre-wagon</h2>
+      <div class="projects-list">
+        <a href="./Calculette/index.html" class="calculette project" target="_blank">
+        </a>
+        <a href="./Morpion/index.html" class="morpion project" target="_blank"></a>
+        <a href="./Jeu de Dame/index.html" class="jeuDeDame project" target="_blank"></a>
+        <a href="./Jeu de la vie/index.html" class="jeuDeLaVie project" target="_blank"></a>
+        <a href="./Markdown Editor/index.html" class="markdown project" target="_blank"></a>
+        <a href="./KTANE/index.html" class="KTANE project" target="_blank">*in progress*</a>
+        <div class="description">
+          <p>Ces projets m'ont permis de me familiariser avec les languages de bases du dévelopement web</p>
+          <p>Grace à ça, j'ai pu me former sur du HTML CSS et JS</p>
+          <p>J'ai décidé de ne pas les modifiers pour me permettres de comprendre mes erreurs et voir mon évolutions au cour du temps</p>
+        </div>
+      </div>
+    </section>
+    <section id="documents">
+      <a href="./documents/Antoine-haffreingue-CV.pdf" class="CV" target="_blank">CV</a>
+      <a href="./documents/antoine-haffreingue-diploma.pdf" class="diplome" target="_blank"></a>
+    </section>
+    <a href="">Sport</a>
+    <a href="">Musique</a>
+    <a href="./gallerie/index.html" target="_blank">Origami</a>
+
   </body>
 </html>
