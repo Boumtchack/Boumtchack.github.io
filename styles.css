@@ -79,7 +79,7 @@ section{
   justify-content: end;
   align-items: center;
   height: 50px;
-  box-shadow:0 0 10px rgba(255, 255, 255);
+  border-bottom: 1px solid white;
   a{
     text-align: center;
     width: 30px;
@@ -227,6 +227,7 @@ section{
 
 
 #documents{
+  z-index: 10;
   background-color: black;
   position: sticky;
   bottom: 0;
