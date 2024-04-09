@@ -222,6 +222,7 @@ section{
 
 
 #documents{
+  z-index: 10;
   background-color: black;
   position: sticky;
   bottom: 0;
