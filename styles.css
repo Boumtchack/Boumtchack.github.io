@@ -13,19 +13,41 @@
     }
   }
   h2{
+    font-size: 50px;
+    font-weight: 100;
     border-radius: 5px;
     text-transform: uppercase;
     text-align: center;
     border-bottom: 1px grey solid;
-    box-shadow:inset -2px 2px 10px 0px rgba(255, 255, 255);
+    padding-bottom: 10px;
+    /* box-shadow:inset -2px 2px 10px 0px rgba(255, 255, 255); */
   }
 }
 
 .description{
+
   text-align: center;
   p{
     margin-block: 20px;
   }
+}
+
+.see-more{
+  margin: 0 auto;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  background-position: center;
+  background-size: cover;
+  background-image: url(./image/icone/photos.jpg);
+  &:hover{
+    color: grey;
+    box-shadow:0 0 8px 3px rgba(255, 255, 255, 0.411);
+  }
+}
+
+.d-none{
+  display: none !important;
 }
 
 html,body {
@@ -33,12 +55,6 @@ html,body {
   background-color: black;
   margin:0;
   padding:0;
-}
-
-.in-progress{
-  background-color: white;
-  color: red;
-  position: sticky;
 }
 
 section{
@@ -61,8 +77,8 @@ section{
   box-shadow:0 0 10px rgba(255, 255, 255);
   a{
     text-align: center;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-size: cover;
   }
 }
@@ -106,16 +122,6 @@ section{
   }
 }
 
-#documents{
-  .diplome{
-    display: block;
-    height: 300px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(./image/icone/certif-wagon.png);
-  }
-}
-
 .github{
   border-radius: 6px;
   border: 1px white solid;
@@ -153,6 +159,7 @@ section{
 
 .KTANE {
   color: red;
+  text-align: center;
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/49/Logo_Keep_Talking_and_Nobody_Explodes.png);
 }
 
@@ -160,10 +167,86 @@ section{
   .img-banner{
     background-image: url(./image/icone/logo_komod.png);
   }
+  .see-more{
+    position: relative;
+    .komod-gallerie{
+      position: absolute;
+      bottom:-466px;
+      right: -215px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      row-gap: 40px;
+      z-index: 2;
+      img{
+        user-select: none;
+        height: 466px;
+        width: 215px;
+        border-radius: 5px;
+        box-shadow:0px 0px 5px 0px rgb(255, 255, 255);
+      }
+    }
+  }
+
 }
 
 .discover {
   .img-banner{
+    border-radius: 50% !important;
     background-image: url(./image/icone/Spotify_logo_without_text.svg);
+  }
+  .see-more{
+    position: relative;
+    .discover-gallerie{
+      position: absolute;
+      bottom: -305px;
+      right: -175px;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 50px;
+      z-index: 2;
+      img{
+        user-select: none;
+        display: block;
+        max-height: 300px;
+        width: auto;
+        height: auto;
+        border-radius: 5px;
+        box-shadow:0px 0px 5px 0px rgb(255, 255, 255);
+      }
+    }
+  }
+}
+
+
+
+#documents{
+  background-color: black;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  border-top: 1px white solid;
+  margin:10px auto;
+  padding: 10px 20px;
+  justify-content: space-around;
+  .diplome, .CV, .origami{
+    border-radius: 5px;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .diplome{
+    border: 1px white solid;
+    background-image: url(./image/icone/wagon.png);
+  }
+  .CV{
+    background-image: url(./image/icone/CV.png);
+  }
+  .origami{
+    background-image: url(./image/icone/origami.png);
   }
 }
