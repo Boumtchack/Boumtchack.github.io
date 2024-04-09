@@ -3,13 +3,12 @@
 * {
   /* border: 1px red solid; */
   font-weight: 400;
-  font-style: normal;
+  /* font-style: normal; */
   font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;
   /* font-family: "Tilt Neon", sans-serif;
   font-optical-sizing: auto; */
-  color: white;
-
+  color: rgba(255, 255, 255, 0.9);
   a{
     text-decoration: none;
     &:hover{
@@ -18,15 +17,25 @@
     }
   }
   h2{
+    display: inline-block;
     font-size: 50px;
     font-weight: 600;
     border-radius: 5px;
     text-transform: uppercase;
     text-align: center;
-    border-bottom: 1px grey solid;
-    padding-bottom: 10px;
+    border-bottom: 2px grey solid;
+    padding: 10px;
+    margin: 10px auto 20px;
     /* box-shadow:inset -2px 2px 10px 0px rgba(255, 255, 255); */
   }
+
+  h3{
+    margin: 0;
+  }
+}
+
+.obsolete{
+  text-decoration: underline;
 }
 
 .description{
@@ -56,29 +65,35 @@
 }
 
 html,body {
-  height:100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
   margin:0;
   padding:0;
 }
 
 section{
+  min-height: 380px;
   padding-inline: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.603);
+  box-shadow:0px 0px 14px 6px rgba(255, 255, 255, 0.411);
+  text-align: center;
+  background: rgb(11,11,11);
+  background: linear-gradient(0deg, rgb(20, 20, 20) 50%, rgb(37, 37, 37) 100%);
 }
 /* NAVBAR */
 
 #nav-bar{
   z-index: 10;
-  padding-inline: 10px;
+  padding: 10px 20px;
+  margin: 0 auto;
   background-color: black;
   position: sticky;
   top: 0;
   left: 0;
-  gap: 10px;
+  gap: 20px;
   display: flex;
-  justify-content: end;
+  justify-content: start;
   align-items: center;
-  height: 50px;
   border-bottom: 1px solid white;
   a{
     text-align: center;
@@ -88,8 +103,39 @@ section{
   }
 }
 
+#documents{
+  z-index: 10;
+  background-color: black;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  border-top: 1px white solid;
+  margin:0 auto;
+  padding: 10px 20px;
+  justify-content: space-around;
+  .diplome, .CV, .origami{
+    border-radius: 5px;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .diplome{
+    border: 1px white solid;
+    background-image: url(./image/icone/wagon.png);
+  }
+  .CV{
+    background-image: url(./image/icone/CV.png);
+  }
+  .origami{
+    background-image: url(./image/icone/origami.png);
+  }
+}
+
 /* PROJECTS */
-#projects{
+#projects, #other{
   .projects-list{
     color: black;
     display: flex;
@@ -116,6 +162,7 @@ section{
         height: 50px;
         width: 100%;
         gap: 20px;
+        align-items: center;
         .img-banner{
           border-radius: 6px;
           width: 50px;
@@ -197,6 +244,7 @@ section{
 
 .discover {
   .img-banner{
+    border: 1px rgb(255, 255, 255) solid;
     border-radius: 50% !important;
     background-image: url(./image/icone/Spotify_logo_without_text.svg);
   }
@@ -221,38 +269,5 @@ section{
         box-shadow:0px 0px 5px 0px rgb(255, 255, 255);
       }
     }
-  }
-}
-
-
-
-#documents{
-  z-index: 10;
-  background-color: black;
-  position: sticky;
-  bottom: 0;
-  display: flex;
-  border-top: 1px white solid;
-  margin:10px auto;
-  padding: 10px 20px;
-  justify-content: space-around;
-  .diplome, .CV, .origami{
-    border-radius: 5px;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .diplome{
-    border: 1px white solid;
-    background-image: url(./image/icone/wagon.png);
-  }
-  .CV{
-    background-image: url(./image/icone/CV.png);
-  }
-  .origami{
-    background-image: url(./image/icone/origami.png);
   }
 }
