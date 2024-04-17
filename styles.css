@@ -46,26 +46,18 @@
   }
 }
 
-.see-more{
-  margin: 0 auto;
-  height: 40px;
-  width: 40px;
-  border-radius: 5px;
-  background-position: center;
-  background-size: cover;
-  background-image: url(./image/icone/photos.jpg);
-  &:hover{
-    color: grey;
-    box-shadow:0 0 8px 3px rgba(255, 255, 255, 0.411);
-  }
-}
-
 .d-none{
   display: none !important;
 }
 
+body{
+  background-image: url(./image/calathea-orbifolia-natural-leaves-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 html,body {
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
   margin:0;
   padding:0;
 }
@@ -74,11 +66,10 @@ section{
   min-height: 380px;
   padding-inline: 10px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.603);
-  box-shadow:0px 0px 14px 6px rgba(255, 255, 255, 0.411);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.295); */
+  box-shadow:0px 0px 5px 2px rgba(255, 255, 255, 0.411);
   text-align: center;
-  background: rgb(11,11,11);
-  background: linear-gradient(0deg, rgb(20, 20, 20) 50%, rgb(37, 37, 37) 100%);
+  background: linear-gradient(0deg, rgb(20, 20, 20) 50%, rgba(37, 37, 37, 0.158) 100%);
 }
 /* NAVBAR */
 
@@ -92,13 +83,13 @@ section{
   left: 0;
   gap: 20px;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid white;
   a{
     text-align: center;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-size: cover;
   }
 }
@@ -116,8 +107,8 @@ section{
   .diplome, .CV, .origami{
     border-radius: 5px;
     background-color: white;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-position: center;
     background-size: cover;
   }
@@ -155,6 +146,11 @@ section{
       }
     }
     .post-project{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
       width: 45%;
       .banner{
         display: flex;
@@ -219,27 +215,16 @@ section{
   .img-banner{
     background-image: url(./image/icone/logo_komod.png);
   }
-  .see-more{
-    position: relative;
-    .komod-gallerie{
-      position: absolute;
-      bottom:-466px;
-      right: -215px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      row-gap: 40px;
-      z-index: 2;
-      img{
-        user-select: none;
-        height: 466px;
-        width: 215px;
-        border-radius: 5px;
-        box-shadow:0px 0px 5px 0px rgb(255, 255, 255);
-      }
+  .komod-gallerie{
+    width: 250px;
+    img{
+      user-select: none;
+      height: 520px;
+      width: 250px;
+      border-radius: 5px;
+      box-shadow:0px 0px 5px 0px rgb(255, 255, 255);
     }
   }
-
 }
 
 .discover {
@@ -248,26 +233,20 @@ section{
     border-radius: 50% !important;
     background-image: url(./image/icone/Spotify_logo_without_text.svg);
   }
-  .see-more{
-    position: relative;
-    .discover-gallerie{
-      position: absolute;
-      bottom: -305px;
-      right: -175px;
-      display: grid;
-      grid-template-columns: 1fr;
-      justify-items: center;
-      gap: 50px;
-      z-index: 2;
-      img{
-        user-select: none;
-        display: block;
-        max-height: 300px;
-        width: auto;
-        height: auto;
-        border-radius: 5px;
-        box-shadow:0px 0px 5px 0px rgb(255, 255, 255);
-      }
+  .discover-gallerie{
+    margin: auto 0px;
+    width: 100%;
+    img{
+      user-select: none;
+      display: block;
+      width: auto;
+      height: auto;
+      border-radius: 5px;
+      box-shadow:0px 0px 5px 0px rgb(255, 255, 255);
     }
   }
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  filter: drop-shadow(0 0 1px black);
 }
