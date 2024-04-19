@@ -242,10 +242,10 @@ function testList(x) {
 }
 
 function resetKeypad() {
-  document.querySelector(".keyResult1").src = "";
-  document.querySelector(".keyResult2").src = "";
-  document.querySelector(".keyResult3").src = "";
-  document.querySelector(".keyResult4").src = "";
+  document.querySelector(".keyResult1").src = "./icons/questionmark.png";
+  document.querySelector(".keyResult2").src = "./icons/questionmark.png";
+  document.querySelector(".keyResult3").src = "./icons/questionmark.png";
+  document.querySelector(".keyResult4").src = "./icons/questionmark.png";
   numberOfKeypad = 0;
   myList.forEach((element) => {
     element.classList.remove("clicked");

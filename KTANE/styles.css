@@ -378,10 +378,15 @@ section {
     height: 75px;
     width: 75px;
   }
-  .keypadicon > img {
-    height: 75px;
-    width: 75px;
-    border: 1px black solid;
+  .keypadicon {
+    img{
+      height: 75px;
+      width: 75px;
+      border: 1px black solid;
+    }
+    .clicked{
+      box-shadow: 0 0 15px 4px  greenyellow;
+    }
   }
 
   .keypadicon > img:hover {
@@ -400,6 +405,10 @@ section {
       background-color: rgb(143, 143, 143);
       height: 80px;
       width: 80px;
+      img{
+        height: 80px;
+        width: 80px;
+      }
     }
   }
 }
@@ -672,24 +681,26 @@ section {
 /* MORSE */
 
 #morse{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  height: 420px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   position: relative;
   .separator{
     position: absolute;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.425);
     width: 3px;
-    left: 50%;
-    background-color: black;
+    top: 0;
+    left: 49%;
+    border-radius: 3px;
   }
   .morse-description{
+    width: 48%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
-    width: 90%;
     span{
       text-transform: uppercase;
     }
