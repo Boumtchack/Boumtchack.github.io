@@ -758,13 +758,13 @@ function showMaze(num) {
 // PASSWORD
 
 words = [
-  "abats", "abime", "abois", "adieu", "delta",
-  "dense", "devin", "divin", "drame", "droit",
-  "envol", "envie", "envoi", "erres", "essai",
-  "fleur", "finit", "fiole", "kilos", "litre",
-  "livre", "masse", "match", "matin", "mauve",
-  "poser", "ports", "poule", "salir", "taire",
-  "tarif", "tasse", "valve", "vanne", "vente"
+  "ABATS", "ABIME", "ABOIS", "ADIEU", "DELTA",
+  "DENSE", "DEVIN", "DIVIN", "DRAME", "DROIT",
+  "ENVOL", "ENVIE", "ENVOI", "ERRES", "ESSAI",
+  "FLEUR", "FINIT", "FIOLE", "KILOS", "LITRE",
+  "LIVRE", "MASSE", "MATCH", "MATIN", "MAUVE",
+  "POSER", "PORTS", "POULE", "SALIR", "TAIRE",
+  "TARIF", "TASSE", "VALVE", "VANNE", "VENTE"
 ];
 
 letters = {

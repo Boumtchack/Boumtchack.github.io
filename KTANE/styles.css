@@ -708,6 +708,7 @@ section {
 
 #password{
   .letters {
+    text-transform: uppercase;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
@@ -736,7 +737,7 @@ section {
   .password-bot{
     display: flex;
     gap: 50px;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     text-align: center;
     p{
