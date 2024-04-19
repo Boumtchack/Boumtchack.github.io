@@ -449,7 +449,7 @@ function showSecondWordsResult(event) {
   let result = secondWordsList[event.currentTarget.value].slice(1);
   for (i = 0; i < result.length; i++) {
     newSpan = document.createElement("span");
-    newSpan.innerText = result[i] + "- - -";
+    newSpan.innerText = " → " + result[i];
     secondWordsResult.appendChild(newSpan);
   }
 }
@@ -531,7 +531,8 @@ let state = "display";
 function reset() {
   stages = [];
   state = "display";
-  instructions.innerText = "Valeur affiché?";
+  instructions.innerText = "Numéro affiché sur l'écran";
+  document.querySelector(".stage-memory").innerText = 0
 }
 reset();
 
@@ -633,25 +634,27 @@ function handle_display(v) {
 }
 
 function handle_position(p) {
+  document.querySelector(".stage-memory").innerText = String(stages.length)
   stages[stages.length - 1].position = p;
   state = "display";
-  instructions.innerText = "Valeur affiché?";
+  instructions.innerText = "Numéro affiché sur l'écran";
 }
 
 function handle_value(v) {
+  document.querySelector(".stage-memory").innerText = String(stages.length)
   stages[stages.length - 1].value = v;
   state = "display";
-  instructions.innerText = "Valeur affiché?";
+  instructions.innerText = "Numéro affiché sur l'écran";
 }
 
 function press_position_ask_value(p) {
-  instructions.innerText = `position ${p} ,appuyer sur la valeur`;
+  instructions.innerText = `regarder position ${p}, appuyer sur la valeur`;
   state = "value";
   stages[stages.length - 1].position = p;
 }
 
 function press_value_ask_position(v) {
-  instructions.innerText = `valeur ${v} appuyer sur la position`;
+  instructions.innerText = `numéro ${v}, appuyer sur la position`;
   state = "position";
   stages[stages.length - 1].value = v;
 }
@@ -714,4 +717,171 @@ function resetWireSequence() {
   nmbOfBlack = 0
   changeWireSequence()
   NumberOfWires()
+}
+
+
+// MAZE
+
+maze = document.getElementById("maze-result")
+function showMaze(num) {
+  switch (num) {
+    case 1:
+      maze.classList = "maze-1"
+      break;
+    case 2:
+      maze.classList = "maze-2"
+      break;
+    case 3:
+      maze.classList = "maze-3"
+      break;
+    case 4:
+      maze.classList = "maze-4"
+      break;
+    case 5:
+      maze.classList = "maze-5"
+      break;
+    case 6:
+      maze.classList = "maze-6"
+      break;
+    case 7:
+      maze.classList = "maze-7"
+      break;
+    case 8:
+      maze.classList = "maze-8"
+      break;
+    case 9:
+      maze.classList = "maze-9"
+      break;
+  }
+}
+
+// PASSWORD
+
+words = [
+  "abats", "abime", "abois", "adieu", "delta",
+  "dense", "devin", "divin", "drame", "droit",
+  "envol", "envie", "envoi", "erres", "essai",
+  "fleur", "finit", "fiole", "kilos", "litre",
+  "livre", "masse", "match", "matin", "mauve",
+  "poser", "ports", "poule", "salir", "taire",
+  "tarif", "tasse", "valve", "vanne", "vente"
+];
+
+letters = {
+  1: [],
+  2: [],
+  3: [],
+  4: [],
+  5: []
+}
+
+function addFirstLetter(div) {
+  toggleLetter(div, 1)
+}
+
+function addSecondLetter(div) {
+  toggleLetter(div, 2)
+}
+
+function addThirdLetter(div) {
+  toggleLetter(div, 3)
+}
+
+function addFourthLetter(div) {
+  toggleLetter(div, 4)
+}
+
+function addFifthLetter(div) {
+  toggleLetter(div, 5)
+}
+
+function toggleLetter(div, num) {
+  if (div.dataset.click == 'false'){
+    div.dataset.click = 'true'
+    letters[num].push(div.innerText)
+  }else if(div.dataset.click == 'true'){
+    div.dataset.click = 'false'
+    i = letters[num].indexOf(div.innerText)
+    letters[num].splice(i, 1)
+  }
+  tryWords()
+}
+
+function tryWords() {
+  found = false
+  words.forEach(function(word) {
+    test = word.split('');
+    if (letters[1].includes(test[0])
+    && letters[2].includes(test[1])
+    && letters[3].includes(test[2])
+    && letters[4].includes(test[3])
+    && letters[5].includes(test[4])) {
+      document.querySelector(".password-result").innerText = `le mot est ${word}`
+      found = true
+    }
+  })
+  if (found == false){
+    document.querySelector(".password-result").innerText = 'no result'
+  }
+}
+
+function resetPassword() {
+  letters = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: []
+  }
+  clicked = document.querySelectorAll('[data-click="true"]')
+  clicked.forEach(function(letter) {
+    letter.dataset.click = 'false'
+  })
+  document.querySelector(".password-result").innerText = 'no result'
+}
+
+// NEEDY
+
+myNeedy = [0,0,0,0,0,0,0,0,0,0,0,0]
+
+result = "pas trouvé"
+
+solution = {
+  up: [[0,0,1,0,1,1,1,1,1,1,0,1,1], [1,0,1,0,1,0,0,1,1,0,1,1]],
+  down: [[0,1,1,0,0,1,1,1,1,1,0,1,1], [1,0,1,0,1,0,0,1,0,0,0,1]],
+  left: [[0,0,0,0,1,0,1,0,0,0,1,1,1], [0,0,0,0,1,0,0,0,0,1,1,0]],
+  right: [[1,0,1,1,1,1,1,1,1,0,1,0], [1,0,1,1,0,0,1,1,1,0,1,0]],
+}
+
+function toggleNeedy(div, i){
+  if (div.dataset.click == 'false'){
+    div.dataset.click = 'true'
+    myNeedy[i] = 1
+    console.log(myNeedy);
+  }else if(div.dataset.click == 'true'){
+    div.dataset.click = 'false'
+    myNeedy[i] = 0
+    console.log(myNeedy);
+  }
+  tryNeedy()
+}
+
+function tryNeedy(){
+  test = myNeedy.join('')
+  if (test === solution.up[0].join('') ||
+      test === solution.up[1].join('')){
+        result = 'haut'
+  }else if (test === solution.down[0].join('') ||
+    test === solution.down[1].join('')){
+      result = 'bas'
+  }else if (test === solution.left[0].join('') ||
+    test === solution.left[1].join('')){
+      result = 'gauche'
+  }else if (test === solution.right[0].join('') ||
+    test === solution.right[1].join('')){
+      result = 'droite'
+  }else{
+    result = "aucune"
+  }
+  document.querySelector('.needy-result').innerText = result
 }

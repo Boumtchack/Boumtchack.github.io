@@ -140,6 +140,9 @@ section {
       border: 1px solid black;
       border-radius: 3px;
       box-shadow: 0 0 5px 1px rgb(87, 87, 87);
+      &:hover{
+        box-shadow: 0 0 5px 1px yellow;
+      }
       p {
         margin: 0;
       }
@@ -148,7 +151,7 @@ section {
       display: none;
     }
     input:checked + label {
-      background-color: rgb(241, 255, 45);
+      background-color: rgb(79, 255, 79);
     }
   }
   #nbBatteries {
@@ -188,6 +191,12 @@ section {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      button{
+        box-shadow: 0 0 5px 1px rgb(87, 87, 87);
+        &:hover{
+          box-shadow: 0 0 5px 1px yellow;
+        }
+      }
     }
     #buttonMentions {
       button- {
@@ -334,6 +343,9 @@ section {
         height: 100px;
         width: 100px;
         border-radius: 50%;
+        &:hover{
+          box-shadow: 0 0 10px 5px green;
+        }
       }
       .resultWire {
         width: 15%;
@@ -464,9 +476,10 @@ section {
 
 #firstWordsResult, #secondWordsResult {
   height: 50px;
-  margin: 10px auto;
-  width: 50%;
+  padding: 15px;
 }
+
+
 
 /* COMPLEX WIRE */
 
@@ -489,10 +502,13 @@ section {
       }
     }
     td:hover{
-      border: 7px green solid;
+      box-shadow: 0 0 10px 5px green;
     }
     td[data-click="yes"] {
-      border: 7px green solid;
+      border: 3px green solid;
+      &:hover{
+        box-shadow: 0 0 10px 1px red;
+      }
     }
     .star{
       background-image: url(https://www.bombmanual.com/web/img/modules/keypad/3-hollowstar.png);
@@ -518,8 +534,10 @@ section {
   }
   #complexWireResult:hover, .empty-td:hover{
     border: 0px;
+    box-shadow: none !important;
   }
   .empty-td{
+    box-shadow: none !important;
     background-color: none;
     border-radius: 0;
     border: 0;
@@ -537,7 +555,24 @@ section {
 }
 
 #memory{
-  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  .buttons-memory{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    button{
+      width: 25%;
+    }
+  }
+  #instructions{
+    text-transform: uppercase;
+  }
 }
 
 /* WIRE SEQUENCE */
@@ -559,12 +594,167 @@ section {
           height: 100px;
           width: 100px;
           border-radius: 5px;
-          border: black 1px solid;
+          &:hover{
+            box-shadow: 0 0 10px 5px green;
+          }
+          p{
+            margin: 0;
+          }
         }
       }
       .result-wire-sequence{
         border: 0;
+        &:hover{
+          box-shadow: none;
+        }
       }
     }
+  }
+}
+
+/* MAZE */
+
+#maze{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  tr{
+    td{
+      height: 60px;
+      width: 60px;
+      border: 1px black solid;
+    }
+    .clickable{
+      background-color: greenyellow;
+      &:hover{
+        box-shadow: inset 0 0 5px 1px green;
+      }
+    }
+  }
+  #maze-result{
+    width: 360px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .maze-0{
+    background-image: url("./maze/m0.png");
+  }
+  .maze-1{
+    background-image: url("./maze/m1.png");
+  }
+  .maze-2{
+    background-image: url("./maze/m2.png");
+  }
+  .maze-3{
+    background-image: url("./maze/m3.png");
+  }
+  .maze-4{
+    background-image: url("./maze/m4.png");
+  }
+  .maze-5{
+    background-image: url("./maze/m5.png");
+  }
+  .maze-6{
+    background-image: url("./maze/m6.png");
+  }
+  .maze-7{
+    background-image: url("./maze/m7.png");
+  }
+  .maze-8{
+    background-image: url("./maze/m8.png");
+  }
+  .maze-9{
+    background-image: url("./maze/m9.png");
+  }
+}
+
+/* MORSE */
+
+#morse{
+  display: flex;
+  align-items: center;
+  .morse-img{
+    height: 500px;
+    width: 50%;
+    background-image: url("./morse-img.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+/* PASSWORD */
+
+#password{
+  .letters {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    .first-letter, .second-letter, .third-letter, .fourth-letter, .fifth-letter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      div {
+        text-align: center;
+        padding: 5px;
+        border: 1px solid black;
+        cursor: pointer;
+        &:hover{
+          box-shadow: 0 0 10px 5px greenyellow;
+        }
+      }
+      div[data-click="true"]{
+        background-color: greenyellow;
+        &:hover{
+          box-shadow: 0 0 10px 5px red;
+        }
+      }
+    }
+  }
+  .password-bot{
+    display: flex;
+    gap: 50px;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    p{
+      margin: 0;
+    }
+  }
+}
+
+/* NEEDY */
+
+#needy{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  .needy-display{
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 60px 60px;
+    grid-template-columns: repeat(6, 60px);
+    gap: 20px;
+    div{
+      border-radius: 50% ;
+      border: black 1px solid;
+      background-color: grey;
+      box-shadow: inset 3px 3px 4px 0px white;;
+      &:hover{
+        box-shadow: 0 0 10px 5px yellow;
+      }
+    }
+    div[data-click="true"]{
+      background-color: yellow;
+      &:hover{
+        box-shadow: 0 0 10px 5px grey;
+      }
+    }
+  }
+  .needy-bot{
+    text-align: center;
+    width: 100px;
   }
 }

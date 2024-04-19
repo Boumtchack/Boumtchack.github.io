@@ -312,14 +312,17 @@
     </table>
   </section>
   <section id="memory">
+    <div class="buttons-memory">
+      <button class="button-reset" onclick="reset()">reset</button>
+      <div>
+        <span>etape:  </span><span class="stage-memory"></span>
+      </div>
+      <button onclick="clicked(1)">1</button>
+      <button onclick="clicked(2)">2</button>
+      <button onclick="clicked(3)">3</button>
+      <button onclick="clicked(4)">4</button>
+    </div>
     <span id="instructions"></span>
-    <br />
-    <button onclick="clicked(1)">1</button>
-    <button onclick="clicked(2)">2</button>
-    <button onclick="clicked(3)">3</button>
-    <button onclick="clicked(4)">4</button>
-    <br />
-    <button class="button-reset" onclick="reset()">reset</button>
   </section>
   <section id="wireSequence">
     <table>
@@ -331,15 +334,150 @@
       <tbody>
         <tr>
           <td class="red" onclick="addOneWire('red')"><p id="nmbOfRedWires"></p></td>
-          <td class="result-wire-sequence">couper:<span id="wireSequenceRed">C</span></td>
+          <td class="result-wire-sequence">couper: <div id="wireSequenceRed">C</div></td>
           <td class="blue" onclick="addOneWire('blue')"><p id="nmbOfBlueWires"></p></td>
-          <td class="result-wire-sequence">couper:<span id="wireSequenceBlue">B</span></td>
+          <td class="result-wire-sequence">couper: <div id="wireSequenceBlue">B</div></td>
           <td class="black" onclick="addOneWire('black')"><p id="nmbOfBlackWires"></p></td>
-          <td class="result-wire-sequence">couper:<span id="wireSequenceBlack">ABC</span></td>
+          <td class="result-wire-sequence">couper: <div id="wireSequenceBlack">ABC</div></td>
         </tr>
       </tbody>
     </table>
     <button class="button-reset" onclick="resetWireSequence()">reset</button>
+  </section>
+  <section id="maze">
+    <table>
+      <tr>
+        <td class="clickable" onclick="showMaze(4)"></td>
+        <td class="clickable" onclick="showMaze(7)"></td>
+        <td></td>
+        <td class="clickable" onclick="showMaze(8)"></td>
+        <td class="clickable" onclick="showMaze(6)"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="clickable" onclick="showMaze(1)"></td>
+        <td></td>
+        <td class="clickable" onclick="showMaze(9)"></td>
+        <td></td>
+        <td class="clickable" onclick="showMaze(2)"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="clickable" onclick="showMaze(5)"></td>
+        <td class="clickable" onclick="showMaze(1)"></td>
+      </tr>
+      <tr>
+        <td class="clickable" onclick="showMaze(4)"></td>
+        <td class="clickable" onclick="showMaze(2)"></td>
+        <td class="clickable" onclick="showMaze(8)"></td>
+        <td class="clickable" onclick="showMaze(3)"></td>
+        <td></td>
+        <td class="clickable" onclick="showMaze(3)"></td>
+      </tr>
+      <tr>
+        <td class="clickable" onclick="showMaze(9)"></td>
+        <td></td>
+        <td class="clickable" onclick="showMaze(6)"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="clickable" onclick="showMaze(7)"></td>
+        <td></td>
+        <td></td>
+        <td class="clickable" onclick="showMaze(5)"></td>
+        <td></td>
+      </tr>
+    </table>
+    <div id="maze-result" class="maze-0"></div>
+  </section>
+  <section id="morse">
+    <div class="morse-img"></div>
+  </section>
+  <section id="password">
+    <div class="letters">
+      <div class="first-letter">
+        <div onclick="addFirstLetter(this)" data-click="false">a</div>
+        <div onclick="addFirstLetter(this)" data-click="false">d</div>
+        <div onclick="addFirstLetter(this)" data-click="false">e</div>
+        <div onclick="addFirstLetter(this)" data-click="false">f</div>
+        <div onclick="addFirstLetter(this)" data-click="false">k</div>
+        <div onclick="addFirstLetter(this)" data-click="false">l</div>
+        <div onclick="addFirstLetter(this)" data-click="false">m</div>
+        <div onclick="addFirstLetter(this)" data-click="false">p</div>
+        <div onclick="addFirstLetter(this)" data-click="false">s</div>
+        <div onclick="addFirstLetter(this)" data-click="false">t</div>
+        <div onclick="addFirstLetter(this)" data-click="false">v</div>
+      </div>
+      <div class="second-letter">
+        <div onclick="addSecondLetter(this)" data-click="false">a</div>
+        <div onclick="addSecondLetter(this)" data-click="false">b</div>
+        <div onclick="addSecondLetter(this)" data-click="false">d</div>
+        <div onclick="addSecondLetter(this)" data-click="false">e</div>
+        <div onclick="addSecondLetter(this)" data-click="false">i</div>
+        <div onclick="addSecondLetter(this)" data-click="false">n</div>
+        <div onclick="addSecondLetter(this)" data-click="false">o</div>
+        <div onclick="addSecondLetter(this)" data-click="false">r</div>
+        <div onclick="addSecondLetter(this)" data-click="false">s</div>
+      </div>
+      <div class="third-letter">
+        <div onclick="addThirdLetter(this)" data-click="false">a</div>
+        <div onclick="addThirdLetter(this)" data-click="false">d</div>
+        <div onclick="addThirdLetter(this)" data-click="false">i</div>
+        <div onclick="addThirdLetter(this)" data-click="false">l</div>
+        <div onclick="addThirdLetter(this)" data-click="false">n</div>
+        <div onclick="addThirdLetter(this)" data-click="false">o</div>
+        <div onclick="addThirdLetter(this)" data-click="false">r</div>
+        <div onclick="addThirdLetter(this)" data-click="false">s</div>
+        <div onclick="addThirdLetter(this)" data-click="false">v</div>
+      </div>
+      <div class="fourth-letter">
+        <div onclick="addFourthLetter(this)" data-click="false">e</div>
+        <div onclick="addFourthLetter(this)" data-click="false">i</div>
+        <div onclick="addFourthLetter(this)" data-click="false">l</div>
+        <div onclick="addFourthLetter(this)" data-click="false">m</div>
+        <div onclick="addFourthLetter(this)" data-click="false">o</div>
+        <div onclick="addFourthLetter(this)" data-click="false">r</div>
+        <div onclick="addFourthLetter(this)" data-click="false">t</div>
+        <div onclick="addFourthLetter(this)" data-click="false">v</div>
+      </div>
+      <div class="fifth-letter">
+        <div onclick="addFifthLetter(this)" data-click="false">a</div>
+        <div onclick="addFifthLetter(this)" data-click="false">e</div>
+        <div onclick="addFifthLetter(this)" data-click="false">f</div>
+        <div onclick="addFifthLetter(this)" data-click="false">n</div>
+        <div onclick="addFifthLetter(this)" data-click="false">r</div>
+        <div onclick="addFifthLetter(this)" data-click="false">s</div>
+        <div onclick="addFifthLetter(this)" data-click="false">t</div>
+      </div>
+    </div>
+    <div class="password-bot">
+      <p class="password-result">no result</p>
+      <button class="button-reset" onclick="resetPassword()">reset</button>
+    </div>
+  </section>
+  <section id="needy">
+      <div class="needy-display">
+        <div onclick="toggleNeedy(this, 0)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 1)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 2)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 3)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 4)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 5)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 6)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 7)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 8)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 9)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 10)" data-click="false"></div>
+        <div onclick="toggleNeedy(this, 11)" data-click="false"></div>
+      </div>
+    <div class="needy-bot"><p>direction: </p><span class="needy-result">aucune</span></div>
   </section>
   <script src="script.js"></script>
 </body>
