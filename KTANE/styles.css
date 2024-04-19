@@ -672,16 +672,37 @@ section {
 /* MORSE */
 
 #morse{
-  display: flex;
-  align-items: center;
-  .morse-img{
-    height: 500px;
-    width: 50%;
-    background-image: url("./morse-img.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  position: relative;
+  .separator{
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    left: 50%;
+    background-color: black;
+  }
+  .morse-description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 90%;
+    span{
+      text-transform: uppercase;
+    }
+    .morse-dots{
+      font-family: 'morse', sans-serif;
+      font-size: 30px;
+      letter-spacing: 10px;
+    }
+    .frequency{
+    }
   }
 }
+
 
 /* PASSWORD */
 
