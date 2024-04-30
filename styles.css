@@ -44,6 +44,14 @@
   p{
     margin-block: 20px;
   }
+  .emploidutemps{
+    text-transform: uppercase;
+    color: white;
+    &:hover{
+      color: grey;
+      box-shadow:none;
+    }
+  }
 }
 
 .d-none{
