@@ -2,7 +2,18 @@
 import { ref } from 'vue'
 import ComponentItem from './ComponentItem.vue'
 import TitleItems from './TitleItems.vue'
-const titles = ['bonjour', 'coucou', 'oui']
+const titles = [
+  'Wires',
+  'Buttons',
+  'Simon says',
+  'Keypads',
+  "Who's First",
+  'Memory',
+  'Morse Code',
+  'Maze',
+  'Password',
+  'Needy'
+]
 
 let newnumber = ref(0)
 function updateNumber(value) {
@@ -10,9 +21,9 @@ function updateNumber(value) {
 }
 </script>
 <template>
-  <ComponentItem @number-updated="updateNumber" />
   <p>parents {{ newnumber * 2 }}</p>
+  <ComponentItem @number-updated="updateNumber" />
   <div v-for="title in titles" :key="title">
-    <TitleItems :title="title"/>
+    <TitleItems :title="title" />
   </div>
 </template>

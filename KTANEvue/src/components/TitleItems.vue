@@ -6,6 +6,6 @@ defineProps({
 
 <template>
   <div>
-    <h1>titre: {{ title }}</h1>
+    <a>{{ title }}</a>
   </div>
 </template>
