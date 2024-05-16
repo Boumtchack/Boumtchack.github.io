@@ -1,12 +1,14 @@
 <script setup>
 import { ref } from 'vue'
-import TitleItems from './TitleItems.vue'
 import BatteriesSetup from './setup/BatteriesSetup.vue'
 import ErrorsNumber from './setup/ErrorsNumber.vue'
 import MentionsAndSerial from './setup/MentionsAndSerial.vue'
+import ButtonsModule from './modules/ButtonsModule.vue'
+import SimpleWireModule from './modules/SimpleWireModule.vue'
+
 const titles = [
-  'Wires',
   'Buttons',
+  'Wires',
   'Simon says',
   'Keypads',
   "Who's First",
@@ -17,29 +19,28 @@ const titles = [
   'Needy'
 ]
 
-const batteriesAmount = ref(0)
+let batteriesAmount = ref(0)
 function updateBatteriesAmount(value) {
   batteriesAmount.value = value
 }
-const errorAmount = ref(0)
+let errorAmount = ref(0)
 function updateErrorAmount(value) {
   errorAmount.value = value
 }
 
-const CAR = ref(false)
-const FRK = ref(false)
-const vowel = ref(false)
-const even = ref(false)
-const port = ref (false)
+let CAR = ref(false)
+let FRK = ref(false)
+let vowel = ref(false)
+let serialEven = ref(false)
+let port = ref(false)
 
 function updateOthers(array) {
   CAR.value = array[0].value
   FRK.value = array[1].value
   vowel.value = array[2].value
-  even.value = array[3].value
- port.value = array[4].value
+  serialEven.value = array[3].value
+  port.value = array[4].value
 }
-
 </script>
 <template>
   <BatteriesSetup @amount-of-batteries="updateBatteriesAmount" />
@@ -50,16 +51,22 @@ function updateOthers(array) {
     <p>batteries number: {{ batteriesAmount }}</p>
     <p>nombre d'erreur: {{ errorAmount }}</p>
     <span>CAR alumé: </span><span v-if="CAR">oui</span><span v-else>non</span>
-    <br>
+    <br />
     <span>frk alumé: </span><span v-if="FRK">oui</span><span v-else>non</span>
-    <br>
+    <br />
     <span>vowel: </span><span v-if="vowel">oui</span><span v-else>non</span>
-    <br>
-    <span>even: </span><span v-if="even">oui</span><span v-else>non</span>
-    <br>
+    <br />
+    <span>serial even: </span><span v-if="serialEven">oui</span><span v-else>non</span>
+    <br />
     <span>port: </span><span v-if="port">oui</span><span v-else>non</span>
   </div>
-  <div v-for="title in titles" :key="title">
-    <TitleItems :title="title" />
-  </div>
+  <div>{{ titles[0] }}</div>
+  <ButtonsModule :batteriesAmount="batteriesAmount" :CAR="CAR" :FRK="FRK"/>
+  <div>{{ titles[1] }}</div>
+  <!-- <SimpleWireModule :serialEven="serialEven"/> -->
+  <div>{{ titles[2] }}</div>
+  <div>{{ titles[3] }}</div>
+  <div>{{ titles[4] }}</div>
+  <div>{{ titles[5] }}</div>
+
 </template>
