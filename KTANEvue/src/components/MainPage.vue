@@ -5,6 +5,7 @@ import ErrorsNumber from './setup/ErrorsNumber.vue'
 import MentionsAndSerial from './setup/MentionsAndSerial.vue'
 import ButtonsModule from './modules/ButtonsModule.vue'
 import SimpleWireModule from './modules/SimpleWireModule.vue'
+import SimonSays from './modules/SimonSays.vue'
 
 const titles = [
   'Buttons',
@@ -65,6 +66,7 @@ function updateOthers(array) {
   <div>{{ titles[1] }}</div>
   <SimpleWireModule :serialEven="serialEven"/>
   <div>{{ titles[2] }}</div>
+  <SimonSays :vowel="vowel" :errorAmount="errorAmount"/>
   <div>{{ titles[3] }}</div>
   <div>{{ titles[4] }}</div>
   <div>{{ titles[5] }}</div>
