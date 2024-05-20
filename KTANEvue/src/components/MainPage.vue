@@ -63,7 +63,7 @@ function updateOthers(array) {
   <div>{{ titles[0] }}</div>
   <ButtonsModule :batteriesAmount="batteriesAmount" :CAR="CAR" :FRK="FRK"/>
   <div>{{ titles[1] }}</div>
-  <!-- <SimpleWireModule :serialEven="serialEven"/> -->
+  <SimpleWireModule :serialEven="serialEven"/>
   <div>{{ titles[2] }}</div>
   <div>{{ titles[3] }}</div>
   <div>{{ titles[4] }}</div>
