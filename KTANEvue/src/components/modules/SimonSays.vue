@@ -89,8 +89,7 @@ function resetKey() {
   <div v-for="(color, index) in colors" :class="color + ' key'" :key="index" @click="addKey(color)">
     {{ color }}
   </div>
-  <div ref="soluce">
-  </div>
+  <div ref="soluce"></div>
   <button @click="resetKey()">reset</button>
 </template>
 
