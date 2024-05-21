@@ -1,84 +1,114 @@
 <script setup>
 import { ref } from 'vue'
-const key1 = ref(null)
-const key2 = ref(null)
-const key3 = ref(null)
-const key4 = ref(null)
+
+const keyResult1 = ref()
+const keyResult2 = ref()
+const keyResult3 = ref()
+const keyResult4 = ref()
 
 let myKeys = []
 
+const questionMark = '../../../public/questionmark.png'
+
 const keypads = {
-  list1: [28, 13, 30, 12, 7, 9, 23],
-  list2: [16, 28, 23, 26, 3, 9, 20],
-  list3: [1, 8, 26, 5, 15, 30, 3],
-  list4: [11, 21, 31, 7, 5, 20, 4],
-  list5: [24, 4, 31, 22, 21, 19, 2],
-  list6: [11, 16, 27, 14, 24, 18, 6]
+  0: [28, 13, 30, 12, 7, 9, 23],
+  1: [16, 28, 23, 26, 3, 9, 20],
+  2: [1, 8, 26, 5, 15, 30, 3],
+  3: [11, 21, 31, 7, 5, 20, 4],
+  4: [24, 4, 31, 22, 21, 19, 2],
+  5: [11, 16, 27, 14, 24, 18, 6]
 }
 
-function addKey(keyElement) {
-  console.log(keyElement);
-  if (myKeys.length < 3) {
-    myKeys << keyElement
-    console.log(myKeys);
-  } else {
-    myKeys << keyElement.value
-    console.log(myKeys);
-    findResult()
+const images = {
+  1: ['https://www.bombmanual.com/web/img/modules/keypad/1-copyright.png', 1],
+  2: ['https://www.bombmanual.com/web/img/modules/keypad/2-filledstar.png', 2],
+  3: ['https://www.bombmanual.com/web/img/modules/keypad/3-hollowstar.png', 3],
+  4: ['https://www.bombmanual.com/web/img/modules/keypad/4-smileyface.png', 4],
+  5: ['https://www.bombmanual.com/web/img/modules/keypad/5-doublek.png', 5],
+  6: ['https://www.bombmanual.com/web/img/modules/keypad/6-omega.png', 6],
+  7: ['https://www.bombmanual.com/web/img/modules/keypad/7-squidknife.png', 7],
+  8: ['https://www.bombmanual.com/web/img/modules/keypad/8-pumpkin.png', 8],
+  9: ['https://www.bombmanual.com/web/img/modules/keypad/9-hookn.png', 9],
+  11: ['https://www.bombmanual.com/web/img/modules/keypad/11-six.png', 11],
+  12: ['https://www.bombmanual.com/web/img/modules/keypad/12-squigglyn.png', 12],
+  13: ['https://www.bombmanual.com/web/img/modules/keypad/13-at.png', 13],
+  14: ['https://www.bombmanual.com/web/img/modules/keypad/14-ae.png', 14],
+  15: ['https://www.bombmanual.com/web/img/modules/keypad/15-meltedthree.png', 15],
+  16: ['https://www.bombmanual.com/web/img/modules/keypad/16-euro.png', 16],
+  18: ['https://www.bombmanual.com/web/img/modules/keypad/18-nwithhat.png', 18],
+  19: ['https://www.bombmanual.com/web/img/modules/keypad/19-dragon.png', 19],
+  20: ['https://www.bombmanual.com/web/img/modules/keypad/20-questionmark.png', 20],
+  21: ['https://www.bombmanual.com/web/img/modules/keypad/21-paragraph.png', 21],
+  22: ['https://www.bombmanual.com/web/img/modules/keypad/22-rightc.png', 22],
+  23: ['https://www.bombmanual.com/web/img/modules/keypad/23-leftc.png', 23],
+  24: ['https://www.bombmanual.com/web/img/modules/keypad/24-pitchfork.png', 24],
+  26: ['https://www.bombmanual.com/web/img/modules/keypad/26-cursive.png', 26],
+  27: ['https://www.bombmanual.com/web/img/modules/keypad/27-tracks.png', 27],
+  28: ['https://www.bombmanual.com/web/img/modules/keypad/28-balloon.png', 28],
+  30: ['https://www.bombmanual.com/web/img/modules/keypad/30-upsidedowny.png', 30],
+  31: ['https://www.bombmanual.com/web/img/modules/keypad/31-bt.png', 31]
+}
+
+function addKey(image, button) {
+  if (button.classList == 'clicked') {
+    button.classList.toggle('clicked')
+    myKeys = myKeys.filter(item => item != image)
+    return
+  } else{
+    button.classList.toggle('clicked')
+    if (myKeys.length < 3) {
+      myKeys.push(image)
+    } else {
+      myKeys.push(image)
+      findResult()
+    }
+  }
+  console.log(myKeys);
+}
+
+function findResult() {
+  for (let i = 0; i < 6; i++) {
+    let listResult = []
+    let testingList = keypads[i]
+    for (let y = 0; y < testingList.length; y++) {
+      for (let z = 0; z < myKeys.length; z++) {
+        if (myKeys[z][1] == testingList[y]) {
+          listResult.push(myKeys[z])
+          console.log(myKeys);
+          console.log(testingList[y]);
+        }
+      }
+      if (listResult.length == 4) {
+        keyResult1.value.src = listResult[0][0]
+        keyResult2.value.src = listResult[1][0]
+        keyResult3.value.src = listResult[2][0]
+        keyResult4.value.src = listResult[3][0]
+        return
+      } else {
+        listResult = []
+      }
+    }
   }
 }
 
-function findResult() {}
-
-function resetKeypad() {}
+function resetKeypad() {
+  keyResult1.value.src = questionMark
+  keyResult2.value.src = questionMark
+  keyResult3.value.src = questionMark
+  keyResult4.value.src = questionMark
+}
 </script>
 
 <template>
-  <div>
-    <div class="keypadicon">
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/1-copyright.png" alt="1"  :value="1" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/2-filledstar.png" alt="2"  :value="2" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/3-hollowstar.png" alt="3"  :value="3" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/4-smileyface.png" alt="4"  :value="4" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/5-doublek.png" alt="5"  :value="5" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/6-omega.png" alt="6"  :value="6" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/7-squidknife.png" alt="7"  :value="7" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/8-pumpkin.png" alt="8"  :value="8" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/9-hookn.png" alt="9"  :value="9" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/11-six.png" alt="11" :value="11" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/12-squigglyn.png" alt="12" :value="12" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/13-at.png" alt="13" :value="13" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/14-ae.png" alt="14" :value="14" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/15-meltedthree.png" alt="15" :value="15" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/16-euro.png" alt="16" :value="16" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/18-nwithhat.png" alt="18" :value="18" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/19-dragon.png" alt="19" :value="19" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/20-questionmark.png" alt="20" :value="20" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/21-paragraph.png" alt="21" :value="21" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/22-rightc.png" alt="22" :value="22" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/23-leftc.png" alt="23" :value="23" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/24-pitchfork.png" alt="24" :value="24" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/26-cursive.png" alt="26" :value="26" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/27-tracks.png" alt="27" :value="27" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/28-balloon.png" alt="28" :value="28" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/30-upsidedowny.png" alt="30" :value="30" @click="addKey(value)" />
-      <img src="https://www.bombmanual.com/web/img/modules/keypad/31-bt.png" alt="31" :value="31" @click="addKey(value)" />
-      <button class="button-reset" onclick="resetKeypad()">reset</button>
-    </div>
+  <div class="keypadicon">
+    <img v-for="image in images" :key="image[1]" :src="image[0]" :alt="'image' + image[1]" @click="addKey(image, $event.target)" />
+    <button class="button-reset" @click="resetKeypad()">reset</button>
   </div>
   <div class="keyResult">
-    <div class="photo-div">
-      <img src="../../../public/questionmark.png" :ref="key1" class="keyResult1" />
-    </div>
-    <div class="photo-div">
-      <img src="../../../public/questionmark.png" :ref="key2" class="keyResult2" />
-    </div>
-    <div class="photo-div">
-      <img src="../../../public/questionmark.png" :ref="key3" class="keyResult3" />
-    </div>
-    <div class="photo-div">
-      <img src="../../../public/questionmark.png" :ref="key4" class="keyResult4" />
-    </div>
+    <img ref="keyResult1" :src="questionMark" alt="result1" />
+    <img ref="keyResult2" :src="questionMark" alt="result2" />
+    <img ref="keyResult3" :src="questionMark" alt="result3" />
+    <img ref="keyResult4" :src="questionMark" alt="result4" />
   </div>
 </template>
 
@@ -94,5 +124,8 @@ img {
 .keyResult {
   display: flex;
   flex-direction: row;
+}
+.clicked {
+  border: 2px solid red;
 }
 </style>
