@@ -7,6 +7,8 @@ import ButtonsModule from './modules/ButtonsModule.vue'
 import SimpleWireModule from './modules/SimpleWireModule.vue'
 import SimonSays from './modules/SimonSays.vue'
 import KeyPads from './modules/KeyPads.vue'
+import WhosFirst from './modules/WhosFirst.vue'
+
 
 const titles = [
   'Buttons',
@@ -71,6 +73,7 @@ function updateOthers(array) {
   <div>{{ titles[3] }}</div>
   <KeyPads/>
   <div>{{ titles[4] }}</div>
+  <WhosFirst/>
   <div>{{ titles[5] }}</div>
 
 </template>

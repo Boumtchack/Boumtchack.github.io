@@ -9,6 +9,7 @@ const keyResult4 = ref()
 let myKeys = []
 
 const questionMark = '../../../public/questionmark.png'
+const blackCross = '../../../public/cross.svg.png'
 
 const keypads = {
   0: [28, 13, 30, 12, 7, 9, 23],
@@ -49,60 +50,64 @@ const images = {
   31: ['https://www.bombmanual.com/web/img/modules/keypad/31-bt.png', 31]
 }
 
-function addKey(image, button) {
-  if (button.classList == 'clicked') {
-    button.classList.toggle('clicked')
-    myKeys = myKeys.filter(item => item != image)
-    return
-  } else{
-    button.classList.toggle('clicked')
-    if (myKeys.length < 3) {
-      myKeys.push(image)
-    } else {
-      myKeys.push(image)
-      findResult()
-    }
+function toggle(key) {
+  if (key.classList.value == 'clicked') {
+    let i = myKeys.indexOf(key)
+    myKeys.splice(i, 1)
+  } else {
+    myKeys.push(key)
   }
-  console.log(myKeys);
+  key.classList.toggle('clicked')
+}
+
+function addKey(key) {
+  toggle(key)
+  if (myKeys.length < 4) {
+    resetResultKeys()
+  } else if (myKeys.length == 4) {
+    findResult()
+  }
+}
+
+function resetResultKeys() {
+  keyResult1.value.src = questionMark
+  keyResult2.value.src = questionMark
+  keyResult3.value.src = questionMark
+  keyResult4.value.src = questionMark
 }
 
 function findResult() {
   for (let i = 0; i < 6; i++) {
     let listResult = []
     let testingList = keypads[i]
+    console.log()
     for (let y = 0; y < testingList.length; y++) {
       for (let z = 0; z < myKeys.length; z++) {
-        if (myKeys[z][1] == testingList[y]) {
+        if (myKeys[z].getAttribute('value') == testingList[y]) {
           listResult.push(myKeys[z])
-          console.log(myKeys);
-          console.log(testingList[y]);
         }
       }
-      if (listResult.length == 4) {
-        keyResult1.value.src = listResult[0][0]
-        keyResult2.value.src = listResult[1][0]
-        keyResult3.value.src = listResult[2][0]
-        keyResult4.value.src = listResult[3][0]
-        return
-      } else {
-        listResult = []
-      }
+    }
+    if (listResult.length == 4) {
+      keyResult1.value.src = listResult[0].src
+      keyResult2.value.src = listResult[1].src
+      keyResult3.value.src = listResult[2].src
+      keyResult4.value.src = listResult[3].src
+      return
+    } else {
+      keyResult1.value.src = blackCross
+      keyResult2.value.src = blackCross
+      keyResult3.value.src = blackCross
+      keyResult4.value.src = blackCross
+      listResult = []
     }
   }
-}
-
-function resetKeypad() {
-  keyResult1.value.src = questionMark
-  keyResult2.value.src = questionMark
-  keyResult3.value.src = questionMark
-  keyResult4.value.src = questionMark
 }
 </script>
 
 <template>
   <div class="keypadicon">
-    <img v-for="image in images" :key="image[1]" :src="image[0]" :alt="'image' + image[1]" @click="addKey(image, $event.target)" />
-    <button class="button-reset" @click="resetKeypad()">reset</button>
+    <img v-for="image in images" :key="image[1]" :src="image[0]" :alt="'image' + image[1]" :value="image[1]" @click="addKey($event.target)" />
   </div>
   <div class="keyResult">
     <img ref="keyResult1" :src="questionMark" alt="result1" />
