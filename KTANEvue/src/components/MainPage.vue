@@ -5,23 +5,13 @@ import ErrorsNumber from './setup/ErrorsNumber.vue'
 import MentionsAndSerial from './setup/MentionsAndSerial.vue'
 import ButtonsModule from './modules/ButtonsModule.vue'
 import SimpleWireModule from './modules/SimpleWireModule.vue'
+import ComplexWireModule from './modules/ComplexWireModule.vue'
 import SimonSays from './modules/SimonSays.vue'
 import KeyPads from './modules/KeyPads.vue'
 import WhosFirst from './modules/WhosFirst.vue'
+import MemoryModule from './modules/MemoryModule.vue'
 
-
-const titles = [
-  'Buttons',
-  'Wires',
-  'Simon says',
-  'Keypads',
-  "Who's First",
-  'Memory',
-  'Morse Code',
-  'Maze',
-  'Password',
-  'Needy'
-]
+const titles = ['Buttons', 'Wires', 'Simon says', 'Keypads', "Who's First", 'Memory', 'Morse Code', 'Maze', 'Password', 'Needy']
 
 let batteriesAmount = ref(0)
 function updateBatteriesAmount(value) {
@@ -65,15 +55,18 @@ function updateOthers(array) {
     <span>port: </span><span v-if="port">oui</span><span v-else>non</span>
   </div>
   <div>{{ titles[0] }}</div>
-  <ButtonsModule :batteriesAmount="batteriesAmount" :CAR="CAR" :FRK="FRK"/>
+  <ButtonsModule :batteriesAmount="batteriesAmount" :CAR="CAR" :FRK="FRK" />
   <div>{{ titles[1] }}</div>
-  <SimpleWireModule :serialEven="serialEven"/>
+  <p>simple wire</p>
+  <SimpleWireModule :serialEven="serialEven" />
+  <p>complex wire</p>
+  <ComplexWireModule :port="port" :serialEven="serialEven" :batteriesAmount="batteriesAmount" />
   <div>{{ titles[2] }}</div>
-  <SimonSays :vowel="vowel" :errorAmount="errorAmount"/>
+  <SimonSays :vowel="vowel" :errorAmount="errorAmount" />
   <div>{{ titles[3] }}</div>
-  <KeyPads/>
+  <KeyPads />
   <div>{{ titles[4] }}</div>
-  <WhosFirst/>
+  <WhosFirst />
   <div>{{ titles[5] }}</div>
-
+  <MemoryModule />
 </template>

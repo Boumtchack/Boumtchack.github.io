@@ -167,7 +167,7 @@ function countColors(color) {
 input[type='radio'] {
   display: none;
 }
-label, p{
+label{
   display: inline-block;
   height: 50px;
   width: 50px;

@@ -31,82 +31,91 @@ const firstWordsListFR = [
   ['vide', 4]
 ]
 
-const secondWordsListFR = {
-  1: ['APPUIE', 'DROITE', 'MILIEU', 'OUI', 'PRÊT', 'APPUIE'],
-  2: ['ATTENDS', 'EUHHH', 'NON', 'VIDE', 'E', 'OUI', 'GAUCHE', 'PREMIER', 'APPUIE', 'EUX', 'ATTENDS'],
-  3: ['AVANT', 'AVANT'],
-  4: ['COMME', 'TONS', 'SUIVANT', 'TES', "T'ES", 'MAINTIENS', 'FAIT', 'QUOI', 'QUOI ?', 'AVANT', 'TOI', 'COMME'],
-  5: ['DROITE', 'OUI', 'RIEN', 'PRÊT', 'APPUIE', 'NON', 'ATTENDS', 'EUX', 'DROITE'],
-  6: ['E', 'MILIEU', 'NON', 'PREMIER', 'OUI', 'EUHHH', 'RIEN', 'ATTENDS', 'E'],
-  7: ['EUHHH', 'PRÊT', 'RIEN', 'GAUCHE', 'EUX', 'E', 'OUI', 'DROITE', 'NON', 'APPUIE', 'VIDE', 'EUHHH'],
-  8: ['EUX', 'EUHHH', 'EUX'],
-  9: ['FAIT', 'OK', 'AVANT', 'SUIVANT', 'QUOI ?', 'TON', "T'ES", 'TONS', 'MAINTIENS', 'COMME', 'TOI', 'TES', 'THON', 'QUOI', 'FAIT'],
-  10: ['GAUCHE', 'DROITE', 'GAUCHE'],
-  11: ['MAINTIENS', 'THON', 'TES', 'FAIT', 'QUOI', 'TOI', "T'ES", 'OK', 'QUOI ?', 'TONS', 'SUIVANT', 'MAINTIENS'],
-  12: ['MILIEU', 'VIDE', 'PRÊT', 'E', 'EUX', 'RIEN', 'APPUIE', 'NON', 'ATTENDS', 'GAUCHE', 'MILIEU'],
-  13: ['NON', 'VIDE', 'EUHHH', 'ATTENDS', 'PREMIER', 'EUX', 'PRÊT', 'DROITE', 'OUI', 'RIEN', 'GAUCHE', 'APPUIE', 'E', 'NON'],
-  14: ['OK', 'THON', 'FAIT', 'COMME', 'TONS', 'TOI', 'MAINTIENS', 'AVANT', "T'ES", 'OK'],
-  15: ['OUI', 'E', 'DROITE', 'EUHHH', 'MILIEU', 'PREMIER', 'EUX', 'APPUIE', 'PRÊT', 'RIEN', 'OUI', 'GAUCHE', 'VIDE', 'NON', 'ATTENDS'],
-  16: ['PREMIER', 'GAUCHE', 'E', 'OUI', 'MILIEU', 'NON', 'DROITE', 'RIEN', 'EUHHH', 'ATTENDS', 'PRÊT', 'VIDE', 'EUX', 'APPUIE', 'PREMIER'],
-  17: ['PRÊT', 'OUI', 'E', 'EUX', 'MILIEU', 'GAUCHE', 'APPUIE', 'DROITE', 'VIDE', 'PRÊT'],
-  18: ['QUOI ?', 'TOI', 'MAINTIENS', 'TONS', 'TON', 'TES', 'FAIT', 'QUOI', 'COMME', 'THON', 'AVANT', "T'ES", 'SUIVANT', 'QUOI ?'],
-  19: ['QUOI', "T'ES", 'TES', 'THON', 'TONS', 'SUIVANT', 'QUOI'],
-  20: ['RIEN', 'EUHHH', 'DROITE', 'E', 'MILIEU', 'OUI', 'VIDE', 'NON', 'APPUIE', 'GAUCHE', 'EUX', 'ATTENDS', 'PREMIER', 'RIEN'],
-  21: ['SUIVANT', 'QUOI ?', 'AVANT', 'QUOI', 'TON', 'MAINTIENS', 'OK', 'SUIVANT'],
-  22: ["T'ES", 'FAIT', 'TES', "T'ES"],
-  23: ['TES', 'AVANT', 'OK', 'SUIVANT', 'QUOI ?', 'TONS', "T'ES", 'QUOI', 'FAIT', 'TES'],
-  24: ['THON', 'TON', 'SUIVANT', 'COMME', 'AVANT', 'QUOI ?', 'FAIT', 'QUOI', 'MAINTIENS', 'TOI', 'TES', 'TONS', 'OK', "T'ES", 'THON'],
-  25: ['TOI', 'OK', 'THON', 'TON', 'TONS', 'SUIVANT', 'AVANT', "T'ES", 'MAINTIENS', 'QUOI ?', 'TOI'],
-  26: ['TON', 'QUOI', 'THON', 'AVANT', 'TON'],
-  27: ['TONS', 'TOI', 'TONS'],
-  28: ['VIDE', 'ATTENDS', 'DROITE', 'E', 'MILIEU', 'VIDE']
+const secondWordsListFR = [
+  ['APPUIE', 'DROITE', 'MILIEU', 'OUI', 'PRÊT', 'APPUIE'],
+  ['ATTENDS', 'EUHHH', 'NON', 'VIDE', 'E', 'OUI', 'GAUCHE', 'PREMIER', 'APPUIE', 'EUX', 'ATTENDS'],
+  ['AVANT', 'AVANT'],
+  ['COMME', 'TONS', 'SUIVANT', 'TES', "T'ES", 'MAINTIENS', 'FAIT', 'QUOI', 'QUOI ?', 'AVANT', 'TOI', 'COMME'],
+  ['DROITE', 'OUI', 'RIEN', 'PRÊT', 'APPUIE', 'NON', 'ATTENDS', 'EUX', 'DROITE'],
+  ['E', 'MILIEU', 'NON', 'PREMIER', 'OUI', 'EUHHH', 'RIEN', 'ATTENDS', 'E'],
+  ['EUHHH', 'PRÊT', 'RIEN', 'GAUCHE', 'EUX', 'E', 'OUI', 'DROITE', 'NON', 'APPUIE', 'VIDE', 'EUHHH'],
+  ['EUX', 'EUHHH', 'EUX'],
+  ['FAIT', 'OK', 'AVANT', 'SUIVANT', 'QUOI ?', 'TON', "T'ES", 'TONS', 'MAINTIENS', 'COMME', 'TOI', 'TES', 'THON', 'QUOI', 'FAIT'],
+  ['GAUCHE', 'DROITE', 'GAUCHE'],
+  ['MAINTIENS', 'THON', 'TES', 'FAIT', 'QUOI', 'TOI', "T'ES", 'OK', 'QUOI ?', 'TONS', 'SUIVANT', 'MAINTIENS'],
+  ['MILIEU', 'VIDE', 'PRÊT', 'E', 'EUX', 'RIEN', 'APPUIE', 'NON', 'ATTENDS', 'GAUCHE', 'MILIEU'],
+  ['NON', 'VIDE', 'EUHHH', 'ATTENDS', 'PREMIER', 'EUX', 'PRÊT', 'DROITE', 'OUI', 'RIEN', 'GAUCHE', 'APPUIE', 'E', 'NON'],
+  ['OK', 'THON', 'FAIT', 'COMME', 'TONS', 'TOI', 'MAINTIENS', 'AVANT', "T'ES", 'OK'],
+  ['OUI', 'E', 'DROITE', 'EUHHH', 'MILIEU', 'PREMIER', 'EUX', 'APPUIE', 'PRÊT', 'RIEN', 'OUI', 'GAUCHE', 'VIDE', 'NON', 'ATTENDS'],
+  ['PREMIER', 'GAUCHE', 'E', 'OUI', 'MILIEU', 'NON', 'DROITE', 'RIEN', 'EUHHH', 'ATTENDS', 'PRÊT', 'VIDE', 'EUX', 'APPUIE', 'PREMIER'],
+  ['PRÊT', 'OUI', 'E', 'EUX', 'MILIEU', 'GAUCHE', 'APPUIE', 'DROITE', 'VIDE', 'PRÊT'],
+  ['QUOI ?', 'TOI', 'MAINTIENS', 'TONS', 'TON', 'TES', 'FAIT', 'QUOI', 'COMME', 'THON', 'AVANT', "T'ES", 'SUIVANT', 'QUOI ?'],
+  ['QUOI', "T'ES", 'TES', 'THON', 'TONS', 'SUIVANT', 'QUOI'],
+  ['RIEN', 'EUHHH', 'DROITE', 'E', 'MILIEU', 'OUI', 'VIDE', 'NON', 'APPUIE', 'GAUCHE', 'EUX', 'ATTENDS', 'PREMIER', 'RIEN'],
+  ['SUIVANT', 'QUOI ?', 'AVANT', 'QUOI', 'TON', 'MAINTIENS', 'OK', 'SUIVANT'],
+  ["T'ES", 'FAIT', 'TES', "T'ES"],
+  ['TES', 'AVANT', 'OK', 'SUIVANT', 'QUOI ?', 'TONS', "T'ES", 'QUOI', 'FAIT', 'TES'],
+  ['THON', 'TON', 'SUIVANT', 'COMME', 'AVANT', 'QUOI ?', 'FAIT', 'QUOI', 'MAINTIENS', 'TOI', 'TES', 'TONS', 'OK', "T'ES", 'THON'],
+  ['TOI', 'OK', 'THON', 'TON', 'TONS', 'SUIVANT', 'AVANT', "T'ES", 'MAINTIENS', 'QUOI ?', 'TOI'],
+  ['TON', 'QUOI', 'THON', 'AVANT', 'TON'],
+  ['TONS', 'TOI', 'TONS'],
+  ['VIDE', 'ATTENDS', 'DROITE', 'E', 'MILIEU', 'VIDE']
+]
+
+let firstWordSolution = ref(0)
+let secondWordSolution = ref(0)
+
+function clickFirst(word) {
+  firstWordSolution.value = word.value
 }
 
-let firstWordSolution = ref('0')
-
-function changeFirstSolution(word) {
-  firstWordSolution.value = word.getAttribute('value')
-}
-
-function click(word) {
-  console.log(word);
-  toggle(word)
-  changeFirstSolution(word)
-}
-
-function toggle(word) {
-  word.classList.toggle('clicked')
+function clickSecond(word) {
+  secondWordSolution.value = word.value.split(',').splice(1)
 }
 </script>
 <template>
   <div class="words">
-    <div v-for="(word, index) in firstWordsListFR" :key="index" @click="click($event.target)">
-      <div :value="word[1]">{{ word[0] }}</div>
+    <div class="word" v-for="(word, index) in firstWordsListFR" :key="index">
+      <input type="radio" :id="word[0]" name="firstWord" :value="word[1]" @click="clickFirst($event.target)" />
+      <label :for="word[0]">{{ word[0] }}</label>
     </div>
   </div>
-  <div v-if="(firstWordSolution='0')">look:</div>
-  <div v-else-if="(firstWordSolution='1')">look: top left</div>
-  <div v-else-if="(firstWordSolution='2')">look: top right</div>
-  <div v-else-if="(firstWordSolution='3')">look: middle left</div>
-  <div v-else-if="(firstWordSolution='4')">look: middle right</div>
-  <div v-else-if="(firstWordSolution='5')">look: bottom left</div>
-  <div v-else-if="(firstWordSolution='6')">look: bottom right</div>
+  <div v-if="firstWordSolution == 0">look:</div>
+  <div v-else-if="firstWordSolution == 1">look: top left</div>
+  <div v-else-if="firstWordSolution == 2">look: top right</div>
+  <div v-else-if="firstWordSolution == 3">look: middle left</div>
+  <div v-else-if="firstWordSolution == 4">look: middle right</div>
+  <div v-else-if="firstWordSolution == 5">look: bottom left</div>
+  <div v-else-if="firstWordSolution == 6">look: bottom right</div>
   <div class="words">
-    <div v-for="(word, index) in secondWordsListFR" :key="index">
-      <div :value="word[1]">{{ word[0] }}</div>
+    <div class="word" v-for="(word, index) in secondWordsListFR" :key="index">
+      <input type="radio" :id="word[0]" name="secondWord" :value="word" @click="clickSecond($event.target)" />
+      <label :for="word[0]">{{ word[0] }}</label>
     </div>
   </div>
-  <p>press: {{ secondAnswer }}</p>
+  <span v-for="(word, index) in secondWordSolution" :key="index">
+    {{ `- ${word} - ` }}
+  </span>
 </template>
+
 <style scope>
 .words {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   height: 200px;
   user-select: none;
-  display: grid;
-  border-collapse: collapse;
-  grid-template-columns: repeat(7, 1fr);
   border: 1px white solid;
-  div {
+  .word {
+    width: 100%;
+  }
+  input {
+    display: none;
+    &:checked + label {
+      background-color: red;
+    }
+  }
+  label {
+    display: block;
     text-align: center;
     color: black;
     background-color: grey;
@@ -117,8 +126,5 @@ function toggle(word) {
       background-color: rgb(163, 163, 163);
     }
   }
-}
-.clicked {
-  border: 2px solid red !important;
 }
 </style>
